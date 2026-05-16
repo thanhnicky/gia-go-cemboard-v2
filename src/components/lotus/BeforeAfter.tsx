@@ -63,18 +63,13 @@ export function BeforeAfter() {
             loading="lazy"
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div
-            className="absolute inset-y-0 left-0 overflow-hidden"
-            style={{ width: `${pos}%` }}
-          >
-            <img
-              src={beforeImg}
-              alt="Tấm xi măng thô chưa phủ"
-              loading="lazy"
-              className="absolute inset-y-0 left-0 h-full w-[100vw] max-w-none object-cover"
-              style={{ width: ref.current?.getBoundingClientRect().width || "100%" }}
-            />
-          </div>
+          <img
+            src={beforeImg}
+            alt="Tấm xi măng thô chưa phủ"
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+          />
           <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur">
             Trước
           </span>
