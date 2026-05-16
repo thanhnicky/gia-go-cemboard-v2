@@ -9,6 +9,7 @@ import { Combos } from "@/components/lotus/Combos";
 import { OrderForm } from "@/components/lotus/OrderForm";
 import { ZaloCTA } from "@/components/lotus/ZaloCTA";
 import { BeforeAfter } from "@/components/lotus/BeforeAfter";
+import { VideoGuide } from "@/components/lotus/VideoGuide";
 import { FAQ } from "@/components/lotus/FAQ";
 import { FinalCTA } from "@/components/lotus/FinalCTA";
 import { Footer } from "@/components/lotus/Footer";
@@ -48,6 +49,7 @@ function Index() {
         <OrderForm />
         <ZaloCTA />
         <BeforeAfter />
+        <VideoGuide />
         <FAQ />
         <FinalCTA />
       </main>
