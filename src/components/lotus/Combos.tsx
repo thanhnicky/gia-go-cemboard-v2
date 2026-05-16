@@ -1,93 +1,253 @@
-const COMBOS = [
+import { useMemo, useState } from "react";
+
+type Variant = { id: string; label: string; spec: string; price: number; area: number };
+type Combo = {
+  id: string;
+  name: string;
+  tagline: string;
+  useFor: string;
+  includes: string[];
+  variants: [Variant, Variant];
+};
+
+const COMBOS: Combo[] = [
   {
-    tag: "Phổ biến nhất",
-    name: "Combo Vách & Lam",
-    desc: "Cho mặt tiền, vách trang trí, lam che nắng, hàng rào fiber cement.",
-    items: [
-      "Lotus Wood Primer Paint — lớp lót",
-      "Lotus Wood Plank Paint — lớp phủ vân gỗ",
-      "Chổi / con lăn tạo vân (tuỳ chọn)",
+    id: "tiet-kiem",
+    name: "Combo Tiết kiệm",
+    tagline: "Gói cơ bản — sơn lót + sơn vân, dùng trong nhà",
+    useFor: "Vách / cột xi măng trong nhà, công trình tiết kiệm chi phí",
+    includes: ["Lotus Wood Primer (lót)", "Lotus Wood Plank (tạo vân)"],
+    variants: [
+      { id: "tk-s", label: "Combo nhỏ", spec: "2 loại × 1kg (tổng 2kg) · ~8 m²", price: 486000, area: 8 },
+      { id: "tk-l", label: "Combo lớn", spec: "2 loại × 3.5kg (tổng 7kg) · ~28 m²", price: 1680000, area: 28 },
     ],
-    coverage: "Định mức tham khảo: 6–8 m²/lít/lớp",
   },
   {
-    tag: "Cho sàn ngoài trời",
-    name: "Combo Sàn Decking",
-    desc: "Cho sàn ban công, lối đi sân vườn, deck hồ bơi, khu vực chịu mài mòn.",
-    items: [
-      "Lotus Wood Primer Paint — lớp lót sàn",
-      "Lotus Decking Paint — lớp phủ chuyên sàn",
-      "Hướng dẫn thi công đi kèm",
+    id: "tuong-vach",
+    name: "Combo cho Tường & Vách",
+    tagline: "Đủ 3 lớp — lót, vân, phủ bảo vệ trong/ngoài trời",
+    useFor: "Vách, lam, hàng rào, tường ốp Cemboard / Fiber Cement",
+    includes: [
+      "Lotus Wood Primer (lót)",
+      "Lotus Wood Plank (tạo vân)",
+      "Lotus Shield (phủ bảo vệ)",
     ],
-    coverage: "Định mức tham khảo: 5–7 m²/lít/lớp",
+    variants: [
+      { id: "tv-s", label: "Combo nhỏ", spec: "3 loại × 1kg (tổng 3kg) · ~8 m²", price: 761400, area: 8 },
+      { id: "tv-l", label: "Combo lớn", spec: "3 loại × 3.5kg (tổng 10.5kg) · ~28 m²", price: 2650000, area: 28 },
+    ],
   },
   {
-    tag: "Theo m²",
-    name: "Báo giá theo diện tích",
-    desc: "Lotus tính trọn gói theo m² thực tế cho dự án từ 50 m² trở lên.",
-    items: [
-      "Khảo sát hạng mục & vật liệu nền",
-      "Tư vấn đúng hệ sơn theo khu vực",
-      "Báo giá theo m² — minh bạch",
+    id: "san",
+    name: "Combo cho Sàn",
+    tagline: "Chuyên cho sàn — chịu mài mòn, đi lại, ngoài trời",
+    useFor: "Sàn, ban công, sân vườn, khu vực chịu mài mòn cao",
+    includes: [
+      "Lotus Wood Primer (lót)",
+      "Lotus Wood Decking Paint (vân gỗ cho sàn)",
+      "Lotus Hard Shield (phủ bóng cứng)",
     ],
-    coverage: "Áp dụng cho contractor, dự án, đại lý",
+    variants: [
+      { id: "sn-s", label: "Combo nhỏ", spec: "3 loại × 1kg (tổng 3kg) · ~8 m²", price: 853200, area: 8 },
+      { id: "sn-l", label: "Combo lớn", spec: "3 loại × 3.5kg (tổng 10.5kg) · ~28 m²", price: 2970000, area: 28 },
+    ],
   },
 ];
 
+const fmt = (n: number) => n.toLocaleString("vi-VN");
+
 export function Combos() {
+  const [qty, setQty] = useState<Record<string, number>>({});
+
+  const total = useMemo(() => {
+    let price = 0;
+    let area = 0;
+    const selected: { name: string; variant: string; qty: number }[] = [];
+    for (const c of COMBOS) {
+      for (const v of c.variants) {
+        const q = qty[v.id] ?? 0;
+        if (q > 0) {
+          price += v.price * q;
+          area += v.area * q;
+          selected.push({ name: c.name, variant: v.label, qty: q });
+        }
+      }
+    }
+    return { price, area, selected };
+  }, [qty]);
+
+  const set = (id: string, next: number) =>
+    setQty((s) => ({ ...s, [id]: Math.max(0, Math.min(99, next)) }));
+
   return (
     <section id="bao-gia" className="bg-[var(--cement)]/50 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-        <div className="max-w-2xl">
+        <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
             Combo & báo giá nhanh
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Chọn combo phù hợp với hạng mục của bạn.
+            Chọn combo &amp; số lượng — ra giá ngay
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Lotus gợi ý sẵn các combo theo nhu cầu thực tế. Số lượng cụ thể sẽ
-            được xác nhận lại theo diện tích bạn cung cấp.
+            3 combo cho 3 nhu cầu khác nhau. Chọn combo nhỏ (mỗi loại 1kg) hoặc
+            combo lớn (mỗi loại 3.5kg) — combo lớn tiết kiệm hơn rõ rệt. Mỗi
+            combo có thể chọn một màu riêng.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {COMBOS.map((c) => (
-            <div
-              key={c.name}
-              className="flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_-25px_oklch(0.22_0.025_45/0.35)]"
+            <article
+              key={c.id}
+              className="flex flex-col rounded-2xl border border-border bg-card p-6"
             >
-              <span className="inline-flex self-start rounded-full bg-[var(--brand-soft)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
-                {c.tag}
-              </span>
-              <h3 className="mt-4 font-serif text-2xl font-semibold text-foreground">
+              <h3 className="font-serif text-2xl font-semibold text-foreground">
                 {c.name}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
-              <ul className="mt-5 space-y-2 text-sm text-foreground/85">
-                {c.items.map((it) => (
-                  <li key={it} className="flex items-start gap-2">
-                    <span
-                      aria-hidden
-                      className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--brand)]"
-                    />
-                    <span>{it}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 border-t border-border pt-4 text-xs text-muted-foreground">
-                {c.coverage}
-              </p>
-              <a
-                href="#dat-hang"
-                className="mt-5 inline-flex items-center justify-center rounded-full border border-[var(--brand)] bg-transparent px-5 py-3 text-sm font-semibold text-[var(--brand)] transition-colors hover:bg-[var(--brand)] hover:text-[var(--brand-foreground)]"
-              >
-                Yêu cầu báo giá
-              </a>
-            </div>
+              <p className="mt-2 text-sm text-muted-foreground">{c.tagline}</p>
+
+              <div className="mt-5 rounded-xl bg-[var(--brand-soft)]/40 px-4 py-4 text-sm">
+                <p className="font-semibold text-foreground">Dùng cho:</p>
+                <p className="mt-1 text-foreground/80">{c.useFor}</p>
+                <p className="mt-3 font-semibold text-foreground">Gồm:</p>
+                <ul className="mt-1 space-y-1 text-foreground/80">
+                  {c.includes.map((it) => (
+                    <li key={it}>• {it}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-5 space-y-3">
+                {c.variants.map((v, idx) => {
+                  const big = idx === 1;
+                  const q = qty[v.id] ?? 0;
+                  return (
+                    <div
+                      key={v.id}
+                      className={`rounded-xl border p-4 transition-colors ${
+                        big
+                          ? "border-[var(--brand)]/35 bg-[var(--brand-soft)]/30"
+                          : "border-border bg-background/60"
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <p className="font-semibold text-foreground">{v.label}</p>
+                            {big && (
+                              <span className="rounded-md bg-[var(--brand)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--brand-foreground)]">
+                                Tiết kiệm hơn
+                              </span>
+                            )}
+                          </div>
+                          <p className="mt-1 text-xs text-muted-foreground">{v.spec}</p>
+                          <p className="mt-2 font-serif text-lg font-semibold text-[var(--brand)]">
+                            {fmt(v.price)}đ
+                          </p>
+                        </div>
+                        <Stepper
+                          value={q}
+                          onChange={(n) => set(v.id, n)}
+                          label={`${v.label} ${c.name}`}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </article>
           ))}
         </div>
+
+        {/* Tạm tính */}
+        <div className="mt-8 rounded-2xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]/40 px-5 py-5 sm:px-7 sm:py-6">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">
+                Tạm tính
+              </p>
+              {total.selected.length === 0 ? (
+                <p className="mt-2 text-sm text-foreground/80 sm:text-base">
+                  Chọn số lượng combo phía trên — giá sẽ tự cộng.
+                </p>
+              ) : (
+                <ul className="mt-2 space-y-0.5 text-sm text-foreground/85">
+                  {total.selected.map((s, i) => (
+                    <li key={i}>
+                      {s.qty} × {s.name} — {s.variant}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            <div className="text-left sm:text-right">
+              <p className="text-xs text-muted-foreground">
+                Phủ được ~{" "}
+                <span className="font-semibold text-foreground">
+                  {total.area} m²
+                </span>
+              </p>
+              <p className="font-serif text-3xl font-semibold text-[var(--brand)] sm:text-4xl">
+                {fmt(total.price)}đ
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Chưa gồm phí vận chuyển
+              </p>
+            </div>
+          </div>
+          {total.price > 0 && (
+            <div className="mt-5 flex flex-col gap-2 border-t border-[var(--brand)]/20 pt-5 sm:flex-row sm:justify-end">
+              <a
+                href="#dat-hang"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5"
+              >
+                Đặt hàng với báo giá này →
+              </a>
+            </div>
+          )}
+        </div>
+
+        <p className="mt-6 text-center text-xs text-muted-foreground">
+          Định mức tham khảo: 1 combo nhỏ phủ ~8 m² · 1 combo lớn phủ ~28 m² (2
+          lớp, bề mặt phẳng).
+        </p>
       </div>
     </section>
+  );
+}
+
+function Stepper({
+  value,
+  onChange,
+  label,
+}: {
+  value: number;
+  onChange: (n: number) => void;
+  label: string;
+}) {
+  return (
+    <div className="flex flex-shrink-0 items-center overflow-hidden rounded-full border border-border bg-background">
+      <button
+        type="button"
+        aria-label={`Giảm ${label}`}
+        onClick={() => onChange(value - 1)}
+        className="grid h-9 w-9 place-items-center text-foreground/70 transition-colors hover:bg-muted disabled:opacity-40"
+        disabled={value <= 0}
+      >
+        −
+      </button>
+      <span className="w-8 text-center text-sm font-semibold tabular-nums text-foreground">
+        {value}
+      </span>
+      <button
+        type="button"
+        aria-label={`Tăng ${label}`}
+        onClick={() => onChange(value + 1)}
+        className="grid h-9 w-9 place-items-center text-foreground/70 transition-colors hover:bg-muted"
+      >
+        +
+      </button>
+    </div>
   );
 }
