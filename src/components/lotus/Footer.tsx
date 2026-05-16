@@ -1,5 +1,14 @@
 import { Logo } from "./Logo";
-import { HOTLINE, HOTLINE_TEL, ZALO_URL } from "./constants";
+import {
+  HOTLINE,
+  HOTLINE_TEL,
+  ZALO_URL,
+  EMAIL,
+  WEBSITE,
+  COMPANY_NAME,
+  COMPANY_TAX,
+  COMPANY_ADDRESS,
+} from "./constants";
 
 export function Footer() {
   return (
@@ -12,6 +21,11 @@ export function Footer() {
               Lotus — hệ sơn vân gỗ chuyên dụng cho tấm xi măng, fiber cement,
               Smartwood, Conwood, Cemboard. Tư vấn đúng hệ cho từng hạng mục.
             </p>
+            <div className="mt-5 space-y-1 text-xs leading-relaxed text-muted-foreground">
+              <p className="font-semibold text-foreground/80">{COMPANY_NAME}</p>
+              <p>MST: {COMPANY_TAX}</p>
+              <p>Đ/c: {COMPANY_ADDRESS}</p>
+            </div>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
@@ -36,17 +50,33 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                Email:{" "}
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="font-semibold hover:underline"
+                >
+                  {EMAIL}
+                </a>
+              </li>
+              <li>
                 Website:{" "}
-                <span className="text-muted-foreground">lotus-paint.vn</span>
+                <a
+                  href={`https://${WEBSITE}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold hover:underline"
+                >
+                  {WEBSITE}
+                </a>
               </li>
             </ul>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-              Showroom
+              Văn phòng
             </p>
-            <p className="mt-4 text-sm text-foreground/85">
-              Địa chỉ: 123 Đường Lotus, Quận 1, TP. Hồ Chí Minh
+            <p className="mt-4 text-sm leading-relaxed text-foreground/85">
+              {COMPANY_ADDRESS}
             </p>
             <p className="mt-2 text-xs text-muted-foreground">
               Giờ làm việc: 8:00 – 18:00 (T2 – T7)
