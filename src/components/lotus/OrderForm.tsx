@@ -10,31 +10,10 @@ const Schema = z.object({
     .min(8, "Số điện thoại chưa đúng")
     .max(15)
     .regex(/^[0-9+\s.()-]+$/, "Số điện thoại chưa hợp lệ"),
-  category: z.string().trim().min(1, "Chọn hạng mục").max(80),
-  material: z.string().trim().min(1, "Chọn loại vật liệu").max(80),
-  color: z.string().trim().max(80).optional().or(z.literal("")),
-  area: z.string().trim().max(60).optional().or(z.literal("")),
+  colors: z.string().trim().max(300).optional().or(z.literal("")),
   province: z.string().trim().max(60).optional().or(z.literal("")),
   note: z.string().trim().max(500).optional().or(z.literal("")),
 });
-
-const CATEGORIES = [
-  "Mặt tiền",
-  "Vách trang trí",
-  "Lam che nắng",
-  "Hàng rào",
-  "Sàn ngoài trời",
-  "Cảnh quan / hồ bơi",
-  "Khác",
-];
-const MATERIALS = [
-  "Smartwood",
-  "Conwood",
-  "Cemboard",
-  "Fiber Cement",
-  "Calcium Silicate",
-  "Chưa rõ — cần tư vấn",
-];
 
 export function OrderForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -121,57 +100,6 @@ export function OrderForm() {
                   placeholder="09xx xxx xxx"
                 />
               </Field>
-              <Field
-                label="Hạng mục cần sơn"
-                name="category"
-                error={errors.category}
-                required
-              >
-                <select name="category" className="form-input" defaultValue="">
-                  <option value="" disabled>
-                    Chọn hạng mục
-                  </option>
-                  {CATEGORIES.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-              </Field>
-              <Field
-                label="Loại vật liệu nền"
-                name="material"
-                error={errors.material}
-                required
-              >
-                <select name="material" className="form-input" defaultValue="">
-                  <option value="" disabled>
-                    Chọn vật liệu
-                  </option>
-                  {MATERIALS.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-              </Field>
-              <Field label="Màu đã chọn" name="color">
-                <input
-                  id="form-color"
-                  name="color"
-                  maxLength={80}
-                  className="form-input"
-                  placeholder="VD: Walnut đậm (L-301)"
-                />
-              </Field>
-              <Field label="Diện tích hoặc số lượng" name="area">
-                <input
-                  name="area"
-                  maxLength={60}
-                  className="form-input"
-                  placeholder="VD: 60 m² hoặc 12 lít"
-                />
-              </Field>
               <Field label="Tỉnh / thành" name="province">
                 <input
                   name="province"
@@ -189,6 +117,22 @@ export function OrderForm() {
                 />
               </Field>
             </div>
+
+            <Field
+              label="Màu đã chọn"
+              name="colors"
+              error={errors.colors}
+              hint="Có thể chọn nhiều màu — bấm thêm vào bảng màu phía trên hoặc gõ tay, cách nhau bằng dấu phẩy."
+            >
+              <textarea
+                id="form-color"
+                name="colors"
+                maxLength={300}
+                rows={2}
+                className="form-input resize-y"
+                placeholder="VD: Walnut (LPM8.LWF103), Cherry (LPM4.LWF101)"
+              />
+            </Field>
 
             <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
@@ -241,12 +185,14 @@ function Field({
   name,
   error,
   required,
+  hint,
   children,
 }: {
   label: string;
   name: string;
   error?: string;
   required?: boolean;
+  hint?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -256,6 +202,9 @@ function Field({
         {required && <span className="text-[var(--brand)]">*</span>}
       </span>
       {children}
+      {hint && (
+        <span className="mt-1.5 block text-xs text-muted-foreground">{hint}</span>
+      )}
       {error && (
         <span className="mt-1.5 block text-xs text-destructive">{error}</span>
       )}

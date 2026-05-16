@@ -74,8 +74,18 @@ export function ColorPicker() {
 
   const setSelectedColor = (s: Swatch) => {
     setSelected(s);
-    const el = document.getElementById("form-color") as HTMLInputElement | null;
-    if (el) el.value = `${s.name} (${s.code})`;
+    const el = document.getElementById("form-color") as
+      | HTMLInputElement
+      | HTMLTextAreaElement
+      | null;
+    if (!el) return;
+    const entry = `${s.name} (${s.code})`;
+    const current = el.value.trim();
+    if (!current) {
+      el.value = entry;
+    } else if (!current.split(/\s*,\s*/).includes(entry)) {
+      el.value = `${current}, ${entry}`;
+    }
   };
 
   return (
