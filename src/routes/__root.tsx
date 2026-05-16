@@ -72,15 +72,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Sơn Giả Gỗ Lotus" },
+      { name: "description", content: "Sơn giả gỗ Lotus cho tấm xi măng. Dễ thi công, bền màu ngoài trời" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Sơn Giả Gỗ Lotus" },
+      { property: "og:description", content: "Sơn giả gỗ Lotus cho tấm xi măng. Dễ thi công, bền màu ngoài trời" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "theme-color", content: "#f4ede0" },
+      { name: "twitter:title", content: "Sơn Giả Gỗ Lotus" },
+      { name: "twitter:description", content: "Sơn giả gỗ Lotus cho tấm xi măng. Dễ thi công, bền màu ngoài trời" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5e3b4f76-4374-4df7-8fd0-7f6cbefb78da/id-preview-4a073d66--de193188-3fa9-4dea-9d97-56048bd12d53.lovable.app-1778915669222.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5e3b4f76-4374-4df7-8fd0-7f6cbefb78da/id-preview-4a073d66--de193188-3fa9-4dea-9d97-56048bd12d53.lovable.app-1778915669222.png" },
     ],
     links: [
       {
