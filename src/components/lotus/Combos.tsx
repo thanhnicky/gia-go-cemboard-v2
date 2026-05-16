@@ -58,6 +58,7 @@ const fmt = (n: number) => n.toLocaleString("vi-VN");
 
 export function Combos() {
   const [qty, setQty] = useState<Record<string, number>>({});
+  const [openId, setOpenId] = useState<string | null>(null);
 
   const total = useMemo(() => {
     let price = 0;
@@ -97,7 +98,11 @@ export function Combos() {
         </div>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
-          {COMBOS.map((c) => (
+          {COMBOS.map((c) => {
+            const isOpen = openId === c.id;
+            const comboQty = c.variants.reduce((s, v) => s + (qty[v.id] ?? 0), 0);
+            const priceMin = Math.min(...c.variants.map((v) => v.price));
+            return (
             <article
               key={c.id}
               className="flex flex-col rounded-2xl border border-border bg-card p-6"
@@ -107,7 +112,30 @@ export function Combos() {
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">{c.tagline}</p>
 
-              <div className="mt-5 rounded-xl bg-[var(--brand-soft)]/40 px-4 py-4 text-sm">
+              {/* Mobile-only collapsed summary + toggle */}
+              <div className="mt-4 lg:hidden">
+                <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-background/60 px-4 py-3">
+                  <div className="min-w-0">
+                    <p className="text-xs text-muted-foreground">Từ</p>
+                    <p className="font-serif text-lg font-semibold text-[var(--brand)]">
+                      {fmt(priceMin)}đ
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setOpenId(isOpen ? null : c.id)}
+                    aria-expanded={isOpen}
+                    className="inline-flex items-center gap-1 rounded-full border border-[var(--brand)]/40 bg-background px-4 py-2 text-xs font-semibold text-[var(--brand)]"
+                  >
+                    {isOpen ? "Thu gọn" : comboQty > 0 ? `Đã chọn ${comboQty} · Sửa` : "Xem chi tiết"}
+                    <span className={`transition-transform ${isOpen ? "rotate-180" : ""}`}>▾</span>
+                  </button>
+                </div>
+              </div>
+
+              <div
+                className={`${isOpen ? "block" : "hidden"} lg:block mt-5 rounded-xl bg-[var(--brand-soft)]/40 px-4 py-4 text-sm`}
+              >
                 <p className="font-semibold text-foreground">Dùng cho:</p>
                 <p className="mt-1 text-foreground/80">{c.useFor}</p>
                 <p className="mt-3 font-semibold text-foreground">Gồm:</p>
@@ -118,7 +146,7 @@ export function Combos() {
                 </ul>
               </div>
 
-              <div className="mt-5 space-y-3">
+              <div className={`${isOpen ? "block" : "hidden"} lg:block mt-5 space-y-3`}>
                 {c.variants.map((v, idx) => {
                   const big = idx === 1;
                   const q = qty[v.id] ?? 0;
@@ -157,7 +185,8 @@ export function Combos() {
                 })}
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
 
         {/* Tạm tính */}
