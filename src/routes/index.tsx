@@ -1,26 +1,58 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/lotus/Header";
+import { Hero } from "@/components/lotus/Hero";
+import { TrustBar } from "@/components/lotus/TrustBar";
+import { Applications } from "@/components/lotus/Applications";
+import { Systems } from "@/components/lotus/Systems";
+import { ColorPicker } from "@/components/lotus/ColorPicker";
+import { Combos } from "@/components/lotus/Combos";
+import { OrderForm } from "@/components/lotus/OrderForm";
+import { ZaloCTA } from "@/components/lotus/ZaloCTA";
+import { BeforeAfter } from "@/components/lotus/BeforeAfter";
+import { FAQ } from "@/components/lotus/FAQ";
+import { FinalCTA } from "@/components/lotus/FinalCTA";
+import { Footer } from "@/components/lotus/Footer";
+import { StickyMobileCTA } from "@/components/lotus/StickyMobileCTA";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Sơn giả gỗ Lotus | Hệ sơn vân gỗ cho Cemboard, Fiber Cement" },
+      {
+        name: "description",
+        content:
+          "Lotus — hệ sơn giả gỗ chuyên dụng cho tấm xi măng, Smartwood, Conwood, Cemboard, Fiber Cement. Tư vấn đúng hệ cho từng hạng mục, đặt hàng nhanh hoặc nhắn Zalo.",
+      },
+      { property: "og:title", content: "Sơn giả gỗ Lotus cho tấm xi măng" },
+      {
+        property: "og:description",
+        content:
+          "Biến tấm xi măng thành bề mặt đẹp như gỗ thật. Đặt hàng nhanh hoặc nhắn Zalo để được tư vấn đúng hệ sơn.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <main className="pb-24 lg:pb-0">
+        <Hero />
+        <TrustBar />
+        <Applications />
+        <Systems />
+        <ColorPicker />
+        <Combos />
+        <OrderForm />
+        <ZaloCTA />
+        <BeforeAfter />
+        <FAQ />
+        <FinalCTA />
+      </main>
+      <Footer />
+      <StickyMobileCTA />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
