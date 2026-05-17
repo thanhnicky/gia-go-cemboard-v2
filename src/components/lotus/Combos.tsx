@@ -227,12 +227,29 @@ export function Combos() {
           </div>
           {total.price > 0 && (
             <div className="mt-5 flex flex-col gap-2 border-t border-[var(--brand)]/20 pt-5 sm:flex-row sm:justify-end">
-              <a
-                href="#dat-hang"
+              <button
+                type="button"
+                onClick={() => {
+                  // Save combo selection to localStorage
+                  const comboSummary = total.selected.map(s => `${s.qty}× ${s.name} (${s.variant})`).join(', ');
+                  const totalQty = total.selected.reduce((sum, s) => sum + s.qty, 0);
+                  const totalPrice = total.price;
+                  console.log('Saving to localStorage:', { comboSummary, totalQty, totalPrice });
+                  localStorage.setItem('selectedCombo', comboSummary);
+                  localStorage.setItem('selectedQuantity', totalQty.toString());
+                  localStorage.setItem('selectedTotalPrice', totalPrice.toString());
+                  console.log('Saved successfully');
+                  
+                  // Dispatch custom event to notify OrderForm
+                  window.dispatchEvent(new CustomEvent('comboUpdated', { detail: { combo: comboSummary, quantity: totalQty.toString(), totalPrice: totalPrice.toString() } }));
+                  
+                  // Navigate to order form
+                  window.location.href = '#dat-hang';
+                }}
                 className="inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5"
               >
                 Đặt hàng với báo giá này →
-              </a>
+              </button>
             </div>
           )}
         </div>

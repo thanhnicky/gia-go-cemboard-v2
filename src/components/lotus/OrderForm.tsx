@@ -1,6 +1,7 @@
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { z } from "zod";
 import { ZALO_URL } from "./constants";
+import { useRouter } from "@tanstack/react-router";
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzrFg2OCg1ZfIdRSVLc65rQQIdtagjXTpTqcWaDmytw-JG-GJldUXuw5CZ4iEu8RWn7/exec";
 
@@ -12,6 +13,9 @@ const Schema = z.object({
     .min(8, "Số điện thoại chưa đúng")
     .max(15)
     .regex(/^[0-9+\s.()-]+$/, "Số điện thoại chưa hợp lệ"),
+  combo: z.string().trim().max(100).optional().or(z.literal("")),
+  quantity: z.string().trim().max(20).optional().or(z.literal("")),
+  totalPrice: z.string().trim().max(50).optional().or(z.literal("")),
   colors: z.string().trim().max(300).optional().or(z.literal("")),
   province: z.string().trim().max(60).optional().or(z.literal("")),
   note: z.string().trim().max(500).optional().or(z.literal("")),
@@ -21,9 +25,78 @@ export function OrderForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const [comboValue, setComboValue] = useState("");
+  const [quantityValue, setQuantityValue] = useState("");
+  const [totalPriceValue, setTotalPriceValue] = useState("");
+
+  // Load combo and quantity from localStorage on mount and when hash changes
+  useEffect(() => {
+    const loadFromStorage = () => {
+      const savedCombo = localStorage.getItem('selectedCombo');
+      const savedQuantity = localStorage.getItem('selectedQuantity');
+      const savedTotalPrice = localStorage.getItem('selectedTotalPrice');
+      console.log('Loading from localStorage:', { savedCombo, savedQuantity, savedTotalPrice });
+      if (savedCombo) setComboValue(savedCombo);
+      if (savedQuantity) setQuantityValue(savedQuantity);
+      if (savedTotalPrice) setTotalPriceValue(savedTotalPrice);
+    };
+
+    loadFromStorage();
+
+    // Also load when hash changes to #dat-hang
+    const handleHashChange = () => {
+      console.log('Hash changed to:', window.location.hash);
+      if (window.location.hash === '#dat-hang') {
+        // Small delay to ensure localStorage is updated
+        setTimeout(loadFromStorage, 100);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Listen for custom comboUpdated event
+    const handleComboUpdate = (e: CustomEvent) => {
+      console.log('Combo updated event received:', e.detail);
+      if (e.detail.combo) setComboValue(e.detail.combo);
+      if (e.detail.quantity) setQuantityValue(e.detail.quantity);
+      if (e.detail.totalPrice) setTotalPriceValue(e.detail.totalPrice);
+    };
+
+    window.addEventListener('comboUpdated', handleComboUpdate as EventListener);
+    
+    // Also check periodically for updates (every 500ms for 5 seconds after hash change)
+    let checkInterval: NodeJS.Timeout;
+    const startChecking = () => {
+      let count = 0;
+      checkInterval = setInterval(() => {
+        loadFromStorage();
+        count++;
+        if (count >= 10) clearInterval(checkInterval);
+      }, 500);
+    };
+
+    window.addEventListener('hashchange', startChecking);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('hashchange', startChecking);
+      window.removeEventListener('comboUpdated', handleComboUpdate as EventListener);
+      if (checkInterval) clearInterval(checkInterval);
+    };
+  }, []);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Load latest combo data from localStorage before submission
+    const savedCombo = localStorage.getItem('selectedCombo');
+    const savedQuantity = localStorage.getItem('selectedQuantity');
+    const savedTotalPrice = localStorage.getItem('selectedTotalPrice');
+    if (savedCombo) setComboValue(savedCombo);
+    if (savedQuantity) setQuantityValue(savedQuantity);
+    if (savedTotalPrice) setTotalPriceValue(savedTotalPrice);
+    
     const fd = new FormData(e.currentTarget);
     const data = Object.fromEntries(fd.entries());
     const result = Schema.safeParse(data);
@@ -48,7 +121,17 @@ export function OrderForm() {
         },
         body: JSON.stringify(data),
       });
-      setSubmitted(true);
+      
+      // Save order data to localStorage
+      localStorage.setItem(`order_${data.phone}`, JSON.stringify(data));
+      
+      // Clear combo selection from localStorage
+      localStorage.removeItem('selectedCombo');
+      localStorage.removeItem('selectedQuantity');
+      localStorage.removeItem('selectedTotalPrice');
+      
+      // Redirect to thank you page with phone as query parameter
+      window.location.href = `/thank-you?phone=${encodeURIComponent(data.phone as string)}`;
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại hoặc nhắn Zalo.");
@@ -120,7 +203,7 @@ export function OrderForm() {
                   placeholder="09xx xxx xxx"
                 />
               </Field>
-              <Field label="Tỉnh / thành" name="province">
+              <Field label="Địa chỉ" name="province">
                 <input
                   name="province"
                   maxLength={60}
@@ -136,6 +219,32 @@ export function OrderForm() {
                   placeholder="Yêu cầu khác (nếu có)"
                 />
               </Field>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              <Field label="Combo sơn" name="combo" hint="VD: Combo sàn, Combo vách, Combo lam">
+                <input
+                  name="combo"
+                  maxLength={100}
+                  className="form-input"
+                  placeholder="Chọn combo (nếu có)"
+                  value={comboValue}
+                  onChange={(e) => setComboValue(e.target.value)}
+                  autoComplete="off"
+                />
+              </Field>
+              <Field label="Số lượng" name="quantity" hint="VD: 10 thùng, 5 set">
+                <input
+                  name="quantity"
+                  maxLength={20}
+                  className="form-input"
+                  placeholder="Số lượng ước tính"
+                  value={quantityValue}
+                  onChange={(e) => setQuantityValue(e.target.value)}
+                  autoComplete="off"
+                />
+              </Field>
+              <input type="hidden" name="totalPrice" value={totalPriceValue} />
             </div>
 
             <Field
@@ -176,6 +285,9 @@ export function OrderForm() {
             <p className="text-sm text-muted-foreground">
               Lotus sẽ liên hệ xác nhận đúng hạng mục, đúng hệ sơn và hỗ trợ
               chốt màu trước khi lên đơn.
+            </p>
+            <p className="mt-2 text-xs text-[var(--brand)] font-medium">
+              Miễn phí vận chuyển cho đơn hàng từ 1.999.000 đ
             </p>
           </form>
         )}
