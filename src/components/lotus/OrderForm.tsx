@@ -5,6 +5,8 @@ import { useRouter } from "@tanstack/react-router";
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzrFg2OCg1ZfIdRSVLc65rQQIdtagjXTpTqcWaDmytw-JG-GJldUXuw5CZ4iEu8RWn7/exec";
 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzrFg2OCg1ZfIdRSVLc65rQQIdtagjXTpTqcWaDmytw-JG-GJldUXuw5CZ4iEu8RWn7/exec";
+
 const Schema = z.object({
   name: z.string().trim().min(2, "Vui lòng nhập họ tên").max(80),
   phone: z
@@ -25,6 +27,7 @@ export function OrderForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+<<<<<<< HEAD
   const router = useRouter();
   const [comboValue, setComboValue] = useState("");
   const [quantityValue, setQuantityValue] = useState("");
@@ -86,6 +89,9 @@ export function OrderForm() {
     };
   }, []);
 
+=======
+
+>>>>>>> 45469cf748fc7386c7443e7be51edfecde5ce646
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
@@ -121,6 +127,7 @@ export function OrderForm() {
         },
         body: JSON.stringify(data),
       });
+<<<<<<< HEAD
       
       // Save order data to localStorage
       localStorage.setItem(`order_${data.phone}`, JSON.stringify(data));
@@ -132,6 +139,9 @@ export function OrderForm() {
       
       // Redirect to thank you page with phone as query parameter
       window.location.href = `/thank-you?phone=${encodeURIComponent(data.phone as string)}`;
+=======
+      setSubmitted(true);
+>>>>>>> 45469cf748fc7386c7443e7be51edfecde5ce646
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại hoặc nhắn Zalo.");
