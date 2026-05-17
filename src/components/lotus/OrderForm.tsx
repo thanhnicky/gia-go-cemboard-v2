@@ -2,6 +2,8 @@ import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { ZALO_URL } from "./constants";
 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzrFg2OCg1ZfIdRSVLc65rQQIdtagjXTpTqcWaDmytw-JG-GJldUXuw5CZ4iEu8RWn7/exec";
+
 const Schema = z.object({
   name: z.string().trim().min(2, "Vui lòng nhập họ tên").max(80),
   phone: z
@@ -18,8 +20,9 @@ const Schema = z.object({
 export function OrderForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const data = Object.fromEntries(fd.entries());
@@ -34,7 +37,24 @@ export function OrderForm() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại hoặc nhắn Zalo.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -137,10 +157,11 @@ export function OrderForm() {
             <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-7 py-3.5 text-base font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5"
+                disabled={loading}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-7 py-3.5 text-base font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
-                Đặt hàng ngay
-                <span aria-hidden>→</span>
+                {loading ? "Đang gửi..." : "Đặt hàng ngay"}
+                {!loading && <span aria-hidden>→</span>}
               </button>
               <a
                 href={ZALO_URL}

@@ -81,7 +81,7 @@ export function Hero() {
                 Hệ sơn áp dụng
               </p>
               <p className="mt-1 text-sm font-semibold text-foreground">
-                Lotus Wood Primer + Lotus Wood Plank Paint — tone Walnut ấm
+                Lotus Wood Primer + Lotus Wood Plank Paint
               </p>
             </div>
           </div>

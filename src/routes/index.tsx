@@ -50,9 +50,9 @@ function Index() {
         <OrderForm />
         <ZaloCTA />
         <BeforeAfter />
-        <VideoGuide />
         <Projects />
         <FAQ />
+        <VideoGuide />
         <FinalCTA />
       </main>
       <Footer />

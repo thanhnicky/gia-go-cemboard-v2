@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ZALO_URL } from "./constants";
+import colorOverview from "@/assets/color-overview.jpg";
 
 import c_LPM0_LWF1017 from "@/assets/colors/LPM0_LWF1017.jpg";
 import c_LPM14_LWF1018 from "@/assets/colors/LPM14_LWF1018.jpg";
@@ -71,6 +72,7 @@ const GROUPS: { label: string; items: Swatch[] }[] = [
 
 export function ColorPicker() {
   const [selected, setSelected] = useState<Swatch>(GROUPS[1].items[0]);
+  const [showDetailed, setShowDetailed] = useState(false);
 
   const setSelectedColor = (s: Swatch) => {
     setSelected(s);
@@ -125,60 +127,102 @@ export function ColorPicker() {
           </div>
         </div>
 
-        <div className="mt-10 space-y-10">
-          {GROUPS.map((g) => (
-            <div key={g.label}>
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                {g.label}
-              </h3>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                {g.items.map((s) => {
-                  const active = selected.code === s.code;
-                  return (
-                    <button
-                      key={s.code}
-                      type="button"
-                      onClick={() => setSelectedColor(s)}
-                      className={`group relative overflow-hidden rounded-xl border text-left transition-all ${
-                        active
-                          ? "border-[var(--brand)] ring-2 ring-[var(--brand)]/30"
-                          : "border-border hover:border-foreground/40"
-                      }`}
-                    >
-                      <img
-                        src={s.img}
-                        alt={s.name}
-                        loading="lazy"
-                        className="aspect-[5/3] w-full object-cover"
-                      />
-                      <div className="bg-card px-3 py-3">
-                        <p className="text-sm font-semibold text-foreground">
-                          {s.name}
-                        </p>
-                        <p className="font-mono text-[11px] text-muted-foreground">
-                          {s.code}
-                        </p>
-                      </div>
-                      {active && (
-                        <span className="absolute right-2 top-2 grid h-6 w-6 place-items-center rounded-full bg-[var(--brand)] text-[var(--brand-foreground)]">
-                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                            <path
-                              d="M2.5 6.2L5 8.7L9.7 3.5"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
+        {!showDetailed ? (
+          <div className="mt-10">
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <img
+                src={colorOverview}
+                alt="Bảng màu vân gỗ Lotus tổng thể"
+                className="w-full object-cover"
+              />
             </div>
-          ))}
-        </div>
+            <button
+              type="button"
+              onClick={() => setShowDetailed(true)}
+              className="mt-6 mx-auto flex items-center gap-2 rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+              Xem bảng màu chi tiết
+            </button>
+          </div>
+        ) : (
+          <div className="mt-10 space-y-10">
+            <button
+              type="button"
+              onClick={() => setShowDetailed(false)}
+              className="mb-4 flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+              </svg>
+              Quay lại xem tổng quan
+            </button>
+            {GROUPS.map((g) => (
+              <div key={g.label}>
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  {g.label}
+                </h3>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                  {g.items.map((s) => {
+                    const active = selected.code === s.code;
+                    return (
+                      <button
+                        key={s.code}
+                        type="button"
+                        onClick={() => setSelectedColor(s)}
+                        className={`group relative overflow-hidden rounded-xl border text-left transition-all ${
+                          active
+                            ? "border-[var(--brand)] ring-2 ring-[var(--brand)]/30"
+                            : "border-border hover:border-foreground/40"
+                        }`}
+                      >
+                        <img
+                          src={s.img}
+                          alt={s.name}
+                          loading="lazy"
+                          className="aspect-[5/3] w-full object-cover"
+                        />
+                        <div className="bg-card px-3 py-3">
+                          <p className="text-sm font-semibold text-foreground">
+                            {s.name}
+                          </p>
+                          <p className="font-mono text-[11px] text-muted-foreground">
+                            {s.code}
+                          </p>
+                        </div>
+                        {active && (
+                          <span className="absolute right-2 top-2 grid h-6 w-6 place-items-center rounded-full bg-[var(--brand)] text-[var(--brand-foreground)]">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                              <path
+                                d="M2.5 6.2L5 8.7L9.7 3.5"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => setShowDetailed(false)}
+              className="mt-8 mx-auto flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+              </svg>
+              Quay lại xem tổng quan
+            </button>
+          </div>
+        )}
 
         <div className="mt-10 grid gap-3 sm:grid-cols-2">
           <a
