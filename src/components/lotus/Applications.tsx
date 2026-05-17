@@ -1,5 +1,5 @@
 import facade from "@/assets/app-facade.jpg";
-import wall from "@/assets/app-wall.jpg";
+import gate from "@/assets/app-gate.jpg";
 import louver from "@/assets/app-louver.jpg";
 import fence from "@/assets/app-fence.jpg";
 import deck from "@/assets/app-deck.jpg";
@@ -7,7 +7,7 @@ import pool from "@/assets/app-pool.jpg";
 
 const APPS = [
   { img: facade, title: "Mặt tiền", desc: "Vách ngoài, ốp mặt dựng" },
-  { img: wall, title: "Vách trang trí", desc: "Vách trong, vách feature" },
+  { img: gate, title: "Cửa cổng", desc: "Cổng gỗ giả, cánh cổng biệt thự" },
   { img: louver, title: "Lam che nắng", desc: "Lam đứng, lam ngang" },
   { img: fence, title: "Hàng rào", desc: "Rào gỗ giả, vách ngăn sân" },
   { img: deck, title: "Sàn ngoài trời", desc: "Ban công, lối đi, terrace" },
