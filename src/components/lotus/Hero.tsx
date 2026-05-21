@@ -16,7 +16,7 @@ export function Hero() {
             <em className="not-italic text-[var(--brand)]">CĐT hài lòng.</em>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn, hỗ trợ quy trình thi công khi cần Conwood, Cemboard và Fiber.
+            Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn.
           </p>
           <ul className="mt-7 grid gap-3 text-sm sm:text-base">
             {[
@@ -62,7 +62,7 @@ export function Hero() {
             </a>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            "Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua. Gửi ảnh hạng mục để Lotus tư vấn đúng loại trước khi đặt.""
+            "Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua.""
           </p>
         </div>
         <div className="relative lg:col-span-6">
