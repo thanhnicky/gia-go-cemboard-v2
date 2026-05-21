@@ -32,9 +32,7 @@ export function Projects() {
             Dự án đã thi công bằng Sơn giả gỗ Lotus
           </h2>
           <p className="text-muted-foreground">
-            Hàng trăm công trình từ biệt thự, nhà phố đến khu nghỉ dưỡng đã tin
-            dùng hệ sơn giả gỗ Lotus cho hạng mục trần, lam, ban công bằng tấm
-            xi măng.
+            Nhà thầu của GS Metrocity, Novaworld, Long Thành Riverside — đều đặt sơn từ Lotus.Khi CĐT hỏi sơn gì, họ có câu trả lời tự tin. Bạn cũng vậy.
           </p>
         </div>
 
