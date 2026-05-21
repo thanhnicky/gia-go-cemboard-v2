@@ -150,7 +150,7 @@ export function OrderForm() {
   return (
     <section id="dat-hang" className="py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-10">
-        <div className="max-w-2xl">
+        <div >
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
             Đặt hàng nhanh
           </p>
