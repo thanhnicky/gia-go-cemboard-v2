@@ -62,7 +62,7 @@ export function Hero() {
             </a>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua.Gửi ảnh hạng mục để Lotus tư vấn đúng loại trước khi đặt.
+            "Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua. Gửi ảnh hạng mục để Lotus tư vấn đúng loại trước khi đặt.""
           </p>
         </div>
         <div className="relative lg:col-span-6">

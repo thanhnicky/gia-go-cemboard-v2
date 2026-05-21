@@ -34,11 +34,10 @@ export function Systems() {
             Chọn đúng hệ sơn
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Mỗi hạng mục cần một hệ sơn phù hợp.
+            Sai hệ sơn là lỗi kỹ thuật — không phải lỗi thẩm mỹ.
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Vách, lam, hàng rào dùng khác với sàn ngoài trời. Chọn đúng hệ giúp
-            bề mặt bền màu, hạn chế bong tróc theo thời gian.
+            Vách và sàn chịu lực khác nhau hoàn toàn. Dùng chung một hệ — bong tróc sớm, mất uy tín với CĐT. Lotus giúp bạn chọn đúng từ đầu.
           </p>
         </div>
 
@@ -79,8 +78,7 @@ export function Systems() {
 
         <div className="mt-8 rounded-xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]/40 px-5 py-4 text-sm text-foreground/85 sm:text-base">
           <span className="font-semibold text-[var(--brand)]">Lưu ý: </span>
-          Không nên dùng một hệ sơn chung cho mọi hạng mục. Lotus sẽ xác nhận
-          đúng hệ trước khi chốt đơn.
+          Lotus cam kết xác nhận đúng hệ kỹ thuật cho từng hạng mục, nhận mẫu trước khi lên đơn — hoàn toàn miễn phí.
         </div>
       </div>
     </section>

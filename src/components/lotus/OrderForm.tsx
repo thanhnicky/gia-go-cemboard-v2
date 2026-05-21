@@ -155,11 +155,10 @@ export function OrderForm() {
             Đặt hàng nhanh
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Đặt hàng nhanh hoặc giữ đơn tư vấn
+            Đặt hàng hoặc yêu cầu báo giá cho công trình
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Phù hợp cho khách đã chọn gần xong hạng mục, màu và nhu cầu. Lotus
-            sẽ liên hệ xác nhận đúng hệ sơn trước khi chốt đơn.
+            Điền thông tin — Lotus gọi xác nhận đúng hệ sơn, báo giá và tư vấn trong vòng 30 phút.
           </p>
         </div>
 
@@ -290,8 +289,7 @@ export function OrderForm() {
             </div>
 
             <p className="text-sm text-muted-foreground">
-              Lotus sẽ liên hệ xác nhận đúng hạng mục, đúng hệ sơn và hỗ trợ
-              chốt màu trước khi lên đơn.
+              Nhà thầu đặt lần đầu? Lotus hỗ trợ mẫu miễn phí để xác nhận kết quả trước khi lên đơn lớn.
             </p>
             <p className="mt-2 text-xs text-[var(--brand)] font-medium">
               Miễn phí vận chuyển cho đơn hàng từ 1.999.000 đ

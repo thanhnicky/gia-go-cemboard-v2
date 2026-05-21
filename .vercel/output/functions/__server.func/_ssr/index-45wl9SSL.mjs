@@ -1,4 +1,4 @@
-import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-ESjmVAMc.mjs";
+import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-CzI4i2sF.mjs";
 import { N as NAV_ITEMS, Z as ZALO_URL, a as COMPANY_NAME, b as COMPANY_TAX, C as COMPANY_ADDRESS, H as HOTLINE, c as HOTLINE_TEL, E as EMAIL, W as WEBSITE } from "./constants-BIxjIQhi.mjs";
 import "node:async_hooks";
 import "node:stream/web";
@@ -123,11 +123,11 @@ function Hero() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]", children: [
         "Sơn giả gỗ cemboard đúng hệ - ",
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", { className: "hidden sm:inline" }),
-        "bàn giao đẹp ",
+        "bàn giao đẹp, chất lượng cao ",
         " ",
         /* @__PURE__ */ jsxRuntimeExports.jsx("em", { className: "not-italic text-[var(--brand)]", children: "CĐT hài lòng." })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", children: "Hệ sơn Lotus được phát triển riêng cho tấm fibercimen xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn, hỗ trợ quy trình thi công khi cần Conwood, Cemboard và Fiber" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", children: "Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn, hỗ trợ quy trình thi công khi cần Conwood, Cemboard và Fiber." }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-7 grid gap-3 text-sm sm:text-base", children: [
         "Chuyên dụng cho Fiber Cement, Smartwood, Conwood, Cemboard.",
         "Hiệu ứng vân gỗ chân thực, nhiều tone từ sáng đến nâu đậm.",
@@ -176,7 +176,7 @@ function Hero() {
           }
         )
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-sm text-muted-foreground", children: "Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua.Gửi ảnh hạng mục để Lotus tư vấn đúng loại trước khi đặt." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-sm text-muted-foreground", children: '"Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua. Gửi ảnh hạng mục để Lotus tư vấn đúng loại trước khi đặt.""' })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative lg:col-span-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative overflow-hidden rounded-2xl border border-border bg-card shadow-[0_30px_60px_-30px_oklch(0.22_0.025_45/0.35)]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -4455,8 +4455,8 @@ function OrderForm() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-5xl px-4 sm:px-6 lg:px-10", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-2xl", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]", children: "Đặt hàng nhanh" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Đặt hàng nhanh hoặc giữ đơn tư vấn" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "Phù hợp cho khách đã chọn gần xong hạng mục, màu và nhu cầu. Lotus sẽ liên hệ xác nhận đúng hệ sơn trước khi chốt đơn." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Đặt hàng hoặc yêu cầu báo giá cho công trình" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "Điền thông tin — Lotus gọi xác nhận đúng hệ sơn, báo giá và tư vấn trong vòng 30 phút." })
       ] }),
       submitted ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-10 rounded-2xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]/40 p-8 text-center", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-serif text-2xl font-semibold text-foreground", children: "Đã nhận yêu cầu của bạn." }),
@@ -4597,7 +4597,7 @@ function OrderForm() {
                 }
               )
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Lotus sẽ liên hệ xác nhận đúng hạng mục, đúng hệ sơn và hỗ trợ chốt màu trước khi lên đơn." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Nhà thầu đặt lần đầu? Lotus hỗ trợ mẫu miễn phí để xác nhận kết quả trước khi lên đơn lớn." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-xs text-[var(--brand)] font-medium", children: "Miễn phí vận chuyển cho đơn hàng từ 1.999.000 đ" })
           ]
         }
@@ -4927,8 +4927,8 @@ function FAQ() {
 function FinalCTA() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-[var(--cement)]/50 py-20 sm:py-28", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-10", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]", children: "Sẵn sàng bắt đầu" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Đã có hạng mục và màu gần phù hợp?" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg", children: "Đặt hàng ngay để Lotus xác nhận đúng hệ sơn, chốt màu và lên đơn chuẩn cho dự án của bạn." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Bạn đang có dự án Cemboard cần sơn giả gỗ?" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg", children: "Gửi ảnh hạng mục qua Zalo — Lotus tư vấn đúng hệ, báo giá cạnh tranh và đảm bảo giao hàng đúng tiến độ thi công của bạn." }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "a",

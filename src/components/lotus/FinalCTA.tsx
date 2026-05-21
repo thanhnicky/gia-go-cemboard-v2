@@ -8,11 +8,10 @@ export function FinalCTA() {
           Sẵn sàng bắt đầu
         </p>
         <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-          Đã có hạng mục và màu gần phù hợp?
+          Bạn đang có dự án Cemboard cần sơn giả gỗ?
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg">
-          Đặt hàng ngay để Lotus xác nhận đúng hệ sơn, chốt màu và lên đơn
-          chuẩn cho dự án của bạn.
+          Gửi ảnh hạng mục qua Zalo — Lotus tư vấn đúng hệ, báo giá cạnh tranh và đảm bảo giao hàng đúng tiến độ thi công của bạn.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
