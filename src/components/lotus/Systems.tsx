@@ -37,7 +37,7 @@ export function Systems() {
             Sai hệ sơn là lỗi kỹ thuật — không phải lỗi thẩm mỹ.
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Vách và sàn chịu lực khác nhau hoàn toàn. Dùng chung một hệ — bong tróc sớm, mất uy tín với CĐT. Lotus giúp bạn chọn đúng từ đầu.
+            Vách và sàn chịu lực khác nhau hoàn toàn. Dùng chung một hệ — bong tróc sớm, mất uy tín với Chủ đầu tư. Lotus giúp bạn chọn đúng từ đầu.
           </p>
         </div>
 

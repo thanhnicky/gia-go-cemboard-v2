@@ -1,4 +1,4 @@
-import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-7EV82rvw.mjs";
+import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-8xRIn6Qy.mjs";
 import { N as NAV_ITEMS, Z as ZALO_URL, a as COMPANY_NAME, b as COMPANY_TAX, C as COMPANY_ADDRESS, H as HOTLINE, c as HOTLINE_TEL, E as EMAIL, W as WEBSITE } from "./constants-BIxjIQhi.mjs";
 import "node:async_hooks";
 import "node:stream/web";
@@ -4454,7 +4454,7 @@ function OrderForm() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]", children: "Đặt hàng nhanh" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Đặt hàng hoặc yêu cầu báo giá cho công trình" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "Điền thông tin — Lotus gọi xác nhận đúng hệ sơn, báo giá và tư vấn trong vòng 30 phút." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "Điền thông tin của bạn — Lotus gọi xác nhận đúng hệ sơn, báo giá và tư vấn trong vòng 30 phút." })
       ] }),
       submitted ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-10 rounded-2xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]/40 p-8 text-center", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-serif text-2xl font-semibold text-foreground", children: "Đã nhận yêu cầu của bạn." }),

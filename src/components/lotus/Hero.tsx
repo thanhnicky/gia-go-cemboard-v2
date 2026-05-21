@@ -13,7 +13,7 @@ export function Hero() {
           <h1 className="mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]">
             Sơn giả gỗ cemboard đúng hệ - 
             bàn giao đẹp, chất lượng cao. {" "}
-            <em className="not-italic text-[var(--brand)]">Chủ Đầu Tư hài lòng.</em>
+            <em className="not-italic text-[var(--brand)]">Chủ Đầu Tư hài lòng</em>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn.
@@ -62,7 +62,7 @@ export function Hero() {
             </a>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            "Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua.""
+            Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua
           </p>
         </div>
         <div className="relative lg:col-span-6">

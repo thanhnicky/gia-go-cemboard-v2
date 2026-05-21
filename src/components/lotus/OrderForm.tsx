@@ -158,7 +158,7 @@ export function OrderForm() {
             Đặt hàng hoặc yêu cầu báo giá cho công trình
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Điền thông tin — Lotus gọi xác nhận đúng hệ sơn, báo giá và tư vấn trong vòng 30 phút.
+            Điền thông tin của bạn — Lotus gọi xác nhận đúng hệ sơn, báo giá và tư vấn trong vòng 30 phút.
           </p>
         </div>
 
