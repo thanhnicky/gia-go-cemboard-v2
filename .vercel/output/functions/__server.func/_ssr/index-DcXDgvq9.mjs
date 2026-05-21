@@ -1,4 +1,4 @@
-import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-DaPSHho0.mjs";
+import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-7EV82rvw.mjs";
 import { N as NAV_ITEMS, Z as ZALO_URL, a as COMPANY_NAME, b as COMPANY_TAX, C as COMPANY_ADDRESS, H as HOTLINE, c as HOTLINE_TEL, E as EMAIL, W as WEBSITE } from "./constants-BIxjIQhi.mjs";
 import "node:async_hooks";
 import "node:stream/web";
@@ -121,11 +121,11 @@ function Hero() {
         "Sơn Giả Gỗ Chuyên Nghiệp Cho Nhà Thầu"
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]", children: [
-        "Sơn giả gỗ cemboard đúng hệ - bàn giao đẹp, chất lượng cao ",
+        "Sơn giả gỗ cemboard đúng hệ - bàn giao đẹp, chất lượng cao. ",
         " ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("em", { className: "not-italic text-[var(--brand)]", children: "CĐT hài lòng." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("em", { className: "not-italic text-[var(--brand)]", children: "Chủ Đầu Tư hài lòng." })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", children: "Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn, hỗ trợ quy trình thi công khi cần Conwood, Cemboard và Fiber." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", children: "Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn." }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-7 grid gap-3 text-sm sm:text-base", children: [
         "Chuyên dụng cho Fiber Cement, Smartwood, Conwood, Cemboard.",
         "Hiệu ứng vân gỗ chân thực, nhiều tone từ sáng đến nâu đậm.",
@@ -174,7 +174,7 @@ function Hero() {
           }
         )
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-sm text-muted-foreground", children: '"Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua. Gửi ảnh hạng mục để Lotus tư vấn đúng loại trước khi đặt.""' })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-sm text-muted-foreground", children: '"Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua.""' })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative lg:col-span-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative overflow-hidden rounded-2xl border border-border bg-card shadow-[0_30px_60px_-30px_oklch(0.22_0.025_45/0.35)]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -4641,7 +4641,7 @@ function Field({
 function ZaloCTA() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 sm:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-5xl px-4 sm:px-6 lg:px-10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "overflow-hidden rounded-3xl border border-border bg-[var(--brand)] px-6 py-12 text-center text-[var(--brand-foreground)] sm:px-10 sm:py-16", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand-foreground)]/70", children: "Tư vấn 1-1" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold sm:text-4xl", children: "Chưa chắc màu hay hệ sơn?" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold sm:text-4xl", children: "Bạn chưa chắc màu hay hệ sơn?" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-3 max-w-2xl text-base text-[var(--brand-foreground)]/85 sm:text-lg", children: "Gửi ảnh hạng mục qua Zalo để được tư vấn đúng loại phù hợp trước khi đặt." }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "a",
