@@ -1,4 +1,4 @@
-import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-B6uum8Kg.mjs";
+import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-DchLKkrC.mjs";
 import { N as NAV_ITEMS, Z as ZALO_URL, a as COMPANY_NAME, b as COMPANY_TAX, C as COMPANY_ADDRESS, H as HOTLINE, c as HOTLINE_TEL, E as EMAIL, W as WEBSITE } from "./constants-BIxjIQhi.mjs";
 import "node:async_hooks";
 import "node:stream/web";
@@ -123,13 +123,13 @@ function Hero() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]", children: [
         "Sơn giả gỗ cemboard đúng hệ - bàn giao đẹp. ",
         " ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("em", { className: "not-italic text-[var(--brand)]", children: "Chủ Đầu Tư hài lòng" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("em", { className: "not-italic text-[var(--brand)]", children: "CĐT hài lòng" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", children: "Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn." }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-7 grid gap-3 text-sm sm:text-base", children: [
         "Chuyên dụng cho Fiber Cement, Smartwood, Conwood, Cemboard.",
         "Hiệu ứng vân gỗ chân thực, nhiều tone từ sáng đến nâu đậm.",
-        "Hệ sơn gốc nước, độ bền màu cao ngoài trời.",
+        "Bền màu 5+ năm ngoài trời — không phai, không bong dù nắng mưa.",
         "Bám dính tốt trên xi măng — không lo bong tróc sau bàn giao."
       ].map((b) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start gap-3", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -4827,7 +4827,7 @@ function Projects() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-2xl mx-auto text-center mb-10", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)] mb-3", children: "Công trình tiêu biểu" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl lg:text-4xl font-bold tracking-tight mb-3", children: "Dự án đã thi công bằng Sơn giả gỗ Lotus" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground", children: "Hàng trăm công trình từ biệt thự, nhà phố đến khu nghỉ dưỡng đã tin dùng hệ sơn giả gỗ Lotus cho hạng mục trần, lam, ban công bằng tấm xi măng." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground", children: "Nhà thầu của GS Metrocity, Novaworld, Long Thành Riverside — đều đặt sơn từ Lotus.Khi CĐT hỏi sơn gì, họ có câu trả lời tự tin. Bạn cũng vậy." })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6", children: projects.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "figure",
