@@ -1,4 +1,4 @@
-import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-BZfXcgD6.mjs";
+import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-B6uum8Kg.mjs";
 import { N as NAV_ITEMS, Z as ZALO_URL, a as COMPANY_NAME, b as COMPANY_TAX, C as COMPANY_ADDRESS, H as HOTLINE, c as HOTLINE_TEL, E as EMAIL, W as WEBSITE } from "./constants-BIxjIQhi.mjs";
 import "node:async_hooks";
 import "node:stream/web";
@@ -121,7 +121,7 @@ function Hero() {
         "Sơn Giả Gỗ Chuyên Nghiệp Cho Nhà Thầu"
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]", children: [
-        "Sơn giả gỗ cemboard đúng hệ - bàn giao đẹp, chất lượng cao. ",
+        "Sơn giả gỗ cemboard đúng hệ - bàn giao đẹp. ",
         " ",
         /* @__PURE__ */ jsxRuntimeExports.jsx("em", { className: "not-italic text-[var(--brand)]", children: "Chủ Đầu Tư hài lòng" })
       ] }),
