@@ -9,7 +9,7 @@ export function ZaloCTA() {
             Tư vấn 1-1
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">
-            Chưa chắc màu hay hệ sơn?
+            Bạn chưa chắc màu hay hệ sơn?
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-base text-[var(--brand-foreground)]/85 sm:text-lg">
             Gửi ảnh hạng mục qua Zalo để được tư vấn đúng loại phù hợp trước

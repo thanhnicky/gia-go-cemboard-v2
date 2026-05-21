@@ -12,8 +12,8 @@ export function Hero() {
           </span>
           <h1 className="mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]">
             Sơn giả gỗ cemboard đúng hệ - 
-            bàn giao đẹp, chất lượng cao {" "}
-            <em className="not-italic text-[var(--brand)]">CĐT hài lòng.</em>
+            bàn giao đẹp, chất lượng cao. {" "}
+            <em className="not-italic text-[var(--brand)]">Chủ Đầu Tư hài lòng.</em>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn.
