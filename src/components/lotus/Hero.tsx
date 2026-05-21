@@ -8,23 +8,22 @@ export function Hero() {
         <div className="lg:col-span-6 lg:pt-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
-            Hệ sơn giả gỗ cho tấm xi măng
+            Sơn Giả Gỗ Chuyên Nghiệp Cho Nhà Thầu
           </span>
           <h1 className="mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]">
-            Biến tấm xi măng <br className="hidden sm:inline" />
-            thành bề mặt{" "}
-            <em className="not-italic text-[var(--brand)]">đẹp như gỗ thật.</em>
+            Sơn giả gỗ cemboard đúng hệ - <br className="hidden sm:inline" />
+            bàn giao đẹp {" "}
+            <em className="not-italic text-[var(--brand)]">CĐT hài lòng.</em>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Lotus chuyên hệ sơn vân gỗ cho Smartwood, Conwood, Cemboard và Fiber
-            Cement — bám dính tốt, bền màu ngoài trời, đúng hệ cho từng hạng mục.
+            Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn, hỗ trợ quy trình thi công khi cần Conwood, Cemboard và Fiber
           </p>
           <ul className="mt-7 grid gap-3 text-sm sm:text-base">
             {[
               "Chuyên dụng cho Fiber Cement, Smartwood, Conwood, Cemboard.",
               "Hiệu ứng vân gỗ chân thực, nhiều tone từ sáng đến nâu đậm.",
               "Hệ sơn gốc nước, độ bền màu cao ngoài trời.",
-              "Tư vấn đúng hệ — sàn, vách, lam, hàng rào dùng đúng loại.",
+              "Bám dính tốt trên xi măng — không lo bong tróc sau bàn giao.",
             ].map((b) => (
               <li key={b} className="flex items-start gap-3">
                 <span
@@ -63,8 +62,7 @@ export function Hero() {
             </a>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            Chưa chắc chọn hệ nào? Gửi ảnh hạng mục để Lotus tư vấn đúng loại
-            trước khi đặt.
+            Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua.Gửi ảnh hạng mục để Lotus tư vấn đúng loại trước khi đặt.
           </p>
         </div>
         <div className="relative lg:col-span-6">
