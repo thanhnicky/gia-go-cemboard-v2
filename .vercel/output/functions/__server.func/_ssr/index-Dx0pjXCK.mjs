@@ -1,4 +1,4 @@
-import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-DA9TuDAU.mjs";
+import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-ESjmVAMc.mjs";
 import { N as NAV_ITEMS, Z as ZALO_URL, a as COMPANY_NAME, b as COMPANY_TAX, C as COMPANY_ADDRESS, H as HOTLINE, c as HOTLINE_TEL, E as EMAIL, W as WEBSITE } from "./constants-BIxjIQhi.mjs";
 import "node:async_hooks";
 import "node:stream/web";
@@ -118,21 +118,21 @@ function Hero() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-6 lg:pt-6", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1.5 w-1.5 rounded-full bg-[var(--brand)]" }),
-        "Hệ sơn giả gỗ cho tấm xi măng"
+        "Sơn Giả Gỗ Chuyên Nghiệp Cho Nhà Thầu"
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]", children: [
-        "Biến tấm xi măng ",
+        "Sơn giả gỗ cemboard đúng hệ - ",
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", { className: "hidden sm:inline" }),
-        "thành bề mặt",
+        "bàn giao đẹp ",
         " ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("em", { className: "not-italic text-[var(--brand)]", children: "đẹp như gỗ thật." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("em", { className: "not-italic text-[var(--brand)]", children: "CĐT hài lòng." })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", children: "Lotus chuyên hệ sơn vân gỗ cho Smartwood, Conwood, Cemboard và Fiber Cement — bám dính tốt, bền màu ngoài trời, đúng hệ cho từng hạng mục." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", children: "Hệ sơn Lotus được phát triển riêng cho tấm fibercimen xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn, hỗ trợ quy trình thi công khi cần Conwood, Cemboard và Fiber" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-7 grid gap-3 text-sm sm:text-base", children: [
         "Chuyên dụng cho Fiber Cement, Smartwood, Conwood, Cemboard.",
         "Hiệu ứng vân gỗ chân thực, nhiều tone từ sáng đến nâu đậm.",
         "Hệ sơn gốc nước, độ bền màu cao ngoài trời.",
-        "Tư vấn đúng hệ — sàn, vách, lam, hàng rào dùng đúng loại."
+        "Bám dính tốt trên xi măng — không lo bong tróc sau bàn giao."
       ].map((b) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start gap-3", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "span",
@@ -176,7 +176,7 @@ function Hero() {
           }
         )
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-sm text-muted-foreground", children: "Chưa chắc chọn hệ nào? Gửi ảnh hạng mục để Lotus tư vấn đúng loại trước khi đặt." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-sm text-muted-foreground", children: "Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua.Gửi ảnh hạng mục để Lotus tư vấn đúng loại trước khi đặt." })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative lg:col-span-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative overflow-hidden rounded-2xl border border-border bg-card shadow-[0_30px_60px_-30px_oklch(0.22_0.025_45/0.35)]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
