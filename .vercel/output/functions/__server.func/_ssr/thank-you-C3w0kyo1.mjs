@@ -1,17 +1,18 @@
-import { P as reactExports, H as jsxRuntimeExports } from "./server-DchLKkrC.mjs";
+import { P as reactExports, H as jsxRuntimeExports } from "./server-D_3lH5nB.mjs";
 import { Z as ZALO_URL } from "./constants-BIxjIQhi.mjs";
-import { R as Route2 } from "./router-BsYDJMWz.mjs";
 import "node:async_hooks";
 import "node:stream/web";
 import "node:stream";
 function ThankYouPage() {
-  const params = Route2.useParams();
-  const phone = params.phone;
+  const searchParams = new URLSearchParams(window.location.search);
+  const phone = searchParams.get("phone") || "";
   const [orderData, setOrderData] = reactExports.useState(null);
   reactExports.useEffect(() => {
-    const storedData = localStorage.getItem(`order_${phone}`);
-    if (storedData) {
-      setOrderData(JSON.parse(storedData));
+    if (phone) {
+      const storedData = localStorage.getItem(`order_${phone}`);
+      if (storedData) {
+        setOrderData(JSON.parse(storedData));
+      }
     }
   }, [phone]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen bg-background text-foreground", children: [
@@ -40,6 +41,13 @@ function ThankYouPage() {
           orderData.quantity && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between border-b border-border pb-3", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "Số lượng:" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium text-foreground", children: orderData.quantity })
+          ] }),
+          orderData.totalPrice && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between border-b border-border pb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "Tổng giá:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-medium text-[var(--brand)]", children: [
+              parseInt(orderData.totalPrice).toLocaleString("vi-VN"),
+              "đ"
+            ] })
           ] }),
           orderData.colors && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between border-b border-border pb-3", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "Màu đã chọn:" }),

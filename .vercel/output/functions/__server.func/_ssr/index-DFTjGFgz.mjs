@@ -1,4 +1,4 @@
-import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-DchLKkrC.mjs";
+import { H as jsxRuntimeExports, P as reactExports, a2 as useRouter } from "./server-D_3lH5nB.mjs";
 import { N as NAV_ITEMS, Z as ZALO_URL, a as COMPANY_NAME, b as COMPANY_TAX, C as COMPANY_ADDRESS, H as HOTLINE, c as HOTLINE_TEL, E as EMAIL, W as WEBSITE } from "./constants-BIxjIQhi.mjs";
 import "node:async_hooks";
 import "node:stream/web";
@@ -156,9 +156,9 @@ function Hero() {
           "a",
           {
             href: "#dat-hang",
-            className: "inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-7 py-3.5 text-base font-semibold text-[var(--brand-foreground)] shadow-[0_8px_24px_-12px_oklch(0.42_0.11_38/0.6)] transition-transform hover:-translate-y-0.5",
+            className: "inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-8 py-4 text-base font-semibold text-[var(--brand-foreground)] shadow-[0_8px_24px_-12px_oklch(0.42_0.11_38/0.6)] transition-transform hover:-translate-y-0.5",
             children: [
-              "Đặt hàng nhanh",
+              "Đặt hàng nhanh — Nhận hàng trong 2-3 ngày",
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { "aria-hidden": true, children: "→" })
             ]
           }
@@ -169,10 +169,14 @@ function Hero() {
             href: ZALO_URL,
             target: "_blank",
             rel: "noreferrer",
-            className: "inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-base font-semibold text-foreground transition-colors hover:bg-muted",
-            children: "Tư vấn qua Zalo"
+            className: "inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-muted",
+            children: "Công trình lớn — Nhắn Zalo báo giá"
           }
         )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 grid gap-2 text-xs text-muted-foreground sm:grid-cols-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-center sm:text-left", children: "Dành cho hạng mục nhỏ, đã biết màu và hệ sơn" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-center sm:text-left", children: "Cần chốt màu thực tế, khối lượng và báo giá theo dự án" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-sm text-muted-foreground", children: "Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua" })
     ] }),
@@ -325,202 +329,29 @@ function Systems() {
   ] }) });
 }
 const colorOverview = "/assets/color-overview-D75vyzlu.jpg";
-const c_LPM0_LWF1017 = "/assets/LPM0_LWF1017-BUUHGSZ6.jpg";
-const c_LPM14_LWF1018 = "/assets/LPM14_LWF1018-nsS7bukA.jpg";
-const c_LPM0_LWF1015 = "/assets/LPM0_LWF1015-B4cA2StW.jpg";
-const c_LPM0_LWF101 = "/assets/LPM0_LWF101-Dak3w-mC.jpg";
-const c_LPM8_LWF101 = "/assets/LPM8_LWF101-CfmpPeab.jpg";
-const c_LPM4_LWF101 = "/assets/LPM4_LWF101-ByiRoJaT.jpg";
-const c_LPM0_LWF1013 = "/assets/LPM0_LWF1013-BBcY0Bku.jpg";
-const c_LPM8_LWF104 = "/assets/LPM8_LWF104-DBDvwuxA.jpg";
-const c_LPM4_LWF104 = "/assets/LPM4_LWF104-BLL77TBr.jpg";
-const c_LPM0_LWF103 = "/assets/LPM0_LWF103-CIeW6w0P.jpg";
-const c_LPM8_LFF2 = "/assets/LPM8_LFF2-5y8sVG0N.jpg";
-const c_LPM1_LFF2 = "/assets/LPM1_LFF2-BkgWKucx.jpg";
-const c_LPM0_LWF1012 = "/assets/LPM0_LWF1012-vnyMnjr2.jpg";
-const c_LPM2_LFF2 = "/assets/LPM2_LFF2-C-I2Hymi.jpg";
-const c_LPM0_LWF1016 = "/assets/LPM0_LWF1016-BHGYJKlI.jpg";
-const c_LPM0_LWF104 = "/assets/LPM0_LWF104-D7VeDtpa.jpg";
-const c_LPM15_LWF1019 = "/assets/LPM15_LWF1019-Dp_aq8Qo.jpg";
-const c_LPM3_LFF2 = "/assets/LPM3_LFF2-D50IrEzE.jpg";
-const c_LPM0_LFF2 = "/assets/LPM0_LFF2-Bc2jRi6z.jpg";
-const c_LPM8_LWF103 = "/assets/LPM8_LWF103-k-vhIqtA.jpg";
-const c_LPM5_LFF2 = "/assets/LPM5_LFF2-mNWxjqHF.jpg";
-const GROUPS = [
-  {
-    label: "Tone sáng",
-    items: [
-      { name: "Vàng nghệ", code: "LPM0.LWF1017", img: c_LPM0_LWF1017 },
-      { name: "Nâu sáng", code: "LPM14.LWF1018", img: c_LPM14_LWF1018 },
-      { name: "Xám gỗ trôi", code: "LPM0.LWF1015", img: c_LPM0_LWF1015 }
-    ]
-  },
-  {
-    label: "Tone cam ấm",
-    items: [
-      { name: "Cam gỗ", code: "LPM0.LWF101", img: c_LPM0_LWF101 },
-      { name: "Cam đồng", code: "LPM8.LWF101", img: c_LPM8_LWF101 },
-      { name: "Cam óng", code: "LPM0.LWF1013", img: c_LPM0_LWF1013 },
-      { name: "Cam đất", code: "LPM0.LWF1012", img: c_LPM0_LWF1012 },
-      { name: "Cam gạch", code: "LPM8.LWF103", img: c_LPM8_LWF103 },
-      { name: "Nâu vàng", code: "LPM15.LWF1019", img: c_LPM15_LWF1019 },
-      { name: "Đỏ gụ", code: "LPM4.LWF101", img: c_LPM4_LWF101 }
-    ]
-  },
-  {
-    label: "Tone nâu tự nhiên",
-    items: [
-      { name: "Nâu đỏ", code: "LPM8.LWF104", img: c_LPM8_LWF104 },
-      { name: "Nâu đỏ đậm", code: "LPM4.LWF104", img: c_LPM4_LWF104 },
-      { name: "Nâu cherry", code: "LPM0.LWF103", img: c_LPM0_LWF103 },
-      { name: "Nâu walnut", code: "LPM0.LWF104", img: c_LPM0_LWF104 },
-      { name: "Teak tự nhiên", code: "LPM8.LFF2", img: c_LPM8_LFF2 },
-      { name: "Nâu sô-cô-la", code: "LPM1.LFF2", img: c_LPM1_LFF2 }
-    ]
-  },
-  {
-    label: "Tone đậm & đặc biệt",
-    items: [
-      { name: "Nâu rượu vang", code: "LPM2.LFF2", img: c_LPM2_LFF2 },
-      { name: "Nâu đen", code: "LPM3.LFF2", img: c_LPM3_LFF2 },
-      { name: "Đen tuyền", code: "LPM5.LFF2", img: c_LPM5_LFF2 },
-      { name: "Xanh rêu", code: "LPM0.LWF1016", img: c_LPM0_LWF1016 },
-      { name: "Olive", code: "LPM0.LFF2", img: c_LPM0_LFF2 }
-    ]
-  }
-];
 function ColorPicker() {
-  const [selected, setSelected] = reactExports.useState(GROUPS[1].items[0]);
-  const [showDetailed, setShowDetailed] = reactExports.useState(false);
-  const setSelectedColor = (s) => {
-    setSelected(s);
-    const el = document.getElementById("form-color");
-    if (!el) return;
-    const entry = `${s.name} (${s.code})`;
-    const current = el.value.trim();
-    if (!current) {
-      el.value = entry;
-    } else if (!current.split(/\s*,\s*/).includes(entry)) {
-      el.value = `${current}, ${entry}`;
-    }
-  };
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "mau-sac", className: "py-20 sm:py-28", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-10", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-2xl", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]", children: "Bảng màu vân gỗ Lotus" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Chọn tông gỗ phù hợp với công trình" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "Bấm vào một màu để chọn. Màu bạn chọn sẽ tự động được điền vào form đặt hàng phía dưới. Khuyến nghị xác nhận màu trên mẫu thực tế trước khi lên đơn lớn." })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 rounded-xl border border-border bg-card px-4 py-3", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "img",
-          {
-            src: selected.img,
-            alt: selected.name,
-            className: "h-14 w-20 rounded-lg border border-border object-cover"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs uppercase tracking-[0.16em] text-muted-foreground", children: "Đang chọn" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-serif text-base font-semibold text-foreground", children: selected.name }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-xs text-muted-foreground", children: selected.code })
-        ] })
-      ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-2xl", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]", children: "Bảng màu vân gỗ Lotus" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Chọn tông gỗ phù hợp với công trình" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "Xem tông màu tổng thể — chọn mã màu cụ thể trong form đặt hàng. Khuyến nghị xác nhận màu trên mẫu thực tế trước khi lên đơn lớn." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-sm text-muted-foreground", children: "Khách mua nhanh: chọn màu rồi đặt hàng ngay. Công trình lớn: nhắn Zalo để nhận mẫu thực tế trước khi chốt màu." })
     ] }),
-    !showDetailed ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-10", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "img",
-        {
-          src: colorOverview,
-          alt: "Bảng màu vân gỗ Lotus tổng thể",
-          className: "w-full object-cover"
-        }
-      ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          type: "button",
-          onClick: () => setShowDetailed(true),
-          className: "mt-6 mx-auto flex items-center gap-2 rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "w-4 h-4", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M19 9l-7 7-7-7" }) }),
-            "Xem bảng màu chi tiết"
-          ]
-        }
-      )
-    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-10 space-y-10", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          type: "button",
-          onClick: () => setShowDetailed(false),
-          className: "mb-4 flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "w-4 h-4", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M5 15l7-7 7 7" }) }),
-            "Quay lại xem tổng quan"
-          ]
-        }
-      ),
-      GROUPS.map((g) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground", children: g.label }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4", children: g.items.map((s) => {
-          const active = selected.code === s.code;
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "button",
-            {
-              type: "button",
-              onClick: () => setSelectedColor(s),
-              className: `group relative overflow-hidden rounded-xl border text-left transition-all ${active ? "border-[var(--brand)] ring-2 ring-[var(--brand)]/30" : "border-border hover:border-foreground/40"}`,
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "img",
-                  {
-                    src: s.img,
-                    alt: s.name,
-                    loading: "lazy",
-                    className: "aspect-[5/3] w-full object-cover"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-card px-3 py-3", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-semibold text-foreground", children: s.name }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[11px] text-muted-foreground", children: s.code })
-                ] }),
-                active && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute right-2 top-2 grid h-6 w-6 place-items-center rounded-full bg-[var(--brand)] text-[var(--brand-foreground)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { width: "12", height: "12", viewBox: "0 0 12 12", fill: "none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "path",
-                  {
-                    d: "M2.5 6.2L5 8.7L9.7 3.5",
-                    stroke: "currentColor",
-                    strokeWidth: "2",
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round"
-                  }
-                ) }) })
-              ]
-            },
-            s.code
-          );
-        }) })
-      ] }, g.label)),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          type: "button",
-          onClick: () => setShowDetailed(false),
-          className: "mt-8 mx-auto flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "w-4 h-4", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M5 15l7-7 7 7" }) }),
-            "Quay lại xem tổng quan"
-          ]
-        }
-      )
-    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "img",
+      {
+        src: colorOverview,
+        alt: "Bảng màu vân gỗ Lotus tổng thể",
+        className: "w-full object-cover"
+      }
+    ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-10 grid gap-3 sm:grid-cols-2", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "a",
         {
-          href: "#dat-hang",
+          href: "#bao-gia",
           className: "inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-6 py-3.5 text-base font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5",
-          children: "Tôi chọn màu này và muốn đặt hàng"
+          children: "Đã chọn được màu - Chọn combo ngay"
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -530,10 +361,11 @@ function ColorPicker() {
           target: "_blank",
           rel: "noreferrer",
           className: "inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3.5 text-base font-semibold text-foreground hover:bg-muted",
-          children: "Tôi chưa chắc màu, cần tư vấn qua Zalo"
+          children: "Chưa chắc màu — Nhắn Zalo chốt mẫu thực tế"
         }
       )
-    ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-center text-xs text-muted-foreground", children: "Khách nhỏ chọn nhanh — Công trình lớn xem mẫu thực tế qua Zalo." })
   ] }) });
 }
 const COMBOS = [
@@ -603,8 +435,8 @@ function Combos() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "bao-gia", className: "bg-[var(--cement)]/50 py-20 sm:py-28", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-10", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-2xl text-center", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]", children: "Combo & báo giá nhanh" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Chọn combo & số lượng — ra giá ngay" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "3 combo cho 3 nhu cầu khác nhau. Chọn combo nhỏ (mỗi loại 1kg) hoặc combo lớn (mỗi loại 3.5kg) — combo lớn tiết kiệm hơn rõ rệt. Mỗi combo có thể chọn một màu riêng." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Combo sơn — Chọn và đặt hàng ngay" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "3 combo cho 3 nhu cầu khác nhau. Combo lớn tiết kiệm hơn rõ rệt. Mỗi combo có thể chọn một màu riêng." })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10 grid gap-5 lg:grid-cols-3", children: COMBOS.map((c) => {
       const isOpen = openId === c.id;
@@ -701,7 +533,8 @@ function Combos() {
             s.name,
             " — ",
             s.variant
-          ] }, i)) })
+          ] }, i)) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-xs text-muted-foreground", children: "Giá trên trang là giá niêm yết — áp dụng cho đơn mua nhanh." })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-left sm:text-right", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
@@ -738,7 +571,22 @@ function Combos() {
           className: "inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5",
           children: "Đặt hàng với báo giá này →"
         }
-      ) })
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 rounded-xl border border-border bg-card px-5 py-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-semibold text-foreground", children: "Công trình lớn cần báo giá chi tiết?" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-sm text-muted-foreground", children: "Nhắn Zalo để Lotus tư vấn đúng hệ, chốt màu thực tế và báo giá theo hạng mục." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-xs text-muted-foreground", children: "Báo giá theo m², hạng mục và tiến độ thi công." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "a",
+          {
+            href: ZALO_URL,
+            target: "_blank",
+            rel: "noreferrer",
+            className: "mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/40 bg-[var(--brand-soft)]/30 px-4 py-2 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand-soft)]/50",
+            children: "Cần báo giá dự án lớn — Nhắn Zalo"
+          }
+        )
+      ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 text-center text-xs text-muted-foreground", children: "Định mức tham khảo: 1 combo nhỏ phủ ~8 m² · 1 combo lớn phủ ~28 m² (2 lớp, bề mặt phẳng)." })
   ] }) });
@@ -4345,6 +4193,33 @@ ZodPromise.create;
 ZodOptional.create;
 ZodNullable.create;
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzrFg2OCg1ZfIdRSVLc65rQQIdtagjXTpTqcWaDmytw-JG-GJldUXuw5CZ4iEu8RWn7/exec";
+const WOOD_COLORS = [
+  // Tone sáng
+  { name: "Vàng nghệ", code: "LPM0.LWF1017" },
+  { name: "Nâu sáng", code: "LPM14.LWF1018" },
+  { name: "Xám gỗ trôi", code: "LPM0.LWF1015" },
+  // Tone cam ấm
+  { name: "Cam gỗ", code: "LPM0.LWF101" },
+  { name: "Cam đồng", code: "LPM8.LWF101" },
+  { name: "Cam óng", code: "LPM0.LWF1013" },
+  { name: "Cam đất", code: "LPM0.LWF1012" },
+  { name: "Cam gạch", code: "LPM8.LWF103" },
+  { name: "Nâu vàng", code: "LPM15.LWF1019" },
+  { name: "Đỏ gụ", code: "LPM4.LWF101" },
+  // Tone nâu tự nhiên
+  { name: "Nâu đỏ", code: "LPM8.LWF104" },
+  { name: "Nâu đỏ đậm", code: "LPM4.LWF104" },
+  { name: "Nâu cherry", code: "LPM0.LWF103" },
+  { name: "Nâu walnut", code: "LPM0.LWF104" },
+  { name: "Teak tự nhiên", code: "LPM8.LFF2" },
+  { name: "Nâu sô-cô-la", code: "LPM1.LFF2" },
+  // Tone đậm & đặc biệt
+  { name: "Nâu rượu vang", code: "LPM2.LFF2" },
+  { name: "Nâu đen", code: "LPM3.LFF2" },
+  { name: "Đen tuyền", code: "LPM5.LFF2" },
+  { name: "Xanh rêu", code: "LPM0.LWF1016" },
+  { name: "Olive", code: "LPM0.LFF2" }
+];
 const Schema = objectType({
   name: stringType().trim().min(2, "Vui lòng nhập họ tên").max(80),
   phone: stringType().trim().min(8, "Số điện thoại chưa đúng").max(15).regex(/^[0-9+\s.()-]+$/, "Số điện thoại chưa hợp lệ"),
@@ -4363,13 +4238,47 @@ function OrderForm() {
   const [comboValue, setComboValue] = reactExports.useState("");
   const [quantityValue, setQuantityValue] = reactExports.useState("");
   const [totalPriceValue, setTotalPriceValue] = reactExports.useState("");
+  const [parsedCombos, setParsedCombos] = reactExports.useState([]);
+  const [comboColors, setComboColors] = reactExports.useState({});
+  const parseComboString = (comboStr) => {
+    if (!comboStr) return [];
+    const items = [];
+    const parts = comboStr.split(", ");
+    parts.forEach((part) => {
+      const match = part.match(/(\d+)×\s*(.+?)\s*\((.+?)\)/);
+      if (match) {
+        items.push({
+          quantity: parseInt(match[1]),
+          name: match[2].trim(),
+          variant: match[3].trim()
+        });
+      }
+    });
+    return items;
+  };
+  reactExports.useEffect(() => {
+    const newComboColors = {};
+    parsedCombos.forEach((combo, index) => {
+      const key = `${combo.name}-${combo.variant}-${index}`;
+      if (!comboColors[key]) {
+        newComboColors[key] = "";
+      } else {
+        newComboColors[key] = comboColors[key];
+      }
+    });
+    setComboColors(newComboColors);
+  }, [parsedCombos]);
   reactExports.useEffect(() => {
     const loadFromStorage = () => {
       const savedCombo = localStorage.getItem("selectedCombo");
       const savedQuantity = localStorage.getItem("selectedQuantity");
       const savedTotalPrice = localStorage.getItem("selectedTotalPrice");
       console.log("Loading from localStorage:", { savedCombo, savedQuantity, savedTotalPrice });
-      if (savedCombo) setComboValue(savedCombo);
+      if (savedCombo) {
+        setComboValue(savedCombo);
+        const parsed = parseComboString(savedCombo);
+        setParsedCombos(parsed);
+      }
       if (savedQuantity) setQuantityValue(savedQuantity);
       if (savedTotalPrice) setTotalPriceValue(savedTotalPrice);
     };
@@ -4383,7 +4292,11 @@ function OrderForm() {
     window.addEventListener("hashchange", handleHashChange);
     const handleComboUpdate = (e) => {
       console.log("Combo updated event received:", e.detail);
-      if (e.detail.combo) setComboValue(e.detail.combo);
+      if (e.detail.combo) {
+        setComboValue(e.detail.combo);
+        const parsed = parseComboString(e.detail.combo);
+        setParsedCombos(parsed);
+      }
       if (e.detail.quantity) setQuantityValue(e.detail.quantity);
       if (e.detail.totalPrice) setTotalPriceValue(e.detail.totalPrice);
     };
@@ -4413,7 +4326,15 @@ function OrderForm() {
     if (savedCombo) setComboValue(savedCombo);
     if (savedQuantity) setQuantityValue(savedQuantity);
     if (savedTotalPrice) setTotalPriceValue(savedTotalPrice);
+    const colorString = Object.entries(comboColors).map(([key, color]) => {
+      const combo = parsedCombos.find((c, i) => `${c.name}-${c.variant}-${i}` === key);
+      if (combo && color) {
+        return `${combo.name} (${combo.variant}): ${color}`;
+      }
+      return null;
+    }).filter(Boolean).join("; ");
     const fd = new FormData(e.currentTarget);
+    fd.set("colors", colorString);
     const data = Object.fromEntries(fd.entries());
     const result = Schema.safeParse(data);
     if (!result.success) {
@@ -4453,8 +4374,9 @@ function OrderForm() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-5xl px-4 sm:px-6 lg:px-10", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]", children: "Đặt hàng nhanh" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Đặt hàng hoặc yêu cầu báo giá cho công trình" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "Điền thông tin của bạn — Lotus gọi xác nhận đúng hệ sơn, báo giá và tư vấn trong vòng 30 phút." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Đặt hàng nhanh" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-base text-muted-foreground", children: "Dành cho hạng mục nhỏ, đã biết màu và hệ sơn. Điền thông tin — Lotus gọi xác nhận trong 30 phút." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-xs text-muted-foreground", children: "Công trình lớn cần báo giá chi tiết? Nhắn Zalo để được tư vấn hệ sơn, khối lượng và giá dự án." })
       ] }),
       submitted ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-10 rounded-2xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]/40 p-8 text-center", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-serif text-2xl font-semibold text-foreground", children: "Đã nhận yêu cầu của bạn." }),
@@ -4476,6 +4398,49 @@ function OrderForm() {
           noValidate: true,
           className: "mt-10 grid gap-5 rounded-2xl border border-border bg-card p-6 sm:p-8",
           children: [
+            parsedCombos.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-xl border border-border bg-muted/30 px-5 py-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-semibold text-foreground", children: "Thông tin đơn hàng đã chọn" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-xs text-muted-foreground", children: "Đã cập nhật từ lựa chọn phía trên" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-3 space-y-4 sm:space-y-3", children: parsedCombos.map((combo, index) => {
+                const key = `${combo.name}-${combo.variant}-${index}`;
+                return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-lg border border-border bg-background/60 px-4 py-4 sm:py-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3 sm:mb-2 text-sm font-semibold text-foreground", children: [
+                    combo.name,
+                    " (",
+                    combo.variant,
+                    ") x",
+                    combo.quantity
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "mb-2 sm:mb-1.5 block text-xs font-medium text-foreground", children: "Mã màu giả gỗ" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "select",
+                      {
+                        value: comboColors[key] || "",
+                        onChange: (e) => setComboColors({ ...comboColors, [key]: e.target.value }),
+                        className: "form-input text-sm py-3 sm:py-[0.85rem]",
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "Chọn mã màu" }),
+                          WOOD_COLORS.map((color) => /* @__PURE__ */ jsxRuntimeExports.jsxs("option", { value: `${color.name} (${color.code})`, children: [
+                            color.name,
+                            " — ",
+                            color.code
+                          ] }, color.code))
+                        ]
+                      }
+                    )
+                  ] })
+                ] }, key);
+              }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "combo", value: comboValue }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "quantity", value: quantityValue }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "totalPrice", value: totalPriceValue }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "colors", value: Object.values(comboColors).filter((c) => c).join(", ") })
+            ] }),
+            parsedCombos.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "combo", value: comboValue }),
+            parsedCombos.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "quantity", value: quantityValue }),
+            parsedCombos.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "totalPrice", value: totalPriceValue }),
+            parsedCombos.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "colors", value: "" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid gap-5 sm:grid-cols-2", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Họ và tên", name: "name", error: errors.name, required: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "input",
@@ -4505,7 +4470,7 @@ function OrderForm() {
                   )
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Địa chỉ", name: "province", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Địa chỉ nhận hàng", name: "province", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "input",
                 {
                   name: "province",
@@ -4514,7 +4479,7 @@ function OrderForm() {
                   placeholder: "VD: TP. Hồ Chí Minh"
                 }
               ) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Ghi chú thêm", name: "note", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Ghi chú giao hàng", name: "note", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "input",
                 {
                   name: "note",
@@ -4524,53 +4489,6 @@ function OrderForm() {
                 }
               ) })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid gap-5 sm:grid-cols-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Combo sơn", name: "combo", hint: "VD: Combo sàn, Combo vách, Combo lam", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "input",
-                {
-                  name: "combo",
-                  maxLength: 100,
-                  className: "form-input",
-                  placeholder: "Chọn combo (nếu có)",
-                  value: comboValue,
-                  onChange: (e) => setComboValue(e.target.value),
-                  autoComplete: "off"
-                }
-              ) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Số lượng", name: "quantity", hint: "VD: 10 thùng, 5 set", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "input",
-                {
-                  name: "quantity",
-                  maxLength: 20,
-                  className: "form-input",
-                  placeholder: "Số lượng ước tính",
-                  value: quantityValue,
-                  onChange: (e) => setQuantityValue(e.target.value),
-                  autoComplete: "off"
-                }
-              ) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "hidden", name: "totalPrice", value: totalPriceValue })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Field,
-              {
-                label: "Màu đã chọn",
-                name: "colors",
-                error: errors.colors,
-                hint: "Có thể chọn nhiều màu — bấm thêm vào bảng màu phía trên hoặc gõ tay, cách nhau bằng dấu phẩy.",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "textarea",
-                  {
-                    id: "form-color",
-                    name: "colors",
-                    maxLength: 300,
-                    rows: 2,
-                    className: "form-input resize-y",
-                    placeholder: "VD: Walnut (LPM8.LWF103), Cherry (LPM4.LWF101)"
-                  }
-                )
-              }
-            ),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 flex flex-col gap-3 sm:flex-row sm:items-center", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "button",
@@ -4591,12 +4509,11 @@ function OrderForm() {
                   target: "_blank",
                   rel: "noreferrer",
                   className: "text-sm font-semibold text-[var(--brand)] underline-offset-4 hover:underline sm:ml-2",
-                  children: "Cần tư vấn sâu hơn? Nhắn Zalo"
+                  children: "Công trình lớn? Nhắn Zalo chốt hệ và báo giá dự án"
                 }
               )
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Nhà thầu đặt lần đầu? Lotus hỗ trợ mẫu miễn phí để xác nhận kết quả trước khi lên đơn lớn." }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-xs text-[var(--brand)] font-medium", children: "Miễn phí vận chuyển cho đơn hàng từ 1.999.000 đ" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-xs text-[var(--brand)] font-medium", children: "Miễn phí vận chuyển cho đơn hàng từ 1.999.000 đ" })
           ]
         }
       )
@@ -4640,9 +4557,14 @@ function Field({
 }
 function ZaloCTA() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-16 sm:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-5xl px-4 sm:px-6 lg:px-10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "overflow-hidden rounded-3xl border border-border bg-[var(--brand)] px-6 py-12 text-center text-[var(--brand-foreground)] sm:px-10 sm:py-16", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand-foreground)]/70", children: "Tư vấn 1-1" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold sm:text-4xl", children: "Bạn chưa chắc màu hay hệ sơn?" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-3 max-w-2xl text-base text-[var(--brand-foreground)]/85 sm:text-lg", children: "Gửi ảnh hạng mục qua Zalo để được tư vấn đúng loại phù hợp trước khi đặt." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand-foreground)]/70", children: "Dành cho công trình lớn" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold sm:text-4xl", children: "Công trình lớn cần tư vấn?" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-3 max-w-2xl text-base text-[var(--brand-foreground)]/85 sm:text-lg", children: "Gửi ảnh hạng mục qua Zalo — Lotus tư vấn đúng hệ theo hạng mục, xác nhận màu trên mẫu thực tế và báo giá theo dự án." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "mx-auto mt-6 max-w-xl grid gap-2 text-sm text-[var(--brand-foreground)]/90 sm:grid-cols-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Tư vấn đúng hệ theo hạng mục" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Xác nhận màu trên mẫu thực tế" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Báo giá theo dự án và tiến độ" })
+    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "a",
       {
@@ -4651,7 +4573,7 @@ function ZaloCTA() {
         rel: "noreferrer",
         className: "mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand-foreground)] px-8 py-4 text-base font-semibold text-[var(--brand)] shadow-sm transition-transform hover:-translate-y-0.5",
         children: [
-          "Nhắn Zalo ngay",
+          "Nhắn Zalo — Tư vấn dự án",
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { "aria-hidden": true, children: "→" })
         ]
       }
@@ -4926,14 +4848,14 @@ function FinalCTA() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-[var(--cement)]/50 py-20 sm:py-28", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-10", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]", children: "Sẵn sàng bắt đầu" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl", children: "Bạn đang có dự án Cemboard cần sơn giả gỗ?" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg", children: "Gửi ảnh hạng mục qua Zalo — Lotus tư vấn đúng hệ, báo giá cạnh tranh và đảm bảo giao hàng đúng tiến độ thi công của bạn." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg", children: "Hạng mục nhỏ đặt hàng ngay — Công trình lớn nhắn Zalo tư vấn." }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "a",
         {
           href: "#dat-hang",
           className: "inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-8 py-4 text-base font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5",
-          children: "Đặt hàng nhanh"
+          children: "Đặt hàng nhanh — Hạng mục nhỏ"
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -4943,9 +4865,13 @@ function FinalCTA() {
           target: "_blank",
           rel: "noreferrer",
           className: "inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-8 py-4 text-base font-semibold text-foreground hover:bg-muted",
-          children: "Nhắn Zalo tư vấn"
+          children: "Nhắn Zalo — Tư vấn công trình"
         }
       )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 grid gap-2 text-xs text-muted-foreground sm:grid-cols-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-center sm:text-left", children: "Đã chọn màu và combo" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-center sm:text-left", children: "Cần báo giá dự án chi tiết" })
     ] })
   ] }) });
 }
