@@ -44,26 +44,28 @@ export function Hero() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#dat-hang"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-8 py-4 text-base font-semibold text-[var(--brand-foreground)] shadow-[0_8px_24px_-12px_oklch(0.42_0.11_38/0.6)] transition-transform hover:-translate-y-0.5"
-            >
-              Đặt hàng nhanh — Nhận hàng trong 2-3 ngày
-              <span aria-hidden>→</span>
-            </a>
-            <a
-              href={ZALO_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-muted"
-            >
-              Công trình lớn — Nhắn Zalo báo giá
-            </a>
-          </div>
-          <div className="mt-3 grid gap-2 text-xs text-muted-foreground sm:grid-cols-2">
-            <p className="text-center sm:text-left">Dành cho hạng mục nhỏ, đã biết màu và hệ sơn</p>
-            <p className="text-center sm:text-left">Cần chốt màu thực tế, khối lượng và báo giá theo dự án</p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-3">
+            <div className="flex flex-col gap-2 sm:flex-1">
+              <a
+                href="#dat-hang"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-8 py-4 text-base font-semibold text-[var(--brand-foreground)] shadow-[0_8px_24px_-12px_oklch(0.42_0.11_38/0.6)] transition-transform hover:-translate-y-0.5"
+              >
+                Đặt hàng nhanh — Nhận hàng trong 2-3 ngày
+                <span aria-hidden>→</span>
+              </a>
+              <p className="text-center text-xs text-muted-foreground sm:text-left">Dành cho hạng mục nhỏ, đã biết màu và hệ sơn</p>
+            </div>
+            <div className="flex flex-col gap-2 sm:flex-1">
+              <a
+                href={ZALO_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-muted"
+              >
+                Công trình lớn — Nhắn Zalo báo giá
+              </a>
+              <p className="text-center text-xs text-muted-foreground sm:text-left">Cần chốt màu thực tế, khối lượng và báo giá theo dự án</p>
+            </div>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
             Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua
