@@ -369,12 +369,12 @@ export function OrderForm() {
                   placeholder="VD: TP. Hồ Chí Minh"
                 />
               </Field>
-              <Field label="Ghi chú giao hàng" name="note">
+              <Field label="Ghi chú" name="note">
                 <input
                   name="note"
                   maxLength={500}
                   className="form-input"
-                  placeholder="Yêu cầu khác (nếu có)"
+                  placeholder="Bạn chọn bề mặt bóng hay mờ của lớp phủ bóng"
                 />
               </Field>
             </div>
