@@ -5,7 +5,7 @@ export function StickyMobileCTA() {
     <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/95 px-3 py-3 backdrop-blur-md lg:hidden">
       <div className="mx-auto grid max-w-md grid-cols-2 gap-2">
         <a
-          href="#dat-hang"
+          href="#bao-gia"
           className="inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-4 py-3 text-sm font-semibold text-[var(--brand-foreground)]"
         >
           Đặt hàng

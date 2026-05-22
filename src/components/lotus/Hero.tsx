@@ -47,7 +47,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-3">
             <div className="flex flex-col gap-2 sm:flex-1">
               <a
-                href="#dat-hang"
+                href="#bao-gia"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-8 py-4 text-base font-semibold text-[var(--brand-foreground)] shadow-[0_8px_24px_-12px_oklch(0.42_0.11_38/0.6)] transition-transform hover:-translate-y-0.5"
               >
                 Đặt hàng nhanh — Nhận hàng trong 2-3 ngày
