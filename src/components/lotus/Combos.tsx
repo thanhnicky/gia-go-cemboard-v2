@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { ZALO_URL } from "./constants";
 
 type Variant = { id: string; label: string; spec: string; price: number; area: number };
 type Combo = {
@@ -88,12 +89,10 @@ export function Combos() {
             Combo & báo giá nhanh
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Chọn combo &amp; số lượng — ra giá ngay
+            Combo sơn — Chọn và đặt hàng ngay
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            3 combo cho 3 nhu cầu khác nhau. Chọn combo nhỏ (mỗi loại 1kg) hoặc
-            combo lớn (mỗi loại 3.5kg) — combo lớn tiết kiệm hơn rõ rệt. Mỗi
-            combo có thể chọn một màu riêng.
+            3 combo cho 3 nhu cầu khác nhau. Combo lớn tiết kiệm hơn rõ rệt. Mỗi combo có thể chọn một màu riêng.
           </p>
         </div>
 
@@ -209,6 +208,9 @@ export function Combos() {
                   ))}
                 </ul>
               )}
+              <p className="mt-3 text-xs text-muted-foreground">
+                Giá trên trang là giá niêm yết — áp dụng cho đơn mua nhanh.
+              </p>
             </div>
             <div className="text-left sm:text-right">
               <p className="text-xs text-muted-foreground">
@@ -239,10 +241,10 @@ export function Combos() {
                   localStorage.setItem('selectedQuantity', totalQty.toString());
                   localStorage.setItem('selectedTotalPrice', totalPrice.toString());
                   console.log('Saved successfully');
-                  
+
                   // Dispatch custom event to notify OrderForm
                   window.dispatchEvent(new CustomEvent('comboUpdated', { detail: { combo: comboSummary, quantity: totalQty.toString(), totalPrice: totalPrice.toString() } }));
-                  
+
                   // Navigate to order form
                   window.location.href = '#dat-hang';
                 }}
@@ -252,6 +254,26 @@ export function Combos() {
               </button>
             </div>
           )}
+
+          <div className="mt-6 rounded-xl border border-border bg-card px-5 py-4">
+            <p className="text-sm font-semibold text-foreground">
+              Công trình lớn cần báo giá chi tiết?
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Nhắn Zalo để Lotus tư vấn đúng hệ, chốt màu thực tế và báo giá theo hạng mục.
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Báo giá theo m², hạng mục và tiến độ thi công.
+            </p>
+            <a
+              href={ZALO_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/40 bg-[var(--brand-soft)]/30 px-4 py-2 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand-soft)]/50"
+            >
+              Cần báo giá dự án lớn — Nhắn Zalo
+            </a>
+          </div>
         </div>
 
         <p className="mt-6 text-center text-xs text-muted-foreground">

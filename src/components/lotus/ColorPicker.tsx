@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ZALO_URL } from "./constants";
 import colorOverview from "@/assets/color-overview.jpg";
 
@@ -71,165 +70,40 @@ const GROUPS: { label: string; items: Swatch[] }[] = [
 ];
 
 export function ColorPicker() {
-  const [selected, setSelected] = useState<Swatch>(GROUPS[1].items[0]);
-  const [showDetailed, setShowDetailed] = useState(false);
-
-  const setSelectedColor = (s: Swatch) => {
-    setSelected(s);
-    const el = document.getElementById("form-color") as
-      | HTMLInputElement
-      | HTMLTextAreaElement
-      | null;
-    if (!el) return;
-    const entry = `${s.name} (${s.code})`;
-    const current = el.value.trim();
-    if (!current) {
-      el.value = entry;
-    } else if (!current.split(/\s*,\s*/).includes(entry)) {
-      el.value = `${current}, ${entry}`;
-    }
-  };
-
   return (
     <section id="mau-sac" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
-              Bảng màu vân gỗ Lotus
-            </p>
-            <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-              Chọn tông gỗ phù hợp với công trình
-            </h2>
-            <p className="mt-3 text-base text-muted-foreground">
-              Bấm vào một màu để chọn. Màu bạn chọn sẽ tự động được điền vào form
-              đặt hàng phía dưới. Khuyến nghị xác nhận màu trên mẫu thực tế trước
-              khi lên đơn lớn.
-            </p>
-          </div>
-          <div className="flex items-center gap-4 rounded-xl border border-border bg-card px-4 py-3">
+        <div className="max-w-2xl">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
+            Bảng màu vân gỗ Lotus
+          </p>
+          <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
+            Chọn tông gỗ phù hợp với công trình
+          </h2>
+          <p className="mt-3 text-base text-muted-foreground">
+            Xem tông màu tổng thể — chọn mã màu cụ thể trong form đặt hàng. Khuyến nghị xác nhận màu trên mẫu thực tế trước khi lên đơn lớn.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Khách mua nhanh: chọn màu rồi đặt hàng ngay. Công trình lớn: nhắn Zalo để nhận mẫu thực tế trước khi chốt màu.
+          </p>
+        </div>
+
+        <div className="mt-10">
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <img
-              src={selected.img}
-              alt={selected.name}
-              className="h-14 w-20 rounded-lg border border-border object-cover"
+              src={colorOverview}
+              alt="Bảng màu vân gỗ Lotus tổng thể"
+              className="w-full object-cover"
             />
-            <div>
-              <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                Đang chọn
-              </p>
-              <p className="font-serif text-base font-semibold text-foreground">
-                {selected.name}
-              </p>
-              <p className="font-mono text-xs text-muted-foreground">
-                {selected.code}
-              </p>
-            </div>
           </div>
         </div>
 
-        {!showDetailed ? (
-          <div className="mt-10">
-            <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-              <img
-                src={colorOverview}
-                alt="Bảng màu vân gỗ Lotus tổng thể"
-                className="w-full object-cover"
-              />
-            </div>
-            <button
-              type="button"
-              onClick={() => setShowDetailed(true)}
-              className="mt-6 mx-auto flex items-center gap-2 rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-              Xem bảng màu chi tiết
-            </button>
-          </div>
-        ) : (
-          <div className="mt-10 space-y-10">
-            <button
-              type="button"
-              onClick={() => setShowDetailed(false)}
-              className="mb-4 flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-              </svg>
-              Quay lại xem tổng quan
-            </button>
-            {GROUPS.map((g) => (
-              <div key={g.label}>
-                <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  {g.label}
-                </h3>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                  {g.items.map((s) => {
-                    const active = selected.code === s.code;
-                    return (
-                      <button
-                        key={s.code}
-                        type="button"
-                        onClick={() => setSelectedColor(s)}
-                        className={`group relative overflow-hidden rounded-xl border text-left transition-all ${
-                          active
-                            ? "border-[var(--brand)] ring-2 ring-[var(--brand)]/30"
-                            : "border-border hover:border-foreground/40"
-                        }`}
-                      >
-                        <img
-                          src={s.img}
-                          alt={s.name}
-                          loading="lazy"
-                          className="aspect-[5/3] w-full object-cover"
-                        />
-                        <div className="bg-card px-3 py-3">
-                          <p className="text-sm font-semibold text-foreground">
-                            {s.name}
-                          </p>
-                          <p className="font-mono text-[11px] text-muted-foreground">
-                            {s.code}
-                          </p>
-                        </div>
-                        {active && (
-                          <span className="absolute right-2 top-2 grid h-6 w-6 place-items-center rounded-full bg-[var(--brand)] text-[var(--brand-foreground)]">
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                              <path
-                                d="M2.5 6.2L5 8.7L9.7 3.5"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </span>
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-            <button
-              type="button"
-              onClick={() => setShowDetailed(false)}
-              className="mt-8 mx-auto flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-              </svg>
-              Quay lại xem tổng quan
-            </button>
-          </div>
-        )}
-
         <div className="mt-10 grid gap-3 sm:grid-cols-2">
           <a
-            href="#dat-hang"
+            href="#bao-gia"
             className="inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-6 py-3.5 text-base font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5"
           >
-            Tôi chọn màu này và muốn đặt hàng
+            Đã chọn được màu - Chọn combo ngay
           </a>
           <a
             href={ZALO_URL}
@@ -237,9 +111,12 @@ export function ColorPicker() {
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3.5 text-base font-semibold text-foreground hover:bg-muted"
           >
-            Tôi chưa chắc màu, cần tư vấn qua Zalo
+            Chưa chắc màu — Nhắn Zalo chốt mẫu thực tế
           </a>
         </div>
+        <p className="mt-4 text-center text-xs text-muted-foreground">
+          Khách nhỏ chọn nhanh — Công trình lớn xem mẫu thực tế qua Zalo.
+        </p>
       </div>
     </section>
   );

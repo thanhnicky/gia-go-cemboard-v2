@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>2048</h1>
+            <div class="score-container">
+                <div class="score-box">
+                    <span class="score-label">Score</span>
+                    <span class="score-value" id="score">0</span>
+                </div>
+                <div class="score-box">
+                    <span class="score-label">Best</span>
+                    <span class="score-value" id="best-score">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="new-game-btn" id="new-game-btn">New Game</button>
+        </div>
+        
+        <div class="game-container">
+            <div class="grid-container">
+                <div class="grid-background">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="tile-container" id="tile-container"></div>
+            </div>
+            
+            <div class="game-message" id="game-message">
+                <p id="game-message-text"></p>
+                <button class="retry-btn" id="retry-btn">Try Again</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>How to play:</strong> Use arrow keys or swipe to move tiles. When two tiles with the same number touch, they merge into one!</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
