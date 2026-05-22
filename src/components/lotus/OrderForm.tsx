@@ -369,7 +369,7 @@ export function OrderForm() {
                   placeholder="VD: TP. Hồ Chí Minh"
                 />
               </Field>
-              <Field label="Ghi chú" name="note">
+              <Field label="Ghi chú - Test vercel" name="note">
                 <input
                   name="note"
                   maxLength={500}
