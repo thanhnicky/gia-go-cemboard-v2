@@ -54,7 +54,7 @@ const Schema = z.object({
   originalPrice: z.string().trim().max(50).optional().or(z.literal("")),
   paymentMethod: z.string().trim().max(20).optional().or(z.literal("")),
   colors: z.string().trim().max(300).optional().or(z.literal("")),
-  province: z.string().trim().max(60).optional().or(z.literal("")),
+  province: z.string().trim().min(1, "Vui lòng nhập địa chỉ nhận hàng").max(60),
   note: z.string().trim().max(500).optional().or(z.literal("")),
 });
 
@@ -327,7 +327,7 @@ export function OrderForm() {
                   placeholder="09xx xxx xxx"
                 />
               </Field>
-              <Field label="Địa chỉ nhận hàng" name="province">
+              <Field label="Địa chỉ nhận hàng" name="province" error={errors.province} required>
                 <input
                   name="province"
                   maxLength={60}
@@ -346,7 +346,7 @@ export function OrderForm() {
             </div>
 
             {parsedCombos.length > 0 && (
-              <div className="rounded-xl border border-border bg-muted/30 px-5 py-4">
+              <div className="rounded-xl border border-border bg-muted/50 px-5 py-4">
                 <p className="text-sm font-semibold text-foreground">
                   Thông tin đơn hàng
                 </p>
@@ -437,10 +437,15 @@ export function OrderForm() {
                       onChange={(e) => setPaymentMethod(e.target.value as "cod" | "online")}
                       className="h-4 w-4 text-[var(--brand)] focus:ring-[var(--brand)]"
                     />
-                    <div className="flex-1 flex items-center gap-2">
-                      <span className="text-sm font-medium text-foreground">Chuyển khoản Online</span>
-                      <span className="rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs font-semibold">
-                        Tiết kiệm 10%
+                    <div className="flex-1 flex flex-col gap-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-medium text-foreground">Chuyển khoản Online</span>
+                        <span className="rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs font-semibold">
+                          Tiết kiệm 10%
+                        </span>
+                      </div>
+                      <span className="text-xs text-green-600">
+                        Tiết kiệm 10% và miễn phí giao hàng
                       </span>
                     </div>
                   </label>
