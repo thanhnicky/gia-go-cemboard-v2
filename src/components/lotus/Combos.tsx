@@ -1,6 +1,35 @@
 import { useMemo, useState } from "react";
 import { ZALO_URL } from "./constants";
 
+// Danh sách màu giả gỗ Lotus (đồng bộ với ColorPicker và OrderForm)
+const WOOD_COLORS = [
+  // Tone sáng
+  { name: "Vàng nghệ", code: "LPM0.LWF1017" },
+  { name: "Nâu sáng", code: "LPM14.LWF1018" },
+  { name: "Xám gỗ trôi", code: "LPM0.LWF1015" },
+  // Tone cam ấm
+  { name: "Cam gỗ", code: "LPM0.LWF101" },
+  { name: "Cam đồng", code: "LPM8.LWF101" },
+  { name: "Cam óng", code: "LPM0.LWF1013" },
+  { name: "Cam đất", code: "LPM0.LWF1012" },
+  { name: "Cam gạch", code: "LPM8.LWF103" },
+  { name: "Nâu vàng", code: "LPM15.LWF1019" },
+  { name: "Đỏ gụ", code: "LPM4.LWF101" },
+  // Tone nâu tự nhiên
+  { name: "Nâu đỏ", code: "LPM8.LWF104" },
+  { name: "Nâu đỏ đậm", code: "LPM4.LWF104" },
+  { name: "Nâu cherry", code: "LPM0.LWF103" },
+  { name: "Nâu walnut", code: "LPM0.LWF104" },
+  { name: "Teak tự nhiên", code: "LPM8.LFF2" },
+  { name: "Nâu sô-cô-la", code: "LPM1.LFF2" },
+  // Tone đậm & đặc biệt
+  { name: "Nâu rượu vang", code: "LPM2.LFF2" },
+  { name: "Nâu đen", code: "LPM3.LFF2" },
+  { name: "Đen tuyền", code: "LPM5.LFF2" },
+  { name: "Xanh rêu", code: "LPM0.LWF1016" },
+  { name: "Olive", code: "LPM0.LFF2" },
+];
+
 type Variant = { id: string; label: string; spec: string; price: number; area: number };
 type Combo = {
   id: string;
@@ -60,6 +89,7 @@ const fmt = (n: number) => n.toLocaleString("vi-VN");
 export function Combos() {
   const [qty, setQty] = useState<Record<string, number>>({});
   const [openId, setOpenId] = useState<string | null>(null);
+  const [comboColors, setComboColors] = useState<Record<string, string>>({});
 
   const total = useMemo(() => {
     let price = 0;
@@ -149,6 +179,7 @@ export function Combos() {
                 {c.variants.map((v, idx) => {
                   const big = idx === 1;
                   const q = qty[v.id] ?? 0;
+                  const colorKey = `${c.id}-${v.id}`;
                   return (
                     <div
                       key={v.id}
@@ -159,7 +190,7 @@ export function Combos() {
                       }`}
                     >
                       <div className="flex items-start justify-between gap-3">
-                        <div>
+                        <div className="flex-1">
                           <div className="flex flex-wrap items-center gap-2">
                             <p className="font-semibold text-foreground">{v.label}</p>
                             {big && (
@@ -172,6 +203,25 @@ export function Combos() {
                           <p className="mt-2 font-serif text-lg font-semibold text-[var(--brand)]">
                             {fmt(v.price)}đ
                           </p>
+                          {q > 0 && (
+                            <div className="mt-3">
+                              <label className="mb-1.5 block text-xs font-medium text-foreground">
+                                Mã màu sơn
+                              </label>
+                              <select
+                                value={comboColors[colorKey] || ""}
+                                onChange={(e) => setComboColors({ ...comboColors, [colorKey]: e.target.value })}
+                                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground transition-colors focus:border-[var(--brand)] focus:outline-none focus:ring-2 focus:ring-[var(--brand)]/20"
+                              >
+                                <option value="">Chưa chọn màu</option>
+                                {WOOD_COLORS.map((color) => (
+                                  <option key={color.code} value={`${color.name} (${color.code})`}>
+                                    {color.name} — {color.code}
+                                  </option>
+                                ))}
+                              </select>
+                            </div>
+                          )}
                         </div>
                         <Stepper
                           value={q}
@@ -236,14 +286,38 @@ export function Combos() {
                   const comboSummary = total.selected.map(s => `${s.qty}× ${s.name} (${s.variant})`).join(', ');
                   const totalQty = total.selected.reduce((sum, s) => sum + s.qty, 0);
                   const totalPrice = total.price;
-                  console.log('Saving to localStorage:', { comboSummary, totalQty, totalPrice });
+                  
+                  // Build color mapping for each selected combo
+                  const colorMapping: Record<string, string> = {};
+                  total.selected.forEach((s, index) => {
+                    const combo = COMBOS.find(c => c.name === s.name);
+                    if (combo) {
+                      const variant = combo.variants.find(v => v.label === s.variant);
+                      if (variant) {
+                        const colorKey = `${combo.id}-${variant.id}`;
+                        if (comboColors[colorKey]) {
+                          colorMapping[`${s.name}-${s.variant}-${index}`] = comboColors[colorKey];
+                        }
+                      }
+                    }
+                  });
+                  
+                  console.log('Saving to localStorage:', { comboSummary, totalQty, totalPrice, colorMapping });
                   localStorage.setItem('selectedCombo', comboSummary);
                   localStorage.setItem('selectedQuantity', totalQty.toString());
                   localStorage.setItem('selectedTotalPrice', totalPrice.toString());
+                  localStorage.setItem('selectedColors', JSON.stringify(colorMapping));
                   console.log('Saved successfully');
 
                   // Dispatch custom event to notify OrderForm
-                  window.dispatchEvent(new CustomEvent('comboUpdated', { detail: { combo: comboSummary, quantity: totalQty.toString(), totalPrice: totalPrice.toString() } }));
+                  window.dispatchEvent(new CustomEvent('comboUpdated', { 
+                    detail: { 
+                      combo: comboSummary, 
+                      quantity: totalQty.toString(), 
+                      totalPrice: totalPrice.toString(),
+                      colors: colorMapping
+                    } 
+                  }));
 
                   // Navigate to order form
                   window.location.href = '#dat-hang';

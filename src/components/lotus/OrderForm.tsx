@@ -51,6 +51,8 @@ const Schema = z.object({
   combo: z.string().trim().max(100).optional().or(z.literal("")),
   quantity: z.string().trim().max(20).optional().or(z.literal("")),
   totalPrice: z.string().trim().max(50).optional().or(z.literal("")),
+  originalPrice: z.string().trim().max(50).optional().or(z.literal("")),
+  paymentMethod: z.string().trim().max(20).optional().or(z.literal("")),
   colors: z.string().trim().max(300).optional().or(z.literal("")),
   province: z.string().trim().max(60).optional().or(z.literal("")),
   note: z.string().trim().max(500).optional().or(z.literal("")),
@@ -70,6 +72,13 @@ export function OrderForm() {
   const [parsedCombos, setParsedCombos] = useState<ComboItem[]>([]);
   // Store color selection for each combo
   const [comboColors, setComboColors] = useState<Record<string, string>>({});
+  // Payment method state
+  const [paymentMethod, setPaymentMethod] = useState<"cod" | "online">("cod");
+
+  // Calculate final price with discount
+  const originalPrice = parseInt(totalPriceValue) || 0;
+  const discountAmount = paymentMethod === "online" ? Math.round(originalPrice * 0.1) : 0;
+  const finalPrice = originalPrice - discountAmount;
 
   // Parse combo string from localStorage
   const parseComboString = (comboStr: string): ComboItem[] => {
@@ -109,7 +118,8 @@ export function OrderForm() {
       const savedCombo = localStorage.getItem('selectedCombo');
       const savedQuantity = localStorage.getItem('selectedQuantity');
       const savedTotalPrice = localStorage.getItem('selectedTotalPrice');
-      console.log('Loading from localStorage:', { savedCombo, savedQuantity, savedTotalPrice });
+      const savedColors = localStorage.getItem('selectedColors');
+      console.log('Loading from localStorage:', { savedCombo, savedQuantity, savedTotalPrice, savedColors });
       if (savedCombo) {
         setComboValue(savedCombo);
         const parsed = parseComboString(savedCombo);
@@ -117,6 +127,14 @@ export function OrderForm() {
       }
       if (savedQuantity) setQuantityValue(savedQuantity);
       if (savedTotalPrice) setTotalPriceValue(savedTotalPrice);
+      if (savedColors) {
+        try {
+          const parsedColors = JSON.parse(savedColors);
+          setComboColors(parsedColors);
+        } catch (e) {
+          console.error('Error parsing saved colors:', e);
+        }
+      }
     };
 
     loadFromStorage();
@@ -142,6 +160,9 @@ export function OrderForm() {
       }
       if (e.detail.quantity) setQuantityValue(e.detail.quantity);
       if (e.detail.totalPrice) setTotalPriceValue(e.detail.totalPrice);
+      if (e.detail.colors) {
+        setComboColors(e.detail.colors);
+      }
     };
 
     window.addEventListener('comboUpdated', handleComboUpdate as EventListener);
@@ -226,6 +247,7 @@ export function OrderForm() {
       localStorage.removeItem('selectedCombo');
       localStorage.removeItem('selectedQuantity');
       localStorage.removeItem('selectedTotalPrice');
+      localStorage.removeItem('selectedColors');
 
       // Redirect to thank you page with phone as query parameter
       window.location.href = `/thank-you?phone=${encodeURIComponent(data.phone as string)}`;
@@ -282,62 +304,6 @@ export function OrderForm() {
             noValidate
             className="mt-10 grid gap-5 rounded-2xl border border-border bg-card p-6 sm:p-8"
           >
-            {parsedCombos.length > 0 && (
-              <div className="rounded-xl border border-border bg-muted/30 px-5 py-4">
-                <p className="text-sm font-semibold text-foreground">
-                  Thông tin đơn hàng đã chọn
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Đã cập nhật từ lựa chọn phía trên
-                </p>
-                <div className="mt-3 space-y-4 sm:space-y-3">
-                  {parsedCombos.map((combo, index) => {
-                    const key = `${combo.name}-${combo.variant}-${index}`;
-                    return (
-                      <div key={key} className="rounded-lg border border-border bg-background/60 px-4 py-4 sm:py-3">
-                        <div className="mb-3 sm:mb-2 text-sm font-semibold text-foreground">
-                          {combo.name} ({combo.variant}) x{combo.quantity}
-                        </div>
-                        <div>
-                          <label className="mb-2 sm:mb-1.5 block text-xs font-medium text-foreground">
-                            Mã màu giả gỗ
-                          </label>
-                          <select
-                            value={comboColors[key] || ""}
-                            onChange={(e) => setComboColors({ ...comboColors, [key]: e.target.value })}
-                            className="form-input text-sm py-3 sm:py-[0.85rem]"
-                          >
-                            <option value="">Chọn mã màu</option>
-                            {WOOD_COLORS.map((color) => (
-                              <option key={color.code} value={`${color.name} (${color.code})`}>
-                                {color.name} — {color.code}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                <input type="hidden" name="combo" value={comboValue} />
-                <input type="hidden" name="quantity" value={quantityValue} />
-                <input type="hidden" name="totalPrice" value={totalPriceValue} />
-                <input type="hidden" name="colors" value={Object.values(comboColors).filter(c => c).join(', ')} />
-              </div>
-            )}
-            {parsedCombos.length === 0 && (
-              <input type="hidden" name="combo" value={comboValue} />
-            )}
-            {parsedCombos.length === 0 && (
-              <input type="hidden" name="quantity" value={quantityValue} />
-            )}
-            {parsedCombos.length === 0 && (
-              <input type="hidden" name="totalPrice" value={totalPriceValue} />
-            )}
-            {parsedCombos.length === 0 && (
-              <input type="hidden" name="colors" value="" />
-            )}
-
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Họ và tên" name="name" error={errors.name} required>
                 <input
@@ -379,13 +345,116 @@ export function OrderForm() {
               </Field>
             </div>
 
+            {parsedCombos.length > 0 && (
+              <div className="rounded-xl border border-border bg-muted/30 px-5 py-4">
+                <p className="text-sm font-semibold text-foreground">
+                  Thông tin đơn hàng
+                </p>
+                <div className="mt-3 space-y-3">
+                  {parsedCombos.map((combo, index) => {
+                    const key = `${combo.name}-${combo.variant}-${index}`;
+                    const selectedColor = comboColors[key];
+                    return (
+                      <div key={key} className="rounded-lg border border-border bg-background/60 px-4 py-3">
+                        <div className="text-sm font-semibold text-foreground">
+                          {combo.name} {combo.variant} x{combo.quantity}
+                        </div>
+                        {selectedColor && (
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            Màu sơn: {selectedColor}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mt-4 border-t border-border pt-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Thành tiền:</span>
+                    <div className="text-right">
+                      {discountAmount > 0 && (
+                        <div className="text-sm text-muted-foreground line-through">
+                          {originalPrice.toLocaleString("vi-VN")}đ
+                        </div>
+                      )}
+                      <div className="font-serif text-2xl font-semibold text-[var(--brand)]">
+                        {finalPrice.toLocaleString("vi-VN")}đ
+                      </div>
+                      {discountAmount > 0 && (
+                        <div className="text-xs text-green-600 font-medium">
+                          Tiết kiệm {discountAmount.toLocaleString("vi-VN")}đ
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="combo" value={comboValue} />
+                <input type="hidden" name="quantity" value={quantityValue} />
+                <input type="hidden" name="totalPrice" value={finalPrice.toString()} />
+                <input type="hidden" name="originalPrice" value={originalPrice.toString()} />
+                <input type="hidden" name="paymentMethod" value={paymentMethod} />
+                <input type="hidden" name="colors" value={Object.values(comboColors).filter(c => c).join(', ')} />
+              </div>
+            )}
+            {parsedCombos.length === 0 && (
+              <input type="hidden" name="combo" value={comboValue} />
+            )}
+            {parsedCombos.length === 0 && (
+              <input type="hidden" name="quantity" value={quantityValue} />
+            )}
+            {parsedCombos.length === 0 && (
+              <input type="hidden" name="totalPrice" value={totalPriceValue} />
+            )}
+            {parsedCombos.length === 0 && (
+              <input type="hidden" name="colors" value="" />
+            )}
+
+            {parsedCombos.length > 0 && (
+              <div className="rounded-xl border border-border bg-muted/30 px-5 py-4">
+                <p className="text-sm font-semibold text-foreground mb-3">
+                  Phương thức thanh toán
+                </p>
+                <div className="space-y-3">
+                  <label className="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="cod"
+                      checked={paymentMethod === "cod"}
+                      onChange={(e) => setPaymentMethod(e.target.value as "cod" | "online")}
+                      className="h-4 w-4 text-[var(--brand)] focus:ring-[var(--brand)]"
+                    />
+                    <div className="flex-1">
+                      <span className="text-sm font-medium text-foreground">Thanh toán khi nhận hàng (COD)</span>
+                    </div>
+                  </label>
+                  <label className="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="online"
+                      checked={paymentMethod === "online"}
+                      onChange={(e) => setPaymentMethod(e.target.value as "cod" | "online")}
+                      className="h-4 w-4 text-[var(--brand)] focus:ring-[var(--brand)]"
+                    />
+                    <div className="flex-1 flex items-center gap-2">
+                      <span className="text-sm font-medium text-foreground">Chuyển khoản Online</span>
+                      <span className="rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs font-semibold">
+                        Tiết kiệm 10%
+                      </span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            )}
+
             <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
                 type="submit"
                 disabled={loading}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-7 py-3.5 text-base font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
-                {loading ? "Đang gửi..." : "Đặt hàng ngay"}
+                {loading ? "Đang gửi..." : "Xác nhận đặt hàng"}
                 {!loading && <span aria-hidden>→</span>}
               </button>
               <a
@@ -398,9 +467,17 @@ export function OrderForm() {
               </a>
             </div>
 
-            <p className="mt-4 text-xs text-[var(--brand)] font-medium">
-              Miễn phí vận chuyển cho đơn hàng từ 1.999.000 đ
-            </p>
+            <div className="mt-4 space-y-2">
+              <p className="text-xs text-muted-foreground">
+                Miễn phí vận chuyển cho đơn hàng từ 1.999.000 đ
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Định mức tham khảo: 1 combo nhỏ phủ ~8 m² · 1 combo lớn phủ ~28 m² (2 lớp, bề mặt phẳng)
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Bằng cách đặt hàng, bạn đồng ý với các điều khoản và điều kiện của chúng tôi
+              </p>
+            </div>
           </form>
         )}
       </div>
