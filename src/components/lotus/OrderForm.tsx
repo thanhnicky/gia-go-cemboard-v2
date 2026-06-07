@@ -3,7 +3,7 @@ import { z } from "zod";
 import { ZALO_URL } from "./constants";
 import { useRouter } from "@tanstack/react-router";
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzrFg2OCg1ZfIdRSVLc65rQQIdtagjXTpTqcWaDmytw-JG-GJldUXuw5CZ4iEu8RWn7/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyv7gIgwksqqalJhhqqUp8KUGCM9r0LEu6LtRd8wuGE86lmFHQGXZGJp8gHWNzBaC_T/exec";
 
 // Danh sách màu giả gỗ Lotus (đồng bộ với ColorPicker)
 const WOOD_COLORS = [
@@ -230,13 +230,14 @@ export function OrderForm() {
     setLoading(true);
 
     try {
+      const dataWithSource = { ...data, source: "cemboard" };
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(dataWithSource),
       });
 
 
