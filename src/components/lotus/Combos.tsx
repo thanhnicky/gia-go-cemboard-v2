@@ -124,7 +124,7 @@ export function Combos() {
           <p className="mt-3 text-base text-muted-foreground">
             3 combo cho 3 nhu cầu khác nhau. <strong>Combo lớn tiết kiệm hơn 15%</strong>. Mỗi combo có thể chọn một màu riêng.
           </p>
-          <p className="mt-2 text-xs text-muted-foreground">
+          <p className="mt-2 text-sm font-medium text-foreground">
             Định mức: 1 combo nhỏ ~8 m² · 1 combo lớn ~28 m² (2 lớp)
           </p>
         </div>
@@ -361,11 +361,6 @@ export function Combos() {
             </a>
           </div>
         </div>
-
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          Định mức tham khảo: 1 combo nhỏ phủ ~8 m² · 1 combo lớn phủ ~28 m² (2
-          lớp, bề mặt phẳng).
-        </p>
       </div>
     </section>
   );
