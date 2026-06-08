@@ -271,10 +271,10 @@ export function OrderForm() {
             Đặt hàng nhanh
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Đặt hàng nhanh
+            Hoàn tất đơn hàng — Nhận hàng trong 2-3 ngày
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Dành cho hạng mục nhỏ, đã biết màu và hệ sơn. Điền thông tin — Lotus gọi xác nhận trong 30 phút.
+            Điền thông tin bên dưới — <strong>Lotus gọi xác nhận trong 30 phút</strong>. Giao hàng toàn quốc, miễn phí vận chuyển cho đơn từ 1.999.000đ.
           </p>
           <p className="mt-2 text-xs text-muted-foreground">
             Công trình lớn cần báo giá chi tiết? Nhắn Zalo để được tư vấn hệ sơn, khối lượng và giá dự án.
@@ -474,12 +474,24 @@ export function OrderForm() {
             </div>
 
             <div className="mt-4 space-y-2">
-              <p className="text-xs text-muted-foreground">
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-green-600">
+                  <path d="M2 7L5.5 10.5L12 3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
                 Miễn phí vận chuyển cho đơn hàng từ 1.999.000 đ
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Định mức tham khảo: 1 combo nhỏ phủ ~8 m² · 1 combo lớn phủ ~28 m² (2 lớp, bề mặt phẳng)
-              </p>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-green-600">
+                  <path d="M2 7L5.5 10.5L12 3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Gọi xác nhận trong 30 phút · Giao hàng 2-3 ngày
+              </div>
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-green-600">
+                  <path d="M2 7L5.5 10.5L12 3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Định mức: 1 combo nhỏ ~8 m² · 1 combo lớn ~28 m² (2 lớp)
+              </div>
               <p className="text-xs text-muted-foreground">
                 Bằng cách đặt hàng, bạn đồng ý với các điều khoản và điều kiện của chúng tôi
               </p>

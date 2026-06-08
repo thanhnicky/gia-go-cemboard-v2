@@ -11,19 +11,19 @@ export function Hero() {
             Sơn Giả Gỗ Chuyên Nghiệp Cho Nhà Thầu
           </span>
           <h1 className="mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]">
-            Sơn giả gỗ cemboard đúng hệ - 
-            bàn giao đẹp. {" "}
+            Sơn giả gỗ Cemboard đúng hệ — 
+            bàn giao đẹp, {" "}
             <em className="not-italic text-[var(--brand)]">CĐT hài lòng</em>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Hệ sơn Lotus được phát triển riêng cho tấm xi măng — đúng hệ cho vách, lam, sàn, hàng rào. Tư vấn kỹ thuật 1-1 trước khi chốt đơn.
+            Lotus tư vấn đúng hệ cho từng hạng mục vách, lam, sàn; hỗ trợ chốt màu, tính định mức và giao hàng nhanh cho công trình từ 100–1000 m².
           </p>
           <ul className="mt-7 grid gap-3 text-sm sm:text-base">
             {[
-              "Chuyên dụng cho Fiber Cement, Smartwood, Conwood, Cemboard.",
-              "Hiệu ứng vân gỗ chân thực, nhiều tone từ sáng đến nâu đậm.",
-              "Bền màu 5+ năm ngoài trời — không phai, không bong dù nắng mưa.",
-              "Bám dính tốt trên xi măng — không lo bong tróc sau bàn giao.",
+              "Chọn đúng hệ ngay từ đầu, giảm rủi ro phải làm lại.",
+              "Dễ tư vấn lại cho chủ đầu tư vì có mẫu màu và hệ rõ ràng.",
+              "Có phương án cho cả đơn nhỏ thử 100 m² lẫn công trình lớn 1000 m²+.",
+              "Hỗ trợ kỹ thuật trước khi chốt đơn, không mua theo cảm tính.",
             ].map((b) => (
               <li key={b} className="flex items-start gap-3">
                 <span
@@ -50,10 +50,10 @@ export function Hero() {
                 href="#bao-gia"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-8 py-4 text-base font-semibold text-[var(--brand-foreground)] shadow-[0_8px_24px_-12px_oklch(0.42_0.11_38/0.6)] transition-transform hover:-translate-y-0.5"
               >
-                Đặt hàng nhanh — Nhận hàng trong 2-3 ngày
+                Đặt hàng ngay — Nhận hàng trong 2-3 ngày
                 <span aria-hidden>→</span>
               </a>
-              <p className="text-center text-xs text-muted-foreground sm:text-left">Dành cho hạng mục nhỏ, đã biết màu và hệ sơn</p>
+              <p className="text-center text-xs text-muted-foreground sm:text-left">Hạng mục nhỏ · Đã biết màu và hệ sơn</p>
             </div>
             <div className="flex flex-col gap-2 sm:flex-1">
               <a
@@ -62,13 +62,13 @@ export function Hero() {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-muted"
               >
-                Công trình lớn — Nhắn Zalo báo giá
+                Tư vấn miễn phí — Nhắn Zalo
               </a>
-              <p className="text-center text-xs text-muted-foreground sm:text-left">Cần chốt màu thực tế, khối lượng và báo giá theo dự án</p>
+              <p className="text-center text-xs text-muted-foreground sm:text-left">Công trình lớn · Cần chốt màu và báo giá dự án</p>
             </div>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            Dùng sai hệ sơn = bong tróc sau 1 mùa mưa = làm lại tốn công. Gửi ảnh hạng mục — Lotus xác nhận đúng hệ miễn phí trước khi bạn mua
+            Đừng chốt sơn theo cảm tính. Gửi ảnh hạng mục, Lotus xác nhận đúng hệ trước khi anh lên đơn hoặc báo giá cho chủ đầu tư.
           </p>
         </div>
         <div className="relative lg:col-span-6">

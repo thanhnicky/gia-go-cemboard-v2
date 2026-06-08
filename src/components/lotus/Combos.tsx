@@ -119,10 +119,10 @@ export function Combos() {
             Combo & báo giá nhanh
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Combo sơn — Chọn và đặt hàng ngay
+            Chọn combo phù hợp — Đặt hàng ngay
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            3 combo cho 3 nhu cầu khác nhau. Combo lớn tiết kiệm hơn rõ rệt. Mỗi combo có thể chọn một màu riêng.
+            3 combo cho 3 nhu cầu khác nhau. <strong>Combo lớn tiết kiệm hơn 15%</strong>. Mỗi combo có thể chọn một màu riêng.
           </p>
         </div>
 
@@ -330,15 +330,24 @@ export function Combos() {
           )}
 
           <div className="mt-6 rounded-xl border border-border bg-card px-5 py-4">
-            <p className="text-sm font-semibold text-foreground">
-              Công trình lớn cần báo giá chi tiết?
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Nhắn Zalo để Lotus tư vấn đúng hệ, chốt màu thực tế và báo giá theo hạng mục.
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              Báo giá theo m², hạng mục và tiến độ thi công.
-            </p>
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 h-5 w-5 flex-shrink-0 rounded-full bg-green-100 flex items-center justify-center">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 6L5 9L10 3" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-semibold text-foreground">
+                  Công trình lớn cần báo giá chi tiết?
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Nhắn Zalo để Lotus tư vấn đúng hệ, chốt màu thực tế và báo giá theo hạng mục.
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Báo giá theo m², hạng mục và tiến độ thi công.
+                </p>
+              </div>
+            </div>
             <a
               href={ZALO_URL}
               target="_blank"
