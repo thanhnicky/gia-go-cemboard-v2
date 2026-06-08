@@ -274,7 +274,7 @@ export function OrderForm() {
             Hoàn tất đơn hàng — Nhận hàng trong 2-3 ngày
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Điền thông tin bên dưới — <strong>Lotus gọi xác nhận trong 30 phút</strong>. Giao hàng toàn quốc, miễn phí vận chuyển cho đơn từ 1.999.000đ.
+            Dành cho hạng mục nhỏ, đã biết màu và hệ sơn. Điền thông tin — Lotus gọi xác nhận trong 30 phút.
           </p>
           <p className="mt-2 text-xs text-muted-foreground">
             Công trình lớn cần báo giá chi tiết? Nhắn Zalo để được tư vấn hệ sơn, khối lượng và giá dự án.
