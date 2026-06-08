@@ -480,9 +480,6 @@ export function OrderForm() {
                 </svg>
                 Định mức: 1 combo nhỏ ~8 m² · 1 combo lớn ~28 m² (2 lớp)
               </div>
-              <p className="text-xs text-muted-foreground">
-                Bằng cách đặt hàng, bạn đồng ý với các điều khoản và điều kiện của chúng tôi
-              </p>
             </div>
           </form>
         )}
