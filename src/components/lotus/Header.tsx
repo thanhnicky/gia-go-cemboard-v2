@@ -17,29 +17,29 @@ export function Header() {
     <header
       className={`sticky top-0 z-40 w-full border-b transition-colors ${
         scrolled
-          ? "border-border/70 bg-background/85 backdrop-blur-md"
-          : "border-transparent bg-background"
+          ? "border-walnut/12 bg-cream/90 backdrop-blur-md"
+          : "border-transparent bg-cream"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-5 md:px-12">
         <Logo />
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-10 lg:flex">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-foreground/75 transition-colors hover:text-foreground"
+              className="text-[11px] uppercase tracking-[0.22em] text-charcoal/60 transition-colors hover:text-charcoal"
             >
               {item.label}
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <a
             href={ZALO_URL}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5 sm:inline-flex"
+            className="hidden border-b border-clay pb-0.5 text-[11px] uppercase tracking-[0.22em] text-clay transition-colors hover:text-walnut sm:inline-block"
           >
             Nhắn Zalo
           </a>
@@ -47,28 +47,24 @@ export function Header() {
             type="button"
             aria-label="Mở menu"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-border lg:hidden"
+            className="grid h-9 w-9 place-items-center lg:hidden"
           >
-            <span className="relative block h-3 w-4">
-              <span
-                className={`absolute left-0 top-0 h-0.5 w-4 bg-foreground transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`}
-              />
-              <span
-                className={`absolute left-0 top-2.5 h-0.5 w-4 bg-foreground transition-transform ${open ? "-translate-y-1 -rotate-45" : ""}`}
-              />
+            <span className="relative block h-3 w-5">
+              <span className={`absolute left-0 top-0 h-px w-5 bg-charcoal transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`} />
+              <span className={`absolute left-0 top-3 h-px w-5 bg-charcoal transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
             </span>
           </button>
         </div>
       </div>
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3">
+        <div className="border-t border-walnut/10 bg-cream lg:hidden">
+          <nav className="mx-auto flex max-w-[1400px] flex-col px-5 py-4">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-base font-medium text-foreground/85 hover:bg-muted"
+                className="border-b border-walnut/8 py-4 text-[11px] uppercase tracking-[0.22em] text-charcoal/70 hover:text-charcoal"
               >
                 {item.label}
               </a>
@@ -78,7 +74,7 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-[var(--brand)] px-4 py-3 text-center text-sm font-semibold text-[var(--brand-foreground)]"
+              className="mt-5 inline-block border-b border-clay pb-0.5 text-[11px] uppercase tracking-[0.22em] text-clay"
             >
               Nhắn Zalo
             </a>

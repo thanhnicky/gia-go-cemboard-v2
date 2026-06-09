@@ -1,84 +1,54 @@
-const BLOCKS = [
+const POINTS = [
   {
-    tag: "Cho vách, lam, hàng rào, bề mặt trang trí",
-    title: "Hệ phủ vân gỗ cho vách & ốp",
-    products: [
-      {
-        name: "Lotus Wood Primer Paint",
-        role: "Lớp lót chuyên dụng cho fiber cement, tăng độ bám và độ phủ.",
-      },
-      {
-        name: "Lotus Wood Plank Paint",
-        role: "Lớp phủ tạo hiệu ứng vân gỗ chân thực, bền màu ngoài trời.",
-      },
-    ],
+    n: "01",
+    t: "Giữ ưu điểm của vật liệu xi măng",
+    d: "Tấm xi măng bền, chịu thời tiết, không cong vênh — hệ sơn Lotus không thay vật liệu, chỉ thay đổi bề mặt.",
   },
   {
-    tag: "Cho sàn, ban công, lối đi, khu vực chịu mài mòn",
-    title: "Hệ phủ cho sàn & khu vực chịu lực",
-    products: [
-      {
-        name: "Lotus Decking Paint",
-        role: "Hệ sơn sàn dành cho tấm xi măng ngoài trời, chịu đi lại, chịu thời tiết.",
-      },
-    ],
+    n: "02",
+    t: "Tạo hiệu ứng gỗ trên nền nhân tạo",
+    d: "Lớp hoàn thiện tạo chiều sâu và vân gỗ tự nhiên trên nền xi măng. Người xem khó nhận ra đây không phải gỗ thật.",
+  },
+  {
+    n: "03",
+    t: "Phù hợp cho mọi hạng mục ngoài trời",
+    d: "Chịu UV, chịu ẩm, bền nhiều năm trên mặt tiền, lam, vách, sàn ngoài trời — với đúng hệ sơn cho từng loại nền.",
+  },
+  {
+    n: "04",
+    t: "Ấm hơn, gần tự nhiên hơn, có chiều sâu hơn",
+    d: "Thay đổi tone công trình từ cứng, lạnh, vật liệu xây dựng sang ấm, gần với kiến trúc gỗ tự nhiên.",
   },
 ];
 
 export function Systems() {
   return (
-    <section className="bg-[var(--cement)]/50 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-        <div className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
-            Chọn đúng hệ sơn
-          </p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Sai hệ sơn là lỗi kỹ thuật — không phải lỗi thẩm mỹ.
-          </h2>
-          <p className="mt-3 text-base text-muted-foreground">
-            Vách và sàn chịu lực khác nhau hoàn toàn. Dùng chung một hệ — bong tróc sớm, mất uy tín với Chủ đầu tư. Lotus giúp bạn chọn đúng từ đầu.
-          </p>
-        </div>
-
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          {BLOCKS.map((b) => (
-            <div
-              key={b.title}
-              className="rounded-2xl border border-border bg-card p-6 sm:p-8"
-            >
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
-                {b.tag}
-              </p>
-              <h3 className="mt-2 font-serif text-2xl font-semibold text-foreground">
-                {b.title}
-              </h3>
-              <div className="mt-6 space-y-4">
-                {b.products.map((p) => (
-                  <div
-                    key={p.name}
-                    className="flex gap-4 rounded-xl border border-border/70 bg-background/60 p-4"
-                  >
-                    <div
-                      aria-hidden
-                      className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-full bg-[var(--brand-soft)] font-serif text-base font-semibold text-[var(--brand)]"
-                    >
-                      L
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground">{p.name}</p>
-                      <p className="mt-1 text-sm text-muted-foreground">{p.role}</p>
-                    </div>
+    <section className="border-b border-walnut/10 bg-charcoal text-cream">
+      <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
+        <div className="grid grid-cols-12 gap-x-8 gap-y-10">
+          <div className="col-span-12 md:col-span-4">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-cream/60">03 — Vì sao giả gỗ trên xi măng</span>
+            <h2 className="mt-5 font-serif text-[34px] leading-tight sm:text-4xl md:text-5xl">
+              Giữ độ bền<br />của xi măng.<br />
+              <em className="not-italic text-clay">Đưa bề mặt<br />gần hơn với gỗ.</em>
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-8 md:pt-2">
+            <p className="font-serif text-[20px] leading-[1.65] text-cream/90 md:text-[22px]">
+              Smartwood, Conwood, Cemboard — vật liệu nhân tạo bền nhưng lạnh. Hệ sơn giả gỗ Lotus không phá kết cấu, không thay tấm xi măng. Nó chỉ thay đổi bề mặt — theo hướng ấm hơn, đẹp hơn, gần ngôn ngữ gỗ và kiến trúc hơn.
+            </p>
+            <ul className="mt-14 divide-y divide-cream/15 border-t border-cream/15">
+              {POINTS.map((b) => (
+                <li key={b.n} className="flex gap-8 py-7">
+                  <span className="mt-0.5 shrink-0 text-[10px] uppercase tracking-[0.25em] text-clay">{b.n}</span>
+                  <div>
+                    <div className="font-serif text-[19px] text-cream">{b.t}</div>
+                    <p className="mt-2 text-[13px] leading-relaxed text-cream/75">{b.d}</p>
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 rounded-xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]/40 px-5 py-4 text-sm text-foreground/85 sm:text-base">
-          <span className="font-semibold text-[var(--brand)]">Lưu ý: </span>
-          Lotus cam kết xác nhận đúng hệ kỹ thuật cho từng hạng mục, nhận mẫu trước khi lên đơn — hoàn toàn miễn phí.
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

@@ -3,90 +3,67 @@ import { ZALO_URL } from "./constants";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-10 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-10 lg:pb-24 lg:pt-16">
-        <div className="lg:col-span-6 lg:pt-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
-            Sơn Giả Gỗ Chuyên Nghiệp Cho Nhà Thầu
-          </span>
-          <h1 className="mt-5 font-serif text-[2.4rem] font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.6rem]">
-            Sơn giả gỗ Cemboard đúng hệ — 
-            bàn giao đẹp, {" "}
-            <em className="not-italic text-[var(--brand)]">CĐT hài lòng</em>
-          </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Lotus tư vấn đúng hệ cho từng hạng mục vách, lam, sàn; hỗ trợ chốt màu, tính định mức và giao hàng nhanh cho công trình từ 100–1000 m².
-          </p>
-          <ul className="mt-7 grid gap-3 text-sm sm:text-base">
-            {[
-              "Chọn đúng hệ ngay từ đầu, giảm rủi ro phải làm lại.",
-              "Dễ tư vấn lại cho chủ đầu tư vì có mẫu màu và hệ rõ ràng.",
-              "Có phương án cho cả đơn nhỏ thử 100 m² lẫn công trình lớn 1000 m²+.",
-              "Hỗ trợ kỹ thuật trước khi chốt đơn, không mua theo cảm tính.",
-            ].map((b) => (
-              <li key={b} className="flex items-start gap-3">
-                <span
-                  aria-hidden
-                  className="mt-1 grid h-5 w-5 flex-shrink-0 place-items-center rounded-full bg-[var(--brand-soft)] text-[var(--brand)]"
-                >
-                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                    <path
-                      d="M2.5 6.2L5 8.7L9.7 3.5"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                <span className="text-foreground/85">{b}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-3">
-            <div className="flex flex-col gap-2 sm:flex-1">
-              <a
-                href="#bao-gia"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-8 py-4 text-base font-semibold text-[var(--brand-foreground)] shadow-[0_8px_24px_-12px_oklch(0.42_0.11_38/0.6)] transition-transform hover:-translate-y-0.5"
-              >
-                Đặt hàng ngay — Nhận hàng trong 2-3 ngày
-                <span aria-hidden>→</span>
-              </a>
-              <p className="text-center text-xs text-muted-foreground sm:text-left">Hạng mục nhỏ · Đã biết màu và hệ sơn</p>
-            </div>
-            <div className="flex flex-col gap-2 sm:flex-1">
+    <section id="top" className="border-b border-walnut/10">
+      <div className="mx-auto max-w-[1400px] px-5 pt-14 pb-0 md:px-12 md:pt-20">
+        <div className="grid grid-cols-12 gap-x-8 gap-y-10">
+          {/* Copy */}
+          <div className="col-span-12 md:col-span-5 md:pb-20">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">
+              Hoàn thiện bề mặt xi măng
+            </span>
+            <h1 className="mt-5 font-serif text-[2.6rem] leading-[1.07] text-charcoal sm:text-5xl lg:text-[3.4rem]">
+              Biến tấm xi măng —<br />
+              smartwood, conwood,<br />
+              cemboard —{" "}
+              <em className="not-italic text-clay">gần với gỗ tự nhiên hơn.</em>
+            </h1>
+            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-charcoal/65">
+              Hệ sơn vân gỗ Lotus tư vấn đúng hệ cho từng hạng mục: vách, lam, ốp tường, mặt dựng, sàn ngoài trời. Gửi ảnh bề mặt qua Zalo để được gợi ý màu và hệ sơn phù hợp.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
               <a
                 href={ZALO_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-muted"
+                className="inline-flex items-center gap-2 bg-[#0068FF] px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-white transition hover:bg-[#0056d6]"
               >
-                Tư vấn miễn phí — Nhắn Zalo
+                Gửi ảnh qua Zalo
               </a>
-              <p className="text-center text-xs text-muted-foreground sm:text-left">Công trình lớn · Cần chốt màu và báo giá dự án</p>
+              <a
+                href="#bao-gia"
+                className="inline-flex items-center gap-2 border border-walnut/30 px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-charcoal/80 transition hover:border-charcoal hover:text-charcoal"
+              >
+                Xem combo & đặt hàng
+              </a>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-2 border-t border-walnut/12 pt-6">
+              {[
+                { v: "21 mã màu", l: "vân gỗ tự nhiên" },
+                { v: "Smartwood / Conwood / Cemboard", l: "tất cả loại tấm xi măng" },
+                { v: "Tư vấn theo ảnh thực tế", l: "qua Zalo" },
+              ].map((f) => (
+                <div key={f.v}>
+                  <div className="text-[13px] font-medium text-charcoal">{f.v}</div>
+                  <div className="text-[11px] text-charcoal/50">{f.l}</div>
+                </div>
+              ))}
             </div>
           </div>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Đừng chốt sơn theo cảm tính. Gửi ảnh hạng mục, Lotus xác nhận đúng hệ trước khi anh lên đơn hoặc báo giá cho chủ đầu tư.
-          </p>
-        </div>
-        <div className="relative lg:col-span-6">
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-[0_30px_60px_-30px_oklch(0.22_0.025_45/0.35)]">
-            <img
-              src={heroImg}
-              alt="Mặt tiền tấm xi măng hoàn thiện vân gỗ Lotus"
-              width={1536}
-              height={1280}
-              className="h-[420px] w-full object-cover sm:h-[520px] lg:h-[640px]"
-            />
-            <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-background/85 px-4 py-3 backdrop-blur-md">
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
-                Hệ sơn áp dụng
-              </p>
-              <p className="mt-1 text-sm font-semibold text-foreground">
-                Lotus Wood Primer + Lotus Wood Plank Paint
-              </p>
+
+          {/* Image */}
+          <div className="col-span-12 md:col-span-7">
+            <div className="overflow-hidden">
+              <img
+                src={heroImg}
+                alt="Mặt tiền tấm xi măng hoàn thiện vân gỗ Lotus"
+                width={1536}
+                height={1280}
+                className="h-[480px] w-full object-cover sm:h-[600px] lg:h-[700px]"
+              />
+            </div>
+            <div className="mt-3 flex items-baseline justify-between border-t border-walnut/12 pt-3">
+              <span className="text-[13px] text-charcoal">Lotus Wood Primer + Lotus Wood Plank Paint</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-charcoal/40">Hệ sơn áp dụng</span>
             </div>
           </div>
         </div>

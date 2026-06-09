@@ -71,52 +71,54 @@ const GROUPS: { label: string; items: Swatch[] }[] = [
 
 export function ColorPicker() {
   return (
-    <section id="mau-sac" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-        <div className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
-            Bảng màu vân gỗ Lotus
-          </p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Chọn tông gỗ phù hợp với công trình
-          </h2>
-          <p className="mt-3 text-base text-muted-foreground">
-            Xem tông màu tổng thể — chọn mã màu cụ thể trong form đặt hàng. Khuyến nghị xác nhận màu trên mẫu thực tế trước khi lên đơn lớn.
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Khách mua nhanh: chọn màu rồi đặt hàng ngay. Công trình lớn: nhắn Zalo để nhận mẫu thực tế trước khi chốt màu.
-          </p>
-        </div>
-
-        <div className="mt-10">
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-            <img
-              src={colorOverview}
-              alt="Bảng màu vân gỗ Lotus tổng thể"
-              className="w-full object-cover"
-            />
+    <section id="mau-sac" className="border-b border-walnut/10">
+      <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
+        <div className="mb-10 grid grid-cols-12 gap-8">
+          <div className="col-span-12 md:col-span-5">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">05 — Bảng màu</span>
+            <h2 className="mt-5 font-serif text-[34px] leading-tight text-charcoal sm:text-4xl md:text-5xl">
+              Chọn tông gỗ<br />
+              <em className="not-italic text-clay">phù hợp công trình.</em>
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-6 md:col-start-7 md:self-end">
+            <p className="text-[15px] leading-relaxed text-charcoal/65">
+              21 mã màu vân gỗ — từ tone sáng, cam ấm, nâu tự nhiên đến tone đậm đặc biệt. Xác nhận màu trên mẫu thực tế trước khi lên đơn lớn.
+            </p>
           </div>
         </div>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2">
-          <a
-            href="#bao-gia"
-            className="inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-6 py-3.5 text-base font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5"
-          >
-            Đã chọn được màu - Chọn combo ngay
-          </a>
-          <a
-            href={ZALO_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3.5 text-base font-semibold text-foreground hover:bg-muted"
-          >
-            Chưa chắc màu — Nhắn Zalo chốt mẫu thực tế
-          </a>
+        <div className="overflow-hidden">
+          <img
+            src={colorOverview}
+            alt="Bảng màu vân gỗ Lotus tổng thể"
+            className="w-full object-cover"
+          />
         </div>
-        <p className="mt-4 text-center text-xs text-muted-foreground">
-          Khách nhỏ chọn nhanh — Công trình lớn xem mẫu thực tế qua Zalo.
-        </p>
+
+        <div className="mt-6 grid grid-cols-12 gap-x-8 gap-y-4">
+          <div className="col-span-12 md:col-span-8">
+            <p className="text-[13px] leading-relaxed text-charcoal/55">
+              Tone sáng · Tone cam ấm · Tone nâu tự nhiên · Tone đậm &amp; đặc biệt — 21 mã màu, chọn mã cụ thể trong form đặt hàng. Công trình lớn: gửi ảnh qua Zalo để nhận mẫu thực tế trước khi chốt màu.
+            </p>
+          </div>
+          <div className="col-span-12 flex flex-wrap gap-3 md:col-span-12">
+            <a
+              href="#bao-gia"
+              className="inline-flex items-center gap-2 bg-clay px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-cream transition hover:bg-walnut"
+            >
+              Đã chọn màu — Xem combo
+            </a>
+            <a
+              href={ZALO_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 border border-walnut/30 px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-charcoal/80 transition hover:border-charcoal hover:text-charcoal"
+            >
+              Nhắn Zalo chốt mẫu thực tế
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const FAQS = [
   {
     q: "Sơn này dùng cho Smartwood, Conwood, Cemboard được không?",
@@ -15,7 +13,7 @@ const FAQS = [
   },
   {
     q: "Tôi chưa biết chọn màu nào thì sao?",
-    a: "Bạn có thể chọn nhanh theo nhóm Tone sáng / Tone ấm tự nhiên / Tone nâu đậm ở phần Bảng màu. Nếu vẫn phân vân, gửi ảnh hạng mục qua Zalo, Lotus sẽ gợi ý màu phù hợp với không gian và ánh sáng thực tế.",
+    a: "Bạn có thể chọn nhanh theo nhóm Tone sáng / Tone cam ấm / Tone nâu tự nhiên ở phần Bảng màu. Nếu vẫn phân vân, gửi ảnh hạng mục qua Zalo, Lotus sẽ gợi ý màu phù hợp với không gian và ánh sáng thực tế.",
   },
   {
     q: "Tôi điền form rồi thì bước tiếp theo là gì?",
@@ -28,54 +26,27 @@ const FAQS = [
 ];
 
 export function FAQ() {
-  const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-10">
-        <div className="text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
-            Câu hỏi thường gặp
-          </p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Mọi điều khách hàng thường hỏi.
-          </h2>
+    <section id="faq" className="border-b border-walnut/10">
+      <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
+        <div className="mb-12 grid grid-cols-12 gap-8">
+          <div className="col-span-12 md:col-span-4">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">08 — Câu hỏi thường gặp</span>
+            <h2 className="mt-5 font-serif text-[32px] leading-tight text-charcoal sm:text-4xl">
+              Những điều<br />khách thường hỏi.
+            </h2>
+          </div>
         </div>
-        <div className="mt-10 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card">
-          {FAQS.map((f, i) => {
-            const isOpen = open === i;
-            return (
-              <div key={f.q}>
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-start justify-between gap-4 px-5 py-5 text-left sm:px-7 sm:py-6"
-                  aria-expanded={isOpen}
-                >
-                  <span className="font-serif text-base font-semibold text-foreground sm:text-lg">
-                    {f.q}
-                  </span>
-                  <span
-                    aria-hidden
-                    className={`mt-1 grid h-7 w-7 flex-shrink-0 place-items-center rounded-full border border-border text-foreground/70 transition-transform ${isOpen ? "rotate-45 border-[var(--brand)] text-[var(--brand)]" : ""}`}
-                  >
-                    <svg width="12" height="12" viewBox="0 0 12 12">
-                      <path
-                        d="M6 1.5V10.5M1.5 6H10.5"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>
-                </button>
-                {isOpen && (
-                  <div className="px-5 pb-6 text-sm leading-relaxed text-muted-foreground sm:px-7 sm:text-base">
-                    {f.a}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        <div className="divide-y divide-walnut/12 border-t border-walnut/12">
+          {FAQS.map((f) => (
+            <details key={f.q} className="group py-0">
+              <summary className="flex cursor-pointer items-start justify-between gap-6 py-6 text-left marker:content-none">
+                <span className="font-serif text-[18px] text-charcoal">{f.q}</span>
+                <span className="mt-1 shrink-0 text-[18px] font-light text-clay transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p className="pb-7 text-[14px] leading-relaxed text-charcoal/65">{f.a}</p>
+            </details>
+          ))}
         </div>
       </div>
     </section>

@@ -264,25 +264,23 @@ export function OrderForm() {
   };
 
   return (
-    <section id="dat-hang" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-10">
-        <div >
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
-            Đặt hàng nhanh
-          </p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Hoàn tất đơn hàng — Nhận hàng trong 2-3 ngày
-          </h2>
-          <p className="mt-3 text-base text-muted-foreground">
-            Dành cho hạng mục nhỏ, đã biết màu và hệ sơn. Điền thông tin — Lotus gọi xác nhận trong 30 phút.
-          </p>
-          <p className="mt-2 text-xs text-muted-foreground">
-            Công trình lớn cần báo giá chi tiết? Nhắn Zalo để được tư vấn hệ sơn, khối lượng và giá dự án.
-          </p>
+    <section id="dat-hang" className="border-b border-walnut/10">
+      <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
+        <div className="mb-10 grid grid-cols-12 gap-8">
+          <div className="col-span-12 md:col-span-5">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">09 — Đặt hàng</span>
+            <h2 className="mt-5 font-serif text-[34px] leading-tight text-charcoal sm:text-4xl">
+              Hoàn tất đơn hàng —<br />
+              <em className="not-italic text-clay">nhận hàng trong 2-3 ngày.</em>
+            </h2>
+            <p className="mt-4 text-[14px] leading-relaxed text-charcoal/65">
+              Dành cho hạng mục nhỏ, đã biết màu và hệ sơn. Điền thông tin — Lotus gọi xác nhận trong 30 phút.
+            </p>
+          </div>
         </div>
 
         {submitted ? (
-          <div className="mt-10 rounded-2xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]/40 p-8 text-center">
+          <div className="mt-10 border border-walnut/15 bg-sand/30 p-8 text-center">
             <h3 className="font-serif text-2xl font-semibold text-foreground">
               Đã nhận yêu cầu của bạn.
             </h3>
@@ -294,7 +292,7 @@ export function OrderForm() {
               href={ZALO_URL}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-foreground)]"
+              className="mt-6 inline-flex bg-clay px-6 py-3 text-[12px] uppercase tracking-[0.15em] text-cream"
             >
               Nhắn Zalo để xử lý nhanh hơn
             </a>
@@ -303,7 +301,7 @@ export function OrderForm() {
           <form
             onSubmit={onSubmit}
             noValidate
-            className="mt-10 grid gap-5 rounded-2xl border border-border bg-card p-6 sm:p-8"
+            className="mt-10 grid gap-5 border border-walnut/15 bg-cream p-6 sm:p-8"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Họ và tên" name="name" error={errors.name} required>
@@ -347,7 +345,7 @@ export function OrderForm() {
             </div>
 
             {parsedCombos.length > 0 && (
-              <div className="rounded-xl border border-border bg-muted/50 px-5 py-4">
+              <div className="border border-walnut/15 bg-sand/30 px-5 py-4">
                 <p className="text-sm font-semibold text-foreground">
                   Thông tin đơn hàng
                 </p>
@@ -356,7 +354,7 @@ export function OrderForm() {
                     const key = `${combo.name}-${combo.variant}-${index}`;
                     const selectedColor = comboColors[key];
                     return (
-                      <div key={key} className="rounded-lg border border-border bg-background/60 px-4 py-3">
+                      <div key={key} className="border border-walnut/12 bg-background px-4 py-3">
                         <div className="text-sm font-semibold text-foreground">
                           {combo.name} {combo.variant} x{combo.quantity}
                         </div>
@@ -378,11 +376,11 @@ export function OrderForm() {
                           {originalPrice.toLocaleString("vi-VN")}đ
                         </div>
                       )}
-                      <div className="font-serif text-2xl font-semibold text-[var(--brand)]">
+                      <div className="text-2xl font-semibold text-charcoal">
                         {finalPrice.toLocaleString("vi-VN")}đ
                       </div>
                       {discountAmount > 0 && (
-                        <div className="text-xs text-green-600 font-medium">
+                        <div className="text-xs font-medium text-clay">
                           Tiết kiệm {discountAmount.toLocaleString("vi-VN")}đ
                         </div>
                       )}
@@ -411,7 +409,7 @@ export function OrderForm() {
             )}
 
             {parsedCombos.length > 0 && (
-              <div className="rounded-xl border border-border bg-muted/30 px-5 py-4">
+              <div className="border border-walnut/15 bg-sand/20 px-5 py-4">
                 <p className="text-sm font-semibold text-foreground mb-3">
                   Phương thức thanh toán
                 </p>
@@ -423,7 +421,7 @@ export function OrderForm() {
                       value="cod"
                       checked={paymentMethod === "cod"}
                       onChange={(e) => setPaymentMethod(e.target.value as "cod" | "online")}
-                      className="h-4 w-4 text-[var(--brand)] focus:ring-[var(--brand)]"
+                      className="h-4 w-4 accent-clay"
                     />
                     <div className="flex-1">
                       <span className="text-sm font-medium text-foreground">Thanh toán khi nhận hàng (COD)</span>
@@ -436,16 +434,16 @@ export function OrderForm() {
                       value="online"
                       checked={paymentMethod === "online"}
                       onChange={(e) => setPaymentMethod(e.target.value as "cod" | "online")}
-                      className="h-4 w-4 text-[var(--brand)] focus:ring-[var(--brand)]"
+                      className="h-4 w-4 accent-clay"
                     />
                     <div className="flex-1 flex flex-col gap-1">
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-medium text-foreground">Chuyển khoản Online</span>
-                        <span className="rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs font-semibold">
+                        <span className="bg-sand px-2 py-0.5 text-[10px] font-medium text-walnut">
                           Tiết kiệm 10%
                         </span>
                       </div>
-                      <span className="text-xs text-green-600">
+                      <span className="text-xs text-clay">
                         Tiết kiệm 10% và miễn phí giao hàng
                       </span>
                     </div>
@@ -458,7 +456,7 @@ export function OrderForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--brand)] px-7 py-3.5 text-base font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                className="inline-flex items-center justify-center gap-2 bg-clay px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-cream transition hover:bg-walnut disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? "Đang gửi..." : "Xác nhận đặt hàng"}
                 {!loading && <span aria-hidden>→</span>}
@@ -467,7 +465,7 @@ export function OrderForm() {
                 href={ZALO_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-semibold text-[var(--brand)] underline-offset-4 hover:underline sm:ml-2"
+                className="border-b border-clay pb-0.5 text-[13px] text-clay hover:text-walnut sm:ml-2"
               >
                 Công trình lớn? Nhắn Zalo chốt hệ và báo giá dự án
               </a>
@@ -480,17 +478,16 @@ export function OrderForm() {
         .form-input {
           width: 100%;
           background: var(--background);
-          border: 1px solid var(--border);
-          border-radius: 0.75rem;
+          border: 1px solid oklch(0.875 0.018 70);
+          border-radius: 0.125rem;
           padding: 0.85rem 1rem;
-          font-size: 1rem;
-          color: var(--foreground);
-          transition: border-color .15s, box-shadow .15s;
+          font-size: 0.9375rem;
+          color: oklch(0.20 0.025 50);
+          transition: border-color .15s;
         }
         .form-input:focus {
           outline: none;
-          border-color: var(--brand);
-          box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 18%, transparent);
+          border-color: oklch(0.50 0.11 45);
         }
       `}</style>
     </section>
@@ -516,7 +513,7 @@ function Field({
     <label htmlFor={name} className="block">
       <span className="mb-1.5 flex items-center gap-1 text-sm font-medium text-foreground">
         {label}
-        {required && <span className="text-[var(--brand)]">*</span>}
+        {required && <span className="text-clay">*</span>}
       </span>
       {children}
       {hint && (

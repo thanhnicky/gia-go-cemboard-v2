@@ -24,23 +24,24 @@ export function BeforeAfter() {
     if (!dragging.current) return;
     setFromClientX(e.clientX);
   };
-  const onUp = () => {
-    dragging.current = false;
-  };
+  const onUp = () => { dragging.current = false; };
 
   return (
-    <section className="bg-[var(--cement)]/50 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-        <div className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
-            Before / After
-          </p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Từ tấm xi măng thô đến bề mặt vân gỗ.
-          </h2>
-          <p className="mt-3 text-base text-muted-foreground">
-            Kéo thanh trượt để so sánh bề mặt trước và sau khi phủ hệ sơn Lotus.
-          </p>
+    <section className="border-b border-walnut/10 bg-sand/30">
+      <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
+        <div className="mb-10 grid grid-cols-12 gap-8">
+          <div className="col-span-12 md:col-span-4">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">04 — So sánh bề mặt</span>
+            <h2 className="mt-5 font-serif text-[32px] leading-tight text-charcoal sm:text-4xl">
+              Từ xi măng thô —<br />
+              <em className="not-italic text-clay">đến bề mặt<br />ngôn ngữ gỗ.</em>
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-5 md:col-start-6 md:self-end">
+            <p className="text-[15px] leading-relaxed text-charcoal/65">
+              Kéo thanh trượt để thấy sự khác biệt trước và sau khi phủ hệ sơn giả gỗ Lotus trên tấm xi măng.
+            </p>
+          </div>
         </div>
 
         <div
@@ -49,7 +50,7 @@ export function BeforeAfter() {
           onPointerMove={onMove}
           onPointerUp={onUp}
           onPointerCancel={onUp}
-          className="relative mt-10 aspect-[4/3] w-full select-none overflow-hidden rounded-2xl border border-border bg-card shadow-[0_30px_60px_-30px_oklch(0.22_0.025_45/0.35)] sm:aspect-[16/9]"
+          className="relative w-full select-none overflow-hidden aspect-[4/3] sm:aspect-[16/9]"
           style={{ touchAction: "none" }}
           role="slider"
           aria-valuemin={0}
@@ -57,38 +58,14 @@ export function BeforeAfter() {
           aria-valuenow={Math.round(pos)}
           aria-label="So sánh trước và sau"
         >
-          <img
-            src={afterImg}
-            alt="Sau khi phủ vân gỗ Lotus"
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <img
-            src={beforeImg}
-            alt="Tấm xi măng thô chưa phủ"
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover"
-            style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
-          />
-          <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur">
-            Trước
-          </span>
-          <span className="absolute right-4 top-4 rounded-full bg-[var(--brand)]/95 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand-foreground)] backdrop-blur">
-            Sau
-          </span>
-          <div
-            className="absolute inset-y-0 w-0.5 bg-background shadow-[0_0_0_1px_oklch(0.22_0.025_45/0.2)]"
-            style={{ left: `${pos}%` }}
-          >
-            <div className="absolute left-1/2 top-1/2 grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-background text-[var(--brand)] shadow-[0_4px_14px_oklch(0.22_0.025_45/0.25)]">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path
-                  d="M6 4L2 9L6 14M12 4L16 9L12 14"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+          <img src={afterImg} alt="Sau khi phủ vân gỗ Lotus" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={beforeImg} alt="Tấm xi măng thô chưa phủ" loading="lazy" className="absolute inset-0 h-full w-full object-cover" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }} />
+          <span className="absolute left-4 top-4 bg-cream/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-charcoal backdrop-blur">Trước</span>
+          <span className="absolute right-4 top-4 bg-walnut/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-cream backdrop-blur">Sau</span>
+          <div className="absolute inset-y-0 w-px bg-cream/70" style={{ left: `${pos}%` }}>
+            <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center bg-cream text-charcoal shadow">
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+                <path d="M6 4L2 9L6 14M12 4L16 9L12 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
           </div>

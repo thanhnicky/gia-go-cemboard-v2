@@ -22,37 +22,37 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-16 lg:py-24">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto text-center mb-10">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)] mb-3">
-            Công trình tiêu biểu
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-3">
-            Dự án đã thi công bằng Sơn giả gỗ Lotus
-          </h2>
-          <p className="text-muted-foreground">
-            Nhà thầu của GS Metrocity, Novaworld, Long Thành Riverside — đều đặt sơn từ Lotus.Khi CĐT hỏi sơn gì, họ có câu trả lời tự tin. Bạn cũng vậy.
-          </p>
+    <section id="projects" className="border-b border-walnut/10">
+      <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
+        <div className="mb-12 grid grid-cols-12 gap-8">
+          <div className="col-span-12 md:col-span-5">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">07 — Công trình tiêu biểu</span>
+            <h2 className="mt-5 font-serif text-[34px] leading-tight text-charcoal sm:text-4xl md:text-5xl">
+              Dự án đã hoàn thiện<br />
+              <em className="not-italic text-clay">bằng hệ sơn Lotus.</em>
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-5 md:col-start-8 md:self-end">
+            <p className="text-[15px] leading-relaxed text-charcoal/65">
+              GS Metrocity, Novaworld Hồ Tràm, Long Thành Riverside — nhà thầu đều đặt sơn từ Lotus.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 md:gap-5">
           {projects.map((p) => (
-            <figure
-              key={p.name}
-              className="group relative overflow-hidden rounded-2xl shadow-elegant bg-muted"
-            >
-              <div className="aspect-[4/3] overflow-hidden">
+            <figure key={p.name} className="group">
+              <div className="overflow-hidden">
                 <img
                   src={p.src}
                   alt={`Sơn giả gỗ Lotus - ${p.name}`}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-[1.02]"
                 />
               </div>
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-white">
-                <div className="font-semibold">{p.name}</div>
-                <div className="text-xs opacity-90">{p.location}</div>
+              <figcaption className="mt-3 flex items-baseline justify-between border-t border-walnut/12 pt-3">
+                <span className="text-[13px] font-medium text-charcoal">{p.name}</span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-charcoal/40">{p.location}</span>
               </figcaption>
             </figure>
           ))}

@@ -112,24 +112,24 @@ export function Combos() {
     setQty((s) => ({ ...s, [id]: Math.max(0, Math.min(99, next)) }));
 
   return (
-    <section id="bao-gia" className="bg-[var(--cement)]/50 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand)]">
-            Combo & báo giá nhanh
-          </p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Chọn combo phù hợp — Đặt hàng ngay
-          </h2>
-          <p className="mt-3 text-base text-muted-foreground">
-            3 combo cho 3 nhu cầu khác nhau. <strong>Combo lớn tiết kiệm hơn 15%</strong>. Mỗi combo có thể chọn một màu riêng.
-          </p>
-          <p className="mt-2 text-sm font-medium text-foreground">
-            Định mức: 1 combo nhỏ ~8 m² · 1 combo lớn ~28 m² (2 lớp)
-          </p>
+    <section id="bao-gia" className="border-b border-walnut/10">
+      <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
+        <div className="mb-12 grid grid-cols-12 gap-8">
+          <div className="col-span-12 md:col-span-5">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">06 — Combo & báo giá</span>
+            <h2 className="mt-5 font-serif text-[34px] leading-tight text-charcoal sm:text-4xl">
+              Chọn combo —<br />
+              <em className="not-italic text-clay">đặt hàng ngay.</em>
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-5 md:col-start-8 md:self-end">
+            <p className="text-[15px] leading-relaxed text-charcoal/65">
+              3 combo cho 3 nhu cầu. Combo lớn tiết kiệm hơn 15%. Định mức: nhỏ ~8 m² · lớn ~28 m² (2 lớp).
+            </p>
+          </div>
         </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-3">
           {COMBOS.map((c) => {
             const isOpen = openId === c.id;
             const comboQty = c.variants.reduce((s, v) => s + (qty[v.id] ?? 0), 0);
@@ -137,19 +137,17 @@ export function Combos() {
             return (
             <article
               key={c.id}
-              className="flex flex-col rounded-2xl border border-border bg-card p-6"
+              className="flex flex-col border border-walnut/15 bg-cream p-6"
             >
-              <h3 className="font-serif text-2xl font-semibold text-foreground">
-                {c.name}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{c.tagline}</p>
+              <h3 className="font-serif text-[22px] text-charcoal">{c.name}</h3>
+              <p className="mt-2 text-[13px] text-charcoal/60">{c.tagline}</p>
 
               {/* Mobile-only collapsed summary + toggle */}
               <div className="mt-4 lg:hidden">
-                <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-background/60 px-4 py-3">
+                <div className="flex items-center justify-between gap-3 border border-walnut/15 px-4 py-3">
                   <div className="min-w-0">
                     <p className="text-xs text-muted-foreground">Từ</p>
-                    <p className="font-serif text-lg font-semibold text-[var(--brand)]">
+                    <p className="text-[17px] font-semibold text-clay">
                       {fmt(priceMin)}đ
                     </p>
                   </div>
@@ -157,7 +155,7 @@ export function Combos() {
                     type="button"
                     onClick={() => setOpenId(isOpen ? null : c.id)}
                     aria-expanded={isOpen}
-                    className="inline-flex items-center gap-1 rounded-full border border-[var(--brand)]/40 bg-background px-4 py-2 text-xs font-semibold text-[var(--brand)]"
+                    className="inline-flex items-center gap-1 border border-clay/40 px-4 py-2 text-[11px] font-medium text-clay"
                   >
                     {isOpen ? "Thu gọn" : comboQty > 0 ? `Đã chọn ${comboQty} · Sửa` : "Xem chi tiết"}
                     <span className={`transition-transform ${isOpen ? "rotate-180" : ""}`}>▾</span>
@@ -166,14 +164,14 @@ export function Combos() {
               </div>
 
               <div
-                className={`${isOpen ? "block" : "hidden"} lg:block mt-5 rounded-xl bg-[var(--brand-soft)]/40 px-4 py-4 text-sm`}
+                className={`${isOpen ? "block" : "hidden"} lg:block mt-5 bg-sand/40 px-4 py-4 text-sm`}
               >
-                <p className="font-semibold text-foreground">Dùng cho:</p>
-                <p className="mt-1 text-foreground/80">{c.useFor}</p>
-                <p className="mt-3 font-semibold text-foreground">Gồm:</p>
-                <ul className="mt-1 space-y-1 text-foreground/80">
+                <p className="text-[12px] font-medium uppercase tracking-[0.15em] text-charcoal/50">Dùng cho</p>
+                <p className="mt-1 text-[13px] text-charcoal/80">{c.useFor}</p>
+                <p className="mt-3 text-[12px] font-medium uppercase tracking-[0.15em] text-charcoal/50">Gồm</p>
+                <ul className="mt-1 space-y-0.5 text-[13px] text-charcoal/80">
                   {c.includes.map((it) => (
-                    <li key={it}>• {it}</li>
+                    <li key={it}>— {it}</li>
                   ))}
                 </ul>
               </div>
@@ -186,10 +184,10 @@ export function Combos() {
                   return (
                     <div
                       key={v.id}
-                      className={`rounded-xl border p-4 transition-colors ${
+                      className={`border p-4 transition-colors ${
                         big
-                          ? "border-[var(--brand)]/35 bg-[var(--brand-soft)]/30"
-                          : "border-border bg-background/60"
+                          ? "border-clay/25 bg-sand/25"
+                          : "border-walnut/12 bg-background/60"
                       }`}
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -197,13 +195,13 @@ export function Combos() {
                           <div className="flex flex-wrap items-center gap-2">
                             <p className="font-semibold text-foreground">{v.label}</p>
                             {big && (
-                              <span className="rounded-md bg-[var(--brand)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--brand-foreground)]">
+                              <span className="bg-clay px-2 py-0.5 text-[9px] uppercase tracking-[0.15em] text-cream">
                                 Tiết kiệm hơn
                               </span>
                             )}
                           </div>
                           <p className="mt-1 text-xs text-muted-foreground">{v.spec}</p>
-                          <p className="mt-2 font-serif text-lg font-semibold text-[var(--brand)]">
+                          <p className="mt-2 text-[17px] font-semibold text-clay">
                             {fmt(v.price)}đ
                           </p>
                           {q > 0 && (
@@ -214,7 +212,7 @@ export function Combos() {
                               <select
                                 value={comboColors[colorKey] || ""}
                                 onChange={(e) => setComboColors({ ...comboColors, [colorKey]: e.target.value })}
-                                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground transition-colors focus:border-[var(--brand)] focus:outline-none focus:ring-2 focus:ring-[var(--brand)]/20"
+                                className="w-full border border-walnut/20 bg-background px-3 py-2 text-[13px] text-charcoal transition-colors focus:border-clay focus:outline-none"
                               >
                                 <option value="">Chưa chọn màu</option>
                                 {WOOD_COLORS.map((color) => (
@@ -242,10 +240,10 @@ export function Combos() {
         </div>
 
         {/* Tạm tính */}
-        <div className="mt-8 rounded-2xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]/40 px-5 py-5 sm:px-7 sm:py-6">
+        <div className="mt-8 border border-walnut/15 bg-sand/30 px-5 py-5 sm:px-7 sm:py-6">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div className="min-w-0">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-charcoal/50">
                 Tạm tính
               </p>
               {total.selected.length === 0 ? (
@@ -272,7 +270,7 @@ export function Combos() {
                   {total.area} m²
                 </span>
               </p>
-              <p className="font-serif text-3xl font-semibold text-[var(--brand)] sm:text-4xl">
+              <p className="text-3xl font-semibold text-charcoal sm:text-4xl">
                 {fmt(total.price)}đ
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
@@ -281,7 +279,7 @@ export function Combos() {
             </div>
           </div>
           {total.price > 0 && (
-            <div className="mt-5 flex flex-col gap-2 border-t border-[var(--brand)]/20 pt-5 sm:flex-row sm:justify-end">
+            <div className="mt-5 flex flex-col gap-2 border-t border-walnut/15 pt-5 sm:flex-row sm:justify-end">
               <button
                 type="button"
                 onClick={() => {
@@ -325,40 +323,20 @@ export function Combos() {
                   // Navigate to order form
                   window.location.href = '#dat-hang';
                 }}
-                className="inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-foreground)] shadow-sm transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center bg-clay px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-cream transition hover:bg-walnut"
               >
                 Đặt hàng với báo giá này →
               </button>
             </div>
           )}
 
-          <div className="mt-6 rounded-xl border border-border bg-card px-5 py-4">
-            <div className="flex items-start gap-3">
-              <div className="mt-0.5 h-5 w-5 flex-shrink-0 rounded-full bg-green-100 flex items-center justify-center">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 6L5 9L10 3" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className="flex-1">
-                <p className="text-sm font-semibold text-foreground">
-                  Công trình lớn cần báo giá chi tiết?
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Nhắn Zalo để Lotus tư vấn đúng hệ, chốt màu thực tế và báo giá theo hạng mục.
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Báo giá theo m², hạng mục và tiến độ thi công.
-                </p>
-              </div>
-            </div>
-            <a
-              href={ZALO_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/40 bg-[var(--brand-soft)]/30 px-4 py-2 text-sm font-semibold text-[var(--brand)] hover:bg-[var(--brand-soft)]/50"
-            >
-              Cần báo giá dự án lớn — Nhắn Zalo
-            </a>
+          <div className="mt-6 border-t border-walnut/12 pt-5">
+            <p className="text-[13px] text-charcoal/65">
+              Công trình lớn cần báo giá chi tiết?{" "}
+              <a href={ZALO_URL} target="_blank" rel="noreferrer" className="border-b border-clay pb-0.5 text-clay hover:text-walnut">
+                Nhắn Zalo để tư vấn đúng hệ và báo giá theo hạng mục
+              </a>.
+            </p>
           </div>
         </div>
       </div>
@@ -376,7 +354,7 @@ function Stepper({
   label: string;
 }) {
   return (
-    <div className="flex flex-shrink-0 items-center overflow-hidden rounded-full border border-border bg-background">
+    <div className="flex flex-shrink-0 items-center border border-walnut/20 bg-background">
       <button
         type="button"
         aria-label={`Giảm ${label}`}
