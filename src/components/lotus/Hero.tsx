@@ -8,14 +8,9 @@ export function Hero() {
         <div className="grid grid-cols-12 gap-x-8 gap-y-10">
           {/* Copy */}
           <div className="col-span-12 md:col-span-5 md:pb-20">
-            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">
-              Hoàn thiện bề mặt xi măng
-            </span>
-            <h1 className="mt-5 font-serif text-[2.6rem] leading-[1.07] text-charcoal sm:text-5xl lg:text-[3.4rem]">
-              Biến tấm xi măng —<br />
-              smartwood, conwood,<br />
-              cemboard —{" "}
-              <em className="not-italic text-clay">gần với gỗ tự nhiên hơn.</em>
+            <h1 className="font-serif text-[2.6rem] leading-[1.07] text-charcoal sm:text-5xl lg:text-[3.4rem]">
+              Hoàn thiện smartwood, conwood, cemboard theo hiệu ứng gỗ{" "}
+              <em className="not-italic text-clay">đẹp hơn, đúng hệ hơn, bền ngoài trời hơn.</em>
             </h1>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-charcoal/65">
               Hệ sơn vân gỗ Lotus tư vấn đúng hệ cho từng hạng mục: vách, lam, ốp tường, mặt dựng, sàn ngoài trời. Gửi ảnh bề mặt qua Zalo để được gợi ý màu và hệ sơn phù hợp.

@@ -6,7 +6,7 @@ const POINTS = [
   },
   {
     n: "02",
-    t: "Tạo hiệu ứng gỗ trên nền nhân tạo",
+    t: "Giữ nền tấm xi măng ổn định, nhưng bề mặt nhìn gần gỗ thật hơn.",
     d: "Lớp hoàn thiện tạo chiều sâu và vân gỗ tự nhiên trên nền xi măng. Người xem khó nhận ra đây không phải gỗ thật.",
   },
   {

@@ -8,8 +8,8 @@ export function ZaloCTA() {
           <div className="col-span-12 md:col-span-6">
             <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">Tư vấn dự án</span>
             <h2 className="mt-5 font-serif text-[32px] leading-tight text-charcoal sm:text-4xl">
-              Gửi ảnh bề mặt —<br />
-              <em className="not-italic text-clay">Lotus tư vấn đúng hệ<br />và gợi ý màu phù hợp.</em>
+              Gửi ảnh bề mặt qua Zalo —<br />
+              <em className="not-italic text-clay">Lotus tư vấn đúng hệ, đúng màu, đúng định mức trước khi chốt.</em>
             </h2>
             <p className="mt-5 max-w-md text-[15px] leading-relaxed text-charcoal/65">
               Gửi ảnh hạng mục qua Zalo: tư vấn đúng hệ sơn theo loại tấm xi măng, xác nhận màu trên mẫu thực tế, báo giá theo dự án và tiến độ.

@@ -274,7 +274,7 @@ export function OrderForm() {
               <em className="not-italic text-clay">nhận hàng trong 2-3 ngày.</em>
             </h2>
             <p className="mt-4 text-[14px] leading-relaxed text-charcoal/65">
-              Dành cho hạng mục nhỏ, đã biết màu và hệ sơn. Điền thông tin — Lotus gọi xác nhận trong 30 phút.
+              Dành cho hạng mục nhỏ đã chốt màu và hệ sơn. Nếu còn phân vân, gửi ảnh qua Zalo để được tư vấn trước.
             </p>
           </div>
         </div>
