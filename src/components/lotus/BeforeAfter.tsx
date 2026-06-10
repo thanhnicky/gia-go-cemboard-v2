@@ -31,7 +31,7 @@ export function BeforeAfter() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="mb-10 grid grid-cols-12 gap-8">
           <div className="col-span-12 md:col-span-4">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">04 — So sánh bề mặt</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">04 — So sánh bề mặt</span>
             <h2 className="mt-5 font-serif text-[32px] leading-tight text-charcoal sm:text-4xl">
               Từ xi măng thô —<br />
               <em className="not-italic text-clay">đến bề mặt<br />ngôn ngữ gỗ.</em>
@@ -60,8 +60,8 @@ export function BeforeAfter() {
         >
           <img src={afterImg} alt="Sau khi phủ vân gỗ Lotus" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
           <img src={beforeImg} alt="Tấm xi măng thô chưa phủ" loading="lazy" className="absolute inset-0 h-full w-full object-cover" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }} />
-          <span className="absolute left-4 top-4 bg-cream/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-charcoal backdrop-blur">Trước</span>
-          <span className="absolute right-4 top-4 bg-walnut/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-cream backdrop-blur">Sau</span>
+          <span className="absolute left-4 top-4 bg-cream/90 px-3 py-1 font-serif text-[11px] uppercase tracking-[0.2em] text-charcoal backdrop-blur">Trước</span>
+          <span className="absolute right-4 top-4 bg-walnut/90 px-3 py-1 font-serif text-[11px] uppercase tracking-[0.2em] text-cream backdrop-blur">Sau</span>
           <div className="absolute inset-y-0 w-px bg-cream/70" style={{ left: `${pos}%` }}>
             <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center bg-cream text-charcoal shadow">
               <svg width="16" height="16" viewBox="0 0 18 18" fill="none">

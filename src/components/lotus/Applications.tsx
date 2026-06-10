@@ -12,7 +12,7 @@ export function Applications() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="mb-12 grid grid-cols-12">
           <div className="col-span-12 md:col-span-5">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">02 — Ứng dụng</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">02 — Ứng dụng</span>
             <h2 className="mt-5 font-serif text-[34px] leading-tight text-charcoal sm:text-4xl md:text-5xl">
               Những bề mặt xi măng<br />
               <em className="not-italic text-clay">hoàn thiện theo ngôn ngữ gỗ.</em>
@@ -33,7 +33,7 @@ export function Applications() {
             </div>
             <figcaption className="mt-3 flex items-baseline justify-between border-t border-walnut/12 pt-3">
               <span className="text-[14px] font-medium text-charcoal">Mặt tiền / Mặt dựng</span>
-              <span className="text-[9px] uppercase tracking-[0.2em] text-charcoal/40">Ngoại thất</span>
+              <span className="font-serif text-[11px] uppercase tracking-[0.2em] text-charcoal/40">Ngoại thất</span>
             </figcaption>
           </figure>
           <div className="col-span-12 grid grid-cols-2 gap-3 md:col-span-5 md:gap-5">
@@ -49,7 +49,7 @@ export function Applications() {
                 </div>
                 <figcaption className="mt-2 flex items-baseline justify-between border-t border-walnut/10 pt-2">
                   <span className="text-[13px] font-medium text-charcoal">{a.label}</span>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-charcoal/35">{a.ctx}</span>
+                  <span className="font-serif text-[11px] uppercase tracking-[0.2em] text-charcoal/35">{a.ctx}</span>
                 </figcaption>
               </figure>
             ))}
@@ -68,7 +68,7 @@ export function Applications() {
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between border-t border-walnut/12 pt-3">
                 <span className="text-[14px] font-medium text-charcoal">{a.label}</span>
-                <span className="text-[9px] uppercase tracking-[0.2em] text-charcoal/40">{a.ctx}</span>
+                <span className="font-serif text-[11px] uppercase tracking-[0.2em] text-charcoal/40">{a.ctx}</span>
               </figcaption>
             </figure>
           ))}

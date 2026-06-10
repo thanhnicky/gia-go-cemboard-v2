@@ -31,7 +31,7 @@ export function FAQ() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="mb-12 grid grid-cols-12 gap-8">
           <div className="col-span-12 md:col-span-4">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">08 — Câu hỏi thường gặp</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">08 — Câu hỏi thường gặp</span>
             <h2 className="mt-5 font-serif text-[32px] leading-tight text-charcoal sm:text-4xl">
               Những điều<br />khách thường hỏi.
             </h2>

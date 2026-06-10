@@ -268,7 +268,7 @@ export function OrderForm() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="mb-10 grid grid-cols-12 gap-8">
           <div className="col-span-12 md:col-span-5">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">09 — Đặt hàng</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">09 — Đặt hàng</span>
             <h2 className="mt-5 font-serif text-[34px] leading-tight text-charcoal sm:text-4xl">
               Hoàn tất đơn hàng —<br />
               <em className="not-italic text-clay">nhận hàng trong 2-3 ngày.</em>

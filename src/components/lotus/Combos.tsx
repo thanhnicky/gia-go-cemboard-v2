@@ -116,15 +116,18 @@ export function Combos() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="mb-12 grid grid-cols-12 gap-8">
           <div className="col-span-12 md:col-span-5">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">06 — Combo & báo giá</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">06 — Combo & báo giá</span>
             <h2 className="mt-5 font-serif text-[34px] leading-tight text-charcoal sm:text-4xl">
               Chọn combo —<br />
               <em className="not-italic text-clay">đặt hàng ngay.</em>
             </h2>
           </div>
-          <div className="col-span-12 md:col-span-5 md:col-start-8 md:self-end">
+          <div className="col-span-12 md:col-span-5 md:col-start-8 md:self-end space-y-2">
             <p className="text-[15px] leading-relaxed text-charcoal/65">
-              3 combo cho 3 nhu cầu. Combo lớn tiết kiệm hơn 15%. Định mức: nhỏ ~8 m² · lớn ~28 m² (2 lớp).
+              3 combo cho 3 nhu cầu. Combo lớn tiết kiệm hơn 15%.
+            </p>
+            <p className="text-[15px] leading-relaxed text-charcoal/65">
+              Định mức: Combo nhỏ ~6-8 m² · Combo lớn ~22-25 m² (2 lớp).
             </p>
           </div>
         </div>
@@ -195,7 +198,7 @@ export function Combos() {
                           <div className="flex flex-wrap items-center gap-2">
                             <p className="font-semibold text-foreground">{v.label}</p>
                             {big && (
-                              <span className="bg-clay px-2 py-0.5 text-[9px] uppercase tracking-[0.15em] text-cream">
+                              <span className="bg-clay px-2 py-0.5 font-serif text-[10px] uppercase tracking-[0.15em] text-cream">
                                 Tiết kiệm hơn
                               </span>
                             )}

@@ -8,14 +8,16 @@ import {
   COMPANY_TAX,
   COMPANY_ADDRESS,
 } from "./constants";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal text-cream">
+    <footer className="bg-charcoal pb-24 text-cream lg:pb-0">
       <div className="mx-auto max-w-[1400px] px-5 py-14 md:px-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div className="lg:col-span-1">
-            <p className="font-serif text-[18px] text-cream">Lotus — Sơn giả gỗ trên tấm xi măng</p>
+            <Logo />
+            <p className="mt-4 font-serif text-[18px] text-cream">Lotus — Sơn giả gỗ trên tấm xi măng</p>
             <p className="mt-3 text-[13px] leading-relaxed text-cream/60">
               Hệ sơn vân gỗ chuyên dụng cho Smartwood, Conwood, Cemboard, fiber cement. Tư vấn đúng hệ cho từng hạng mục.
             </p>
@@ -26,7 +28,7 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-cream/40">Liên hệ</p>
+            <p className="font-serif text-[11px] uppercase tracking-[0.25em] text-cream/40">Liên hệ</p>
             <ul className="mt-4 space-y-2 text-[13px] text-cream/70">
               <li>Hotline: <a href={HOTLINE_TEL} className="text-cream hover:text-clay transition">{HOTLINE}</a></li>
               <li>Zalo: <a href={ZALO_URL} target="_blank" rel="noreferrer" className="text-cream hover:text-clay transition">Nhắn tin ngay</a></li>
@@ -35,7 +37,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-cream/40">Văn phòng</p>
+            <p className="font-serif text-[11px] uppercase tracking-[0.25em] text-cream/40">Văn phòng</p>
             <p className="mt-4 text-[13px] leading-relaxed text-cream/70">{COMPANY_ADDRESS}</p>
             <p className="mt-2 text-[12px] text-cream/40">Giờ làm việc: 8:00 – 18:00 (T2 – T7)</p>
           </div>

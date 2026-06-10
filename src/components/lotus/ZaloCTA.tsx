@@ -6,7 +6,7 @@ export function ZaloCTA() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-12 md:col-span-6">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">Tư vấn dự án</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">Tư vấn dự án</span>
             <h2 className="mt-5 font-serif text-[32px] leading-tight text-charcoal sm:text-4xl">
               Gửi ảnh bề mặt —<br />
               <em className="not-italic text-clay">Lotus tư vấn đúng hệ<br />và gợi ý màu phù hợp.</em>
@@ -39,8 +39,8 @@ export function ZaloCTA() {
                 { dt: "Báo giá theo dự án", dd: "Định mức và tiến độ giao hàng theo công trình" },
               ].map((r) => (
                 <div key={r.dt} className="py-4">
-                  <dt className="text-[13px] font-medium text-charcoal">{r.dt}</dt>
-                  <dd className="mt-0.5 text-[12px] text-charcoal/55">{r.dd}</dd>
+                  <dt className="text-[15px] font-medium text-charcoal">{r.dt}</dt>
+                  <dd className="mt-0.5 text-[14px] text-charcoal/55">{r.dd}</dd>
                 </div>
               ))}
             </dl>

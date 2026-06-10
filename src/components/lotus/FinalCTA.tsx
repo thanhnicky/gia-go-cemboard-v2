@@ -6,7 +6,7 @@ export function FinalCTA() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="grid grid-cols-12">
           <div className="col-span-12 md:col-span-8">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-cream/60">Bắt đầu</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-cream/60">Bắt đầu</span>
             <h2 className="mt-5 font-serif text-[36px] leading-tight sm:text-5xl md:text-[52px]">
               Gửi ảnh bề mặt xi măng —<br />
               <em className="not-italic text-clay">nhận tư vấn màu, hệ sơn</em><br />

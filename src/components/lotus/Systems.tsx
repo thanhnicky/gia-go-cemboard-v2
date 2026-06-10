@@ -27,7 +27,7 @@ export function Systems() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="grid grid-cols-12 gap-x-8 gap-y-10">
           <div className="col-span-12 md:col-span-4">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-cream/60">03 — Vì sao giả gỗ trên xi măng</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-cream/60">03 — Vì sao giả gỗ trên xi măng</span>
             <h2 className="mt-5 font-serif text-[34px] leading-tight sm:text-4xl md:text-5xl">
               Giữ độ bền<br />của xi măng.<br />
               <em className="not-italic text-clay">Đưa bề mặt<br />gần hơn với gỗ.</em>
@@ -40,7 +40,7 @@ export function Systems() {
             <ul className="mt-14 divide-y divide-cream/15 border-t border-cream/15">
               {POINTS.map((b) => (
                 <li key={b.n} className="flex gap-8 py-7">
-                  <span className="mt-0.5 shrink-0 text-[10px] uppercase tracking-[0.25em] text-clay">{b.n}</span>
+                  <span className="mt-0.5 shrink-0 font-serif text-[14px] uppercase tracking-[0.25em] text-clay">{b.n}</span>
                   <div>
                     <div className="font-serif text-[19px] text-cream">{b.t}</div>
                     <p className="mt-2 text-[13px] leading-relaxed text-cream/75">{b.d}</p>

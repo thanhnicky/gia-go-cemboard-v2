@@ -28,7 +28,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[11px] uppercase tracking-[0.22em] text-charcoal/60 transition-colors hover:text-charcoal"
+              className="text-[12px] uppercase tracking-[0.22em] text-charcoal/60 transition-colors hover:text-charcoal"
             >
               {item.label}
             </a>
@@ -39,7 +39,7 @@ export function Header() {
             href={ZALO_URL}
             target="_blank"
             rel="noreferrer"
-            className="hidden border-b border-clay pb-0.5 text-[11px] uppercase tracking-[0.22em] text-clay transition-colors hover:text-walnut sm:inline-block"
+            className="hidden border-b border-clay pb-0.5 text-[12px] uppercase tracking-[0.22em] text-clay transition-colors hover:text-walnut sm:inline-block"
           >
             Nhắn Zalo
           </a>
@@ -64,7 +64,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-walnut/8 py-4 text-[11px] uppercase tracking-[0.22em] text-charcoal/70 hover:text-charcoal"
+                className="border-b border-walnut/8 py-4 text-[12px] uppercase tracking-[0.22em] text-charcoal/70 hover:text-charcoal"
               >
                 {item.label}
               </a>
@@ -74,7 +74,7 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-5 inline-block border-b border-clay pb-0.5 text-[11px] uppercase tracking-[0.22em] text-clay"
+              className="mt-5 inline-block border-b border-clay pb-0.5 text-[12px] uppercase tracking-[0.22em] text-clay"
             >
               Nhắn Zalo
             </a>

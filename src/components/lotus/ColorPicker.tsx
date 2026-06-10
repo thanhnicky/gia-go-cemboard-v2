@@ -75,7 +75,7 @@ export function ColorPicker() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="mb-10 grid grid-cols-12 gap-8">
           <div className="col-span-12 md:col-span-5">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">05 — Bảng màu</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">05 — Bảng màu</span>
             <h2 className="mt-5 font-serif text-[34px] leading-tight text-charcoal sm:text-4xl md:text-5xl">
               Chọn tông gỗ<br />
               <em className="not-italic text-clay">phù hợp công trình.</em>

@@ -8,7 +8,7 @@ export function Hero() {
         <div className="grid grid-cols-12 gap-x-8 gap-y-10">
           {/* Copy */}
           <div className="col-span-12 md:col-span-5 md:pb-20">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">
               Hoàn thiện bề mặt xi măng
             </span>
             <h1 className="mt-5 font-serif text-[2.6rem] leading-[1.07] text-charcoal sm:text-5xl lg:text-[3.4rem]">
@@ -63,7 +63,7 @@ export function Hero() {
             </div>
             <div className="mt-3 flex items-baseline justify-between border-t border-walnut/12 pt-3">
               <span className="text-[13px] text-charcoal">Lotus Wood Primer + Lotus Wood Plank Paint</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-charcoal/40">Hệ sơn áp dụng</span>
+              <span className="font-serif text-[11px] uppercase tracking-[0.2em] text-charcoal/40">Hệ sơn áp dụng</span>
             </div>
           </div>
         </div>

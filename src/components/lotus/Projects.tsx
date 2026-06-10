@@ -26,7 +26,7 @@ export function Projects() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-12 md:py-32">
         <div className="mb-12 grid grid-cols-12 gap-8">
           <div className="col-span-12 md:col-span-5">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50">07 — Công trình tiêu biểu</span>
+            <span className="font-serif text-[12px] uppercase tracking-[0.3em] text-charcoal/50">07 — Công trình tiêu biểu</span>
             <h2 className="mt-5 font-serif text-[34px] leading-tight text-charcoal sm:text-4xl md:text-5xl">
               Dự án đã hoàn thiện<br />
               <em className="not-italic text-clay">bằng hệ sơn Lotus.</em>
@@ -52,7 +52,7 @@ export function Projects() {
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between border-t border-walnut/12 pt-3">
                 <span className="text-[13px] font-medium text-charcoal">{p.name}</span>
-                <span className="text-[10px] uppercase tracking-[0.18em] text-charcoal/40">{p.location}</span>
+                <span className="font-serif text-[11px] uppercase tracking-[0.18em] text-charcoal/40">{p.location}</span>
               </figcaption>
             </figure>
           ))}
