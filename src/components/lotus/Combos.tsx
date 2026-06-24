@@ -43,7 +43,7 @@ type Combo = {
 const COMBOS: Combo[] = [
   {
     id: "tiet-kiem",
-    name: "Combo Tiết kiệm",
+    name: "Combo Trong Nhà",
     tagline: "Gói cơ bản — sơn lót + sơn vân, dùng trong nhà",
     useFor: "Vách / cột xi măng trong nhà, công trình tiết kiệm chi phí",
     includes: ["Lotus Wood Primer (lót)", "Lotus Wood Plank (tạo vân)"],
@@ -54,7 +54,7 @@ const COMBOS: Combo[] = [
   },
   {
     id: "tuong-vach",
-    name: "Combo cho Tường & Vách",
+    name: "Combo Ngoài Trời",
     tagline: "Đủ 3 lớp — lót, vân, phủ bảo vệ trong/ngoài trời",
     useFor: "Vách, lam, hàng rào, tường ốp Cemboard / Fiber Cement",
     includes: [
@@ -69,7 +69,7 @@ const COMBOS: Combo[] = [
   },
   {
     id: "san",
-    name: "Combo cho Sàn",
+    name: "Combo Sàn Chịu Lực",
     tagline: "Chuyên cho sàn — chịu mài mòn, đi lại, ngoài trời",
     useFor: "Sàn, ban công, sân vườn, khu vực chịu mài mòn cao",
     includes: [
@@ -128,6 +128,12 @@ export function Combos() {
             </p>
             <p className="text-[15px] leading-relaxed text-charcoal/65">
               Định mức: Combo nhỏ ~6-8 m² · Combo lớn ~22-25 m² (2 lớp).
+            </p>
+            <p className="mt-3 text-[13px] italic text-charcoal/50">
+              Đơn lớn hơn 50m²?{" "}
+              <a href={ZALO_URL} target="_blank" rel="noreferrer" className="border-b border-clay pb-0.5 text-clay hover:text-walnut">
+                Nhắn Zalo để được báo giá riêng theo dự án
+              </a>.
             </p>
           </div>
         </div>
@@ -207,6 +213,9 @@ export function Combos() {
                           <p className="mt-2 text-[17px] font-semibold text-clay">
                             {fmt(v.price)}đ
                           </p>
+                          <span className="mt-2 inline-block bg-amber-600 px-2 py-0.5 text-[10px] font-medium text-white">
+                            Chuyển khoản: giảm thêm 10%
+                          </span>
                           {q > 0 && (
                             <div className="mt-3">
                               <label className="mb-1.5 block text-xs font-medium text-foreground">

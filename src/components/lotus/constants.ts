@@ -9,8 +9,8 @@ export const COMPANY_ADDRESS = "99/5 Đường XTT26-1, Ấp 2, Xã Bà Điểm,
 
 export const NAV_ITEMS = [
   { href: "#ung-dung", label: "Ứng dụng" },
-  { href: "#mau-sac", label: "Màu sắc" },
-  { href: "#bao-gia", label: "Báo giá" },
-  { href: "#dat-hang", label: "Đặt hàng" },
+  { href: "#mau-sac", label: "Bảng màu" },
+  { href: "#cong-trinh", label: "Công trình" },
+  { href: "#bao-gia", label: "Hệ sơn & giá" },
   { href: "#faq", label: "FAQ" },
 ] as const;

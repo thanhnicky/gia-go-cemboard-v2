@@ -1,13 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/lotus/Header";
 import { Hero } from "@/components/lotus/Hero";
+import { TrustBar } from "@/components/lotus/TrustBar";
 import { Applications } from "@/components/lotus/Applications";
 import { Systems } from "@/components/lotus/Systems";
 import { BeforeAfter } from "@/components/lotus/BeforeAfter";
 import { ColorPicker } from "@/components/lotus/ColorPicker";
+import { Projects } from "@/components/lotus/Projects";
 import { B2CSection } from "@/components/lotus/B2CSection";
 import { ZaloCTA } from "@/components/lotus/ZaloCTA";
-import { Projects } from "@/components/lotus/Projects";
 import { FAQ } from "@/components/lotus/FAQ";
 import { FinalCTA } from "@/components/lotus/FinalCTA";
 import { Footer } from "@/components/lotus/Footer";
@@ -39,13 +40,14 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <TrustBar />
         <Applications />
         <Systems />
         <BeforeAfter />
         <ColorPicker />
+        <Projects />
         <ZaloCTA />
         <B2CSection />
-        <Projects />
         <FAQ />
         <FinalCTA />
       </main>

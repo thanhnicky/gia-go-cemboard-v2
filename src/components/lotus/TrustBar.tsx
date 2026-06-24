@@ -1,22 +1,25 @@
 const TRUST = [
-  { t: "Chuyên cho Fiber Cement / Cemboard", s: "Đúng hệ cho từng nền vật liệu" },
-  { t: "Gốc nước", s: "An toàn thi công, ít mùi" },
-  { t: "Độ bền màu cao ngoài trời", s: "Chịu nắng mưa khí hậu Việt Nam" },
-  { t: "Hỗ trợ chọn đúng hệ", s: "Tư vấn 1-1 theo hạng mục" },
+  { value: "500+", label: "công trình đã hoàn thiện" },
+  { value: "10+ năm", label: "kinh nghiệm sản xuất" },
+  { value: "GS Metrocity · Novaworld", label: "dự án tiêu biểu" },
 ];
 
 export function TrustBar() {
   return (
-    <section className="border-y border-border bg-[var(--cement)]/40">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-border/60 sm:grid-cols-4">
-        {TRUST.map((it) => (
-          <div key={it.t} className="bg-[var(--cement)]/40 px-5 py-5 sm:px-6 sm:py-6">
-            <p className="font-serif text-sm font-semibold text-foreground sm:text-base">
-              {it.t}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground sm:text-sm">{it.s}</p>
-          </div>
-        ))}
+    <section className="border-y border-walnut/10 bg-[#f5f0ea]">
+      <div className="mx-auto max-w-[1400px] px-5 py-12 md:px-12 md:py-16">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {TRUST.map((it) => (
+            <div key={it.value} className="text-center">
+              <p className="font-serif text-4xl font-semibold text-charcoal sm:text-5xl">
+                {it.value}
+              </p>
+              <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-charcoal/50">
+                {it.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
