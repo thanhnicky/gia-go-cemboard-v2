@@ -28,7 +28,7 @@ export function Hero() {
                 Gửi hạng mục — báo giá qua Zalo
               </a>
               <a
-                href="#bao-gia"
+                href="#dat-le-online"
                 className="inline-flex items-center gap-2 border border-walnut/30 px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-charcoal/80 transition hover:border-charcoal hover:text-charcoal"
               >
                 Xem hệ sơn & giá

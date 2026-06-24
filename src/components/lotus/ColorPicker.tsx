@@ -104,7 +104,7 @@ export function ColorPicker() {
           </div>
           <div className="col-span-12 flex flex-wrap gap-3 md:col-span-12">
             <a
-              href="#bao-gia"
+              href="#dat-le-online"
               className="inline-flex items-center gap-2 bg-clay px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-cream transition hover:bg-walnut"
             >
               Đã chọn màu — Xem combo

@@ -22,6 +22,12 @@ export function FinalCTA() {
               >
                 Gửi hạng mục qua Zalo
               </a>
+              <a
+                href="#dat-le-online"
+                className="inline-flex items-center gap-3 border border-cream/45 px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-cream/90 transition hover:border-cream hover:text-cream"
+              >
+                Đặt lẻ online
+              </a>
             </div>
             <div className="mt-6 text-center text-[12px] text-cream/50 md:text-left">
               ✓ Tư vấn kỹ thuật miễn phí · Cung cấp TDS/MSDS · Giao hàng đúng tiến độ
