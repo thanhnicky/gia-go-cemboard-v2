@@ -38,18 +38,12 @@ export function B2CSection() {
         </button>
 
         {/* Expandable Content */}
-        <div
-          className="overflow-hidden transition-all duration-500 ease-in-out"
-          style={{
-            maxHeight: isExpanded ? "5000px" : "0px",
-            opacity: isExpanded ? "1" : "0",
-          }}
-        >
-          <div className="pt-10">
+        {isExpanded && (
+          <div className="pt-10 animate-in fade-in slide-in-from-top-4 duration-500">
             <Combos />
             <OrderForm />
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
