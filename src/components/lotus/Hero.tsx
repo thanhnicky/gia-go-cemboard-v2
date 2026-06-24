@@ -34,7 +34,7 @@ export function Hero() {
                 Xem hệ sơn & giá
               </a>
             </div>
-            <div className="mt-6 text-center text-[12px] text-charcoal/50 md:text-left">
+            <div className="mt-6 text-center text-[12px] text-charcoal/50">
               ✓ Tư vấn kỹ thuật miễn phí · Giao hàng toàn quốc · Hỗ trợ TDS/MSDS
             </div>
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-2 border-t border-walnut/12 pt-6">

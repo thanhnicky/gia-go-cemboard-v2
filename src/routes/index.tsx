@@ -45,8 +45,8 @@ function Index() {
         <Systems />
         <BeforeAfter />
         <ColorPicker />
-        <Projects />
         <ZaloCTA />
+        <Projects />
         <B2CSection />
         <FAQ />
         <FinalCTA />
