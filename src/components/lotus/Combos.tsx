@@ -333,7 +333,7 @@ export function Combos() {
                   }));
 
                   // Navigate to order form
-                  window.location.href = '#dat-hang';
+                  window.location.href = '#dat-le-online';
                 }}
                 className="inline-flex items-center justify-center bg-clay px-7 py-4 text-[12px] uppercase tracking-[0.18em] text-cream transition hover:bg-walnut"
               >
