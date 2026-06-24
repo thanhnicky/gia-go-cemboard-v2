@@ -5,8 +5,7 @@ import { Applications } from "@/components/lotus/Applications";
 import { Systems } from "@/components/lotus/Systems";
 import { BeforeAfter } from "@/components/lotus/BeforeAfter";
 import { ColorPicker } from "@/components/lotus/ColorPicker";
-import { Combos } from "@/components/lotus/Combos";
-import { OrderForm } from "@/components/lotus/OrderForm";
+import { B2CSection } from "@/components/lotus/B2CSection";
 import { ZaloCTA } from "@/components/lotus/ZaloCTA";
 import { Projects } from "@/components/lotus/Projects";
 import { FAQ } from "@/components/lotus/FAQ";
@@ -44,9 +43,8 @@ function Index() {
         <Systems />
         <BeforeAfter />
         <ColorPicker />
-        <Combos />
         <ZaloCTA />
-        <OrderForm />
+        <B2CSection />
         <Projects />
         <FAQ />
         <FinalCTA />
