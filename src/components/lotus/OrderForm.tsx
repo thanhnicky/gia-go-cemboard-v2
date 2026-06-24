@@ -139,10 +139,10 @@ export function OrderForm() {
 
     loadFromStorage();
 
-    // Also load when hash changes to #dat-hang
+    // Also load when hash changes to #dat-le-online or #dat-hang (backward compatibility)
     const handleHashChange = () => {
       console.log('Hash changed to:', window.location.hash);
-      if (window.location.hash === '#dat-hang') {
+      if (window.location.hash === '#dat-le-online' || window.location.hash === '#dat-hang') {
         // Small delay to ensure localStorage is updated
         setTimeout(loadFromStorage, 100);
       }
