@@ -11,6 +11,5 @@ export const NAV_ITEMS = [
   { href: "#ung-dung", label: "Ứng dụng" },
   { href: "#mau-sac", label: "Bảng màu" },
   { href: "#cong-trinh", label: "Công trình" },
-  { href: "#bao-gia", label: "Hệ sơn & giá" },
   { href: "#faq", label: "FAQ" },
 ] as const;
