@@ -25,7 +25,20 @@ function ThankYouPage() {
       // Get order data from localStorage
       const storedData = localStorage.getItem(`order_${phone}`);
       if (storedData) {
-        setOrderData(JSON.parse(storedData));
+        const data = JSON.parse(storedData);
+        setOrderData(data);
+
+        // Push conversion event to GTM dataLayer
+        if (typeof window !== "undefined") {
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({
+            event: "purchase",
+            transaction_id: data.phone || phone,
+            value: data.totalPrice ? parseInt(data.totalPrice) : 0,
+            currency: "VND",
+            payment_method: data.paymentMethod || "cod",
+          });
+        }
       }
     }
   }, [phone]);
