@@ -43,6 +43,14 @@ export function Header() {
           >
             Nhắn Zalo
           </a>
+          <a
+            href={ZALO_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center bg-[#0068FF] px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-white lg:hidden"
+          >
+            Nhắn Zalo
+          </a>
           <button
             type="button"
             aria-label="Mở menu"
