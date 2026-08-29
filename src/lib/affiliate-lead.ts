@@ -6,21 +6,24 @@
 // Events are captured through a single delegated listener on `document`, so no
 // component, CTA, form handler, GA4 or GTM wiring is touched.
 //
-// Privacy: `lead_data` only ever carries Lotus' own public contact details (the
-// hotline / Zalo number / sales mailbox already hardcoded in components/lotus/
-// constants.ts and rendered into the HTML). Customer name, phone, email,
-// address, note and order contents are never read, stored or sent, and nothing
-// is written to localStorage.
+// Privacy:
+//   - Click leads carry only Lotus' own public contact details (the hotline /
+//     Zalo number / sales mailbox already hardcoded in components/lotus/
+//     constants.ts and rendered into the HTML).
+//   - form_submit carries the customer details the visitor typed into the order
+//     form, so sales can follow up and the partner portal can show the lead.
+//     They are POSTed over HTTPS to the tracking API only. This module never
+//     writes them to localStorage and never logs them, in any environment.
 //
-// NOTE: sending is intentionally DISABLED for Phase C. Flip
-// LEAD_TRACKING_ENABLED to true to start posting to /track-lead.
+// /track-lead is live in production (Phase D verified: OPTIONS/CORS, the four
+// lead types, dedupe, and forged-attribution rejection all confirmed against
+// aff.sonlotus.vn), so sending is enabled.
 
 import { getAffiliateAttribution } from "./affiliate-attribution";
 
 const TRACK_LEAD_URL = "https://aff.sonlotus.vn/api/affiliate/track-lead";
 
-/** Phase C ships with the request disabled — no customer/form/Zalo data leaves the page. */
-const LEAD_TRACKING_ENABLED: boolean = false;
+const LEAD_TRACKING_ENABLED: boolean = true;
 
 /** Boolean-only guard so refreshing the thank-you page cannot duplicate a lead. */
 const FORM_LEAD_FLAG_KEY = "lotus_affiliate_lead_form_v1";
@@ -30,13 +33,19 @@ const REQUEST_TIMEOUT_MS = 8_000;
 export type LeadType = "form_submit" | "zalo_click" | "phone_click" | "email_click";
 
 /**
- * Contact details of Lotus itself, echoed back so the affiliate dashboard knows
- * which channel was used. Never customer data.
+ * For click leads: the Lotus contact the visitor reached out through.
+ * For form_submit: the details the visitor typed into the order form.
  */
 export type LeadData = {
   zalo_phone?: string;
   phone?: string;
   email?: string;
+  name?: string;
+  province?: string;
+  district?: string;
+  product_interest?: string;
+  area_sqm?: number;
+  message?: string;
 };
 
 export type LeadPayload = {
@@ -74,41 +83,27 @@ export function buildLeadPayload(leadType: LeadType, leadData: LeadData): LeadPa
 }
 
 /**
- * Fire-and-forget delivery, attempted at most once per event.
+ * Fire-and-forget delivery over `fetch`, attempted exactly once per event.
  *
- * `sendBeacon` goes first because a Zalo / hotline click navigates away and would
- * cancel an in-flight request. It carries `Content-Type: application/json` via the
- * Blob type, which stays inside the CORS-safelist so no preflight is triggered.
- * If the browser refuses to queue it we fall back to a single `keepalive` fetch.
- * In development we use fetch directly so the API response is visible.
+ * `sendBeacon` is deliberately NOT used. Its only advantage is surviving a page
+ * unload, which never happens here: every Zalo CTA opens with target="_blank",
+ * and tel: / mailto: hand off to the OS without unloading. In exchange it would
+ * report success as soon as the request is queued, so a rejected CORS preflight
+ * (`application/json` is not a safelisted content type) would silently drop the
+ * lead with no way to detect or fall back. `fetch` surfaces that failure and
+ * lets us read the API response; `keepalive` still covers an unexpected unload.
+ *
+ * /track-lead must answer OPTIONS with Access-Control-Allow-Headers: Content-Type,
+ * exactly like /track-click already does.
  */
 function sendLead(payload: LeadPayload): void {
-  const body = JSON.stringify(payload);
-  const beaconAvailable =
-    !import.meta.env.DEV &&
-    typeof navigator !== "undefined" &&
-    typeof navigator.sendBeacon === "function";
-
-  try {
-    if (beaconAvailable) {
-      const blob = new Blob([body], { type: "application/json" });
-      if (navigator.sendBeacon(TRACK_LEAD_URL, blob)) return;
-      devLog("sendBeacon refused the payload, falling back to fetch");
-    }
-    postLead(body);
-  } catch {
-    // Tracking must never surface an error to the visitor.
-  }
-}
-
-function postLead(body: string): void {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
   void fetch(TRACK_LEAD_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body,
+    body: JSON.stringify(payload),
     signal: controller.signal,
     keepalive: true,
   })
@@ -205,24 +200,62 @@ function writeFormFlag() {
   }
 }
 
+function text(value: unknown, max: number): string | undefined {
+  if (typeof value !== "string") return undefined;
+  const trimmed = value.trim().slice(0, max);
+  return trimmed || undefined;
+}
+
+/**
+ * Reads the order OrderForm persisted as `order_<phone>` right before redirecting.
+ * Fields are whitelisted so an unexpected addition to the form is never forwarded
+ * by accident, and nothing is written back to storage.
+ */
+function readSubmittedOrder(phone: string): LeadData {
+  let order: Record<string, unknown> = {};
+  try {
+    const raw = localStorage.getItem(`order_${phone}`);
+    if (raw) order = JSON.parse(raw) as Record<string, unknown>;
+  } catch {
+    // Unreadable payload: fall back to the phone we already have.
+  }
+
+  const data: LeadData = {
+    phone: text(order.phone, 20) ?? text(phone, 20),
+    name: text(order.name, 80),
+    province: text(order.province, 60),
+    message: text(order.note, 500),
+    product_interest: text(order.combo, 300),
+  };
+  // Drop empty keys so the API receives only what the visitor actually provided.
+  for (const key of Object.keys(data) as (keyof LeadData)[]) {
+    if (data[key] === undefined) delete data[key];
+  }
+  return data;
+}
+
 /**
  * The order form reports its lead from the thank-you page instead of the raw
  * `submit` event, because OrderForm only reaches /thank-you after Zod validation
- * and the upstream request both succeeded. The phone parameter is used purely as
- * proof that a submit happened — its value is never read, stored or sent, which
- * is why `lead_data` stays empty for form_submit.
+ * and the upstream request both succeeded.
+ *
+ * The customer details come from the record OrderForm itself already wrote to
+ * localStorage before redirecting; this module only reads it, and POSTs it over
+ * HTTPS to the tracking API. `email`, `district` and `area_sqm` are omitted
+ * because the form does not collect them.
  */
 function trackConfirmedFormSubmit() {
   const path = window.location.pathname;
   if (!path.startsWith("/thank-you")) return;
 
-  const hasPhoneQuery = new URLSearchParams(window.location.search).has("phone");
-  const hasPhoneSegment = /^\/thank-you\/[^/]+/.test(path);
-  if (!hasPhoneQuery && !hasPhoneSegment) return;
+  const queryPhone = new URLSearchParams(window.location.search).get("phone");
+  const segmentPhone = path.match(/^\/thank-you\/([^/]+)/)?.[1];
+  const phone = queryPhone || (segmentPhone ? decodeURIComponent(segmentPhone) : "");
+  if (!phone) return;
   if (readFormFlag()) return;
 
   writeFormFlag();
-  trackLead("form_submit");
+  trackLead("form_submit", readSubmittedOrder(phone));
 }
 
 let started = false;
