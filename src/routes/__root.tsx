@@ -8,6 +8,11 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { useEffect } from "react";
+
+import { initAffiliateAttribution } from "@/lib/affiliate-attribution";
+import { initAffiliateLeadTracking } from "@/lib/affiliate-lead";
+
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -132,6 +137,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    initAffiliateAttribution();
+    initAffiliateLeadTracking();
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
