@@ -234,11 +234,13 @@ export function OrderForm() {
       // Attribution is included so a later reconciliation step (manual or via
       // Pipedream/Zapier reading the sheet) can credit the affiliate who sent
       // this visitor. Absent for organic/no-ref visits, which is expected.
+      // order_code matches the UNIQUE order_code column on Supabase's orders
+      // table, so a sync run can safely re-POST the same sheet row.
       const attribution = getAffiliateAttribution();
       const dataWithSource = {
         ...data,
         source: "cemboard",
-        order_id: createUuid(),
+        order_code: createUuid(),
         affiliate_code: attribution?.affiliate_code ?? "",
         affiliate_link_id: attribution?.affiliate_link_id ?? "",
         visitor_id: attribution?.visitor_id ?? "",
