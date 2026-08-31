@@ -4,7 +4,7 @@ import { ZALO_URL } from "./constants";
 import { useRouter } from "@tanstack/react-router";
 import { getAffiliateAttribution, createUuid } from "@/lib/affiliate-attribution";
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyv7gIgwksqqalJhhqqUp8KUGCM9r0LEu6LtRd8wuGE86lmFHQGXZGJp8gHWNzBaC_T/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxMoSJF2ok-WgLY9Okcyx3XSju3sVh5PXjrfygSwsNHYV2mHNPYaHegdA44MkgffA7H/exec";
 
 // Danh sách màu giả gỗ Lotus (đồng bộ với ColorPicker)
 const WOOD_COLORS = [
