@@ -2,6 +2,7 @@ import { useState, useEffect, type FormEvent } from "react";
 import { z } from "zod";
 import { ZALO_URL } from "./constants";
 import { useRouter } from "@tanstack/react-router";
+import { getAffiliateAttribution, createUuid } from "@/lib/affiliate-attribution";
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyv7gIgwksqqalJhhqqUp8KUGCM9r0LEu6LtRd8wuGE86lmFHQGXZGJp8gHWNzBaC_T/exec";
 
@@ -230,7 +231,18 @@ export function OrderForm() {
     setLoading(true);
 
     try {
-      const dataWithSource = { ...data, source: "cemboard" };
+      // Attribution is included so a later reconciliation step (manual or via
+      // Pipedream/Zapier reading the sheet) can credit the affiliate who sent
+      // this visitor. Absent for organic/no-ref visits, which is expected.
+      const attribution = getAffiliateAttribution();
+      const dataWithSource = {
+        ...data,
+        source: "cemboard",
+        order_id: createUuid(),
+        affiliate_code: attribution?.affiliate_code ?? "",
+        affiliate_link_id: attribution?.affiliate_link_id ?? "",
+        visitor_id: attribution?.visitor_id ?? "",
+      };
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",

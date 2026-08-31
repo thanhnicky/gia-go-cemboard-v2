@@ -63,7 +63,7 @@ function hasLiveAttribution(record: AffiliateAttribution | null): boolean {
   return !isExpired(record);
 }
 
-function createUuid(): string {
+export function createUuid(): string {
   if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
     return crypto.randomUUID();
   }
